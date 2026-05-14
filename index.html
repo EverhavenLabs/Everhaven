@@ -1,0 +1,620 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Everhaven — Custom Additive Manufacturing · Cartersville, GA</title>
+<meta name="description" content="Custom carbon-fiber composite parts for manufacturers who can't wait. From drawing to dock in five to seven business days. No minimum order.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Everhaven — Custom Additive Manufacturing · Cartersville, GA">
+<meta property="og:description" content="Custom carbon-fiber composite parts for manufacturers who can't wait. From drawing to dock in five to seven business days. No minimum order.">
+<meta property="og:url" content="https://everhaven.design/">
+<meta property="og:image" content="https://everhaven.design/img/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Home page — richer video colour */
+  #page-video-bg.is-active { opacity: 0.90; }
+  #page-video-bg .page-video-tint {
+    background: linear-gradient(
+      to bottom,
+      rgba(5, 22, 34, 0.58) 0%,
+      rgba(5, 22, 34, 0.42) 50%,
+      rgba(5, 22, 34, 0.58) 100%
+    );
+  }
+  /* Home page — hero text warm gold over video */
+  .hero .meta {
+    color: rgba(222, 185, 146, 0.72);
+    text-shadow: 0 1px 14px rgba(5, 22, 34, 0.80);
+  }
+  .hero .meta strong {
+    color: #1BA098;
+    font-weight: 500;
+    text-shadow: 0 1px 14px rgba(5, 22, 34, 0.80);
+  }
+  .hero .display-xl,
+  .hero .display-xl .word {
+    color: #DEB992;
+    text-shadow: 0 2px 36px rgba(5, 22, 34, 0.75);
+  }
+  .hero .display-xl em {
+    color: #DEB992;
+    text-shadow: 0 2px 36px rgba(5, 22, 34, 0.75);
+  }
+  .hero .lede {
+    color: rgba(222, 185, 146, 0.85);
+    text-shadow: 0 1px 16px rgba(5, 22, 34, 0.80);
+  }
+  .hero .link-arrow {
+    color: rgba(222, 185, 146, 0.80);
+  }
+  /* Hero ambient blobs */
+  .hero { position: relative; overflow: hidden; }
+  .hero-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+    animation: blob-drift-home 18s ease-in-out infinite;
+  }
+  .hero-blob-1 {
+    width: 520px; height: 520px;
+    background: radial-gradient(circle, rgba(27,160,152,0.22) 0%, transparent 70%);
+    top: -100px; left: -80px;
+    animation-delay: 0s; opacity: 0.9;
+  }
+  .hero-blob-2 {
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(19,120,111,0.18) 0%, transparent 70%);
+    bottom: 40px; right: 8%;
+    animation-delay: -7s; opacity: 0.9;
+    animation-duration: 22s;
+  }
+  .hero-blob-3 {
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(27,160,152,0.12) 0%, transparent 70%);
+    top: 30%; left: 50%;
+    animation-delay: -13s; opacity: 0.9;
+    animation-duration: 26s;
+  }
+  .hero > .container { position: relative; z-index: 1; }
+  @keyframes blob-drift-home {
+    0%   { transform: translate(0px,   0px)   scale(1.00); }
+    25%  { transform: translate(28px, -18px)  scale(1.06); }
+    50%  { transform: translate(-14px, 32px)  scale(0.94); }
+    75%  { transform: translate(18px,  14px)  scale(1.04); }
+    100% { transform: translate(0px,   0px)   scale(1.00); }
+  }
+</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2315130E' stroke-width='1.5'%3E%3Cpath d='M12 2 L21 7 L21 17 L12 22 L3 17 L3 7 Z'/%3E%3Cpath d='M12 2 L12 12 L21 7'/%3E%3Cpath d='M12 12 L3 7'/%3E%3Cpath d='M12 12 L12 22'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<!-- Fixed video background — fades in behind content sections -->
+<div class="page-video-bg is-active" id="page-video-bg">
+  <video autoplay muted loop playsinline preload="auto" disablepictureinpicture src="printer-loop.mp4"></video>
+  <div class="page-video-tint"></div>
+</div>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round">
+        <path d="M12 2 L21 7 L21 17 L12 22 L3 17 L3 7 Z"/>
+        <path d="M12 2 L12 12 L21 7"/>
+        <path d="M12 12 L3 7"/>
+        <path d="M12 12 L12 22" stroke-dasharray="1.2 2"/>
+      </svg>
+      EVERHAVEN
+    </a>
+    <nav class="primary-nav">
+      <a href="index.html">Home</a>
+      <a href="capabilities.html">Capabilities</a>
+      <a href="materials.html">Materials</a>
+      <a href="process.html">Process</a>
+      <a href="about.html">Studio</a>
+      <a href="contact.html" class="cta-link">Request a quote</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<div class="video-zone" id="video-zone">
+<section class="hero">
+  <div class="hero-blob hero-blob-1"></div>
+  <div class="hero-blob hero-blob-2"></div>
+  <div class="hero-blob hero-blob-3"></div>
+  <div class="container">
+
+    <div class="hero-topline">
+      <div class="meta">
+        <strong>Everhaven Manufacturing</strong>
+        Cartersville, Georgia · Bartow County
+      </div>
+      <div class="meta" style="text-align:right;">
+        <strong>Edition 01 / 2025</strong>
+        Custom industrial parts<br>
+        Carbon-fiber composite
+      </div>
+    </div>
+
+    <h1 class="display-xl hero-headline">
+      <span class="word">Your</span>
+      <span class="word">spec.</span>
+      <span class="word">Our</span>
+      <span class="word">printers.</span>
+      <span class="word"><em>Done right.</em></span>
+    </h1>
+
+    <div class="hero-body">
+      <p class="lede hero-sub">
+        Custom carbon-fiber composite tooling, fixtures, and replacement components — engineered for manufacturers who need it done right, and shipped from Cartersville in five to seven business days. No minimum order.
+      </p>
+      <div class="hero-cta">
+        <a href="contact.html" class="btn">Request a quote</a>
+        <a href="capabilities.html" class="link-arrow">View capabilities</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ §01 PREMISE ============ -->
+<section class="section section--opaque">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num"><span>§01</span> Premise</div>
+      <div>
+        <h2 class="headline">
+          The bracket your supplier doesn&rsquo;t make. The fixture your machinist won&rsquo;t quote.
+        </h2>
+      </div>
+    </div>
+
+    <div class="premise reveal">
+      <div class="eyebrow">A short note</div>
+      <div class="body">
+        <p>
+          Most manufacturing problems aren&rsquo;t solved by a catalog or a machine shop. They&rsquo;re solved by a single-quantity bracket, a one-off jig, or an obsolete replacement part — work too small for a CNC quote and too specific for an off-the-shelf solution.
+        </p>
+        <p>
+          Everhaven exists to close that gap. We design and produce custom parts in carbon-fiber-reinforced composite on industrial-grade additive systems, with the dimensional discipline of an engineering shop and the lead times of a service bureau. Send a drawing, a sketch, or a photograph with dimensions. We&rsquo;ll send back a part you can put to work.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ §02 APPLICATIONS ============ -->
+<section class="section section--clear">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num"><span>§02</span> Applications</div>
+      <div>
+        <h2 class="headline">Four areas where additive earns its keep.</h2>
+        <p class="lede" style="max-width:46ch; margin-top:24px;">
+          Our work falls into a handful of clearly defined categories. Most of what comes through the studio looks like one of these.
+        </p>
+      </div>
+    </div>
+
+    <div class="applications reveal">
+
+      <!-- JIGS & FIXTURES -->
+      <a href="capabilities.html#jigs" class="app-card">
+        <div class="app-head">
+          <span class="app-id">EH&middot;JF &middot; 001</span>
+        </div>
+        <div class="app-art">
+          <img src="img/cap-jf-014.png" alt="Drill Locating Guide — Jigs &amp; Fixtures" loading="lazy">
+        </div>
+        <h3 class="title">Jigs &amp; Fixtures</h3>
+        <p class="body">
+          Vise soft jaws, locating fixtures, drilling guides, assembly aids, and inspection gauges &mdash; engineered to your part and your process.
+        </p>
+        <span class="app-link">See examples</span>
+      </a>
+
+      <!-- REPLACEMENT PARTS -->
+      <a href="capabilities.html#replacement" class="app-card">
+        <div class="app-head">
+          <span class="app-id">EH&middot;RP &middot; 002</span>
+        </div>
+        <div class="app-art">
+          <img src="img/cap-rp-044.png" alt="Tractor Throttle Gear — Replacement Parts" loading="lazy">
+        </div>
+        <h3 class="title">Replacement Parts</h3>
+        <p class="body">
+          Discontinued knobs, gears, bezels, brackets, trim, and consumables &mdash; reverse-engineered from a sample or produced from your drawing.
+        </p>
+        <span class="app-link">See examples</span>
+      </a>
+
+      <!-- SENSOR & EQUIPMENT MOUNTS -->
+      <a href="capabilities.html#mounts" class="app-card">
+        <div class="app-head">
+          <span class="app-id">EH&middot;SM &middot; 003</span>
+        </div>
+        <div class="app-art">
+          <img src="img/cap-sm-064.png" alt="IP Camera Enclosure — Sensor &amp; Equipment Mounts" loading="lazy">
+        </div>
+        <h3 class="title">Sensor &amp; Equipment Mounts</h3>
+        <p class="body">
+          Brackets, enclosures, and adapters for cameras, barcode scanners, proximity sensors, instrumentation, and shop-floor displays.
+        </p>
+        <span class="app-link">See examples</span>
+      </a>
+
+      <!-- CUSTOM TOOLING -->
+      <a href="capabilities.html#tooling" class="app-card">
+        <div class="app-head">
+          <span class="app-id">EH&middot;CT &middot; 004</span>
+        </div>
+        <div class="app-art">
+          <img src="img/cap-ct-081.png" alt="Op-2 Part Nesting Tray — Custom Tooling" loading="lazy">
+        </div>
+        <h3 class="title">Custom Tooling</h3>
+        <p class="body">
+          Part nesting trays, kanban bins, shadow boards, workholding, and shop-floor organizers &mdash; with embossed labels and part numbers.
+        </p>
+        <span class="app-link">See examples</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ §03 SERVED BY ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num"><span>§03</span> Served by Everhaven</div>
+      <div>
+        <h2 class="headline">A short list of who we work with.</h2>
+        <p class="lede" style="max-width:48ch; margin-top:24px;">
+          We&rsquo;ve found a natural fit with manufacturers and shops across the industrial sector.
+        </p>
+      </div>
+    </div>
+
+    <div class="industries reveal">
+      <div class="industry-tag"><span>01</span> CNC &amp; Machine Shops</div>
+      <div class="industry-tag"><span>02</span> Cabinet &amp; Millwork</div>
+      <div class="industry-tag"><span>03</span> Maintenance &amp; Facilities</div>
+      <div class="industry-tag"><span>04</span> Fabrication &amp; Welding</div>
+      <div class="industry-tag"><span>05</span> Quality &amp; Inspection</div>
+      <div class="industry-tag"><span>06</span> Drone &amp; UAV Operations</div>
+      <div class="industry-tag"><span>07</span> Carpet &amp; Flooring</div>
+      <div class="industry-tag"><span>08</span> Automotive Supply</div>
+      <div class="industry-tag"><span>09</span> Aggregate &amp; Quarry</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ §04 MATERIALS ============ -->
+<section class="section section--clear">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num"><span>§04</span> Materials</div>
+      <div>
+        <h2 class="headline">Four materials. Production-grade. Engineered for the floor.</h2>
+        <p class="lede" style="max-width:50ch; margin-top:24px;">
+          We standardize on a focused materials library. Fewer variables, more dimensional discipline, predictable outcomes.
+        </p>
+      </div>
+    </div>
+
+    <div class="materials-preview reveal">
+
+      <div class="material-block">
+        <div class="mat-head">
+          <div>
+            <div class="mat-id">M&middot;01 / Carbon-Fiber Composite</div>
+            <h3 class="mat-name">PETG&#8202;&#8201;CF</h3>
+          </div>
+          <span class="meta">Primary</span>
+        </div>
+        <p class="body" style="max-width:42ch;">
+          Stiff, dimensionally stable, chemical-resistant. The standard choice for functional parts that need to look engineered.
+        </p>
+        <div class="mat-specs">
+          <div class="mat-spec">
+            <span class="k">Tensile Strength</span>
+            <span class="v">52<small>MPa</small></span>
+          </div>
+          <div class="mat-spec">
+            <span class="k">Flexural Modulus</span>
+            <span class="v">3.8<small>GPa</small></span>
+          </div>
+          <div class="mat-spec">
+            <span class="k">Max Service Temp</span>
+            <span class="v">75<small>°C</small></span>
+          </div>
+          <div class="mat-spec">
+            <span class="k">Finish</span>
+            <span class="v">Matte<small>composite</small></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="material-block">
+        <div class="mat-head">
+          <div>
+            <div class="mat-id">M&middot;02 / High-Flow Composite</div>
+            <h3 class="mat-name">PETG&#8202;&#8201;HF</h3>
+          </div>
+          <span class="meta">Production</span>
+        </div>
+        <p class="body" style="max-width:42ch;">
+          High-flow chemistry tuned for speed. Used when volume and lead time matter more than absolute stiffness.
+        </p>
+        <div class="mat-specs">
+          <div class="mat-spec">
+            <span class="k">Tensile Strength</span>
+            <span class="v">42<small>MPa</small></span>
+          </div>
+          <div class="mat-spec">
+            <span class="k">Flow Rate</span>
+            <span class="v">2&times;<small>standard</small></span>
+          </div>
+          <div class="mat-spec">
+            <span class="k">Max Service Temp</span>
+            <span class="v">70<small>°C</small></span>
+          </div>
+          <div class="mat-spec">
+            <span class="k">Finish</span>
+            <span class="v">Smooth<small>matte</small></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="material-block">
+        <div class="mat-head">
+          <div>
+            <div class="mat-id">M&middot;03 / Weather-Resistant</div>
+            <h3 class="mat-name">ASA</h3>
+          </div>
+          <span class="meta">Outdoor</span>
+        </div>
+        <p class="body" style="max-width:42ch;">
+          UV-stable and weather-rated. The standard choice for anything that lives outside or in direct sunlight.
+        </p>
+        <div class="mat-specs">
+          <div class="mat-spec">
+            <span class="k">Tensile Strength</span>
+            <span class="v">45<small>MPa</small></span>
+          </div>
+          <div class="mat-spec">
+            <span class="k">UV Resistance</span>
+            <span class="v">Excellent<small>outdoor rated</small></span>
+          </div>
+          <div class="mat-spec">
+            <span class="k">Max Service Temp</span>
+            <span class="v">95<small>°C</small></span>
+          </div>
+          <div class="mat-spec">
+            <span class="k">Finish</span>
+            <span class="v">Smooth<small>paintable</small></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="material-block">
+        <div class="mat-head">
+          <div>
+            <div class="mat-id">M&middot;04 / High-Temp Carbon Fiber</div>
+            <h3 class="mat-name">PAHT&#8202;&#8201;CF</h3>
+          </div>
+          <span class="meta">High-Temp</span>
+        </div>
+        <p class="body" style="max-width:42ch;">
+          Maximum stiffness and heat resistance. Specified for engine-bay, near-heat, and high-load structural applications.
+        </p>
+        <div class="mat-specs">
+          <div class="mat-spec">
+            <span class="k">Tensile Strength</span>
+            <span class="v">110<small>MPa</small></span>
+          </div>
+          <div class="mat-spec">
+            <span class="k">Flexural Modulus</span>
+            <span class="v">8.5<small>GPa</small></span>
+          </div>
+          <div class="mat-spec">
+            <span class="k">Max Service Temp</span>
+            <span class="v">180<small>°C</small></span>
+          </div>
+          <div class="mat-spec">
+            <span class="k">Finish</span>
+            <span class="v">Matte<small>composite</small></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="clear-text" style="margin-top: 56px; display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap;">
+      <p class="body" style="max-width: 40ch;">
+        Custom material qualifications available on request for production programs.
+      </p>
+      <a href="materials.html" class="link-arrow">Full specifications</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ §05 PROCESS ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num"><span>§05</span> Process</div>
+      <div>
+        <h2 class="headline">Drawing in today. Parts in your hand Friday.</h2>
+      </div>
+    </div>
+
+    <div class="process-steps reveal">
+
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <h3 class="title">Send a drawing</h3>
+        <p class="body">
+          STEP, STL, IGES, PDF — or a photograph with dimensions. Whatever you have. We&rsquo;ll work from a napkin sketch if that&rsquo;s where the part starts.
+        </p>
+        <div class="step-meta">Accepted formats &middot; 12+</div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <h3 class="title">Receive a firm quote</h3>
+        <p class="body">
+          A line-itemed quote &mdash; with material, lead time, and tolerances &mdash; back to your inbox within one business day. No surprises and no minimums.
+        </p>
+        <div class="step-meta">Quote turnaround &middot; &lt; 24h</div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <h3 class="title">Parts on your dock</h3>
+        <p class="body">
+          Shipped or available for local pickup in Cartersville. Five to seven business days for most jobs &mdash; rush available when production stops for you.
+        </p>
+        <div class="step-meta">Typical lead time &middot; 5&ndash;7 days</div>
+      </div>
+
+    </div>
+
+    <div style="margin-top: 64px; display: flex; justify-content: flex-end;">
+      <a href="process.html" class="link-arrow">Full process</a>
+    </div>
+  </div>
+</section>
+
+</div><!-- /video-zone -->
+
+<!-- ============ §06 TESTIMONIALS ============ -->
+<section class="section section--opaque">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num"><span>§06</span> From customers</div>
+      <div>
+        <h2 class="headline">What manufacturers say after the first job.</h2>
+      </div>
+    </div>
+    <div class="testimonials reveal">
+      <div class="testimonial">
+        <blockquote>"We needed a replacement bracket Monday morning — the OEM part had a six-week lead. Everhaven had a quote that afternoon and the bracket on our dock Thursday. Fit on first try."</blockquote>
+        <div class="t-attribution">
+          <div class="t-name">Maintenance Supervisor</div>
+          <div class="t-role">Automotive supplier · Bartow County</div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <blockquote>"The drilling guide cut our fixture time from 90 seconds to under 20 per part. We run it on every shift. Small part, real money."</blockquote>
+        <div class="t-attribution">
+          <div class="t-name">Production Manager</div>
+          <div class="t-role">CNC machine shop · Cherokee County</div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <blockquote>"Called on a Friday with a worn sensor mount that was stopping a line. Part was in our hands Monday. We've been on a standing order ever since."</blockquote>
+        <div class="t-attribution">
+          <div class="t-name">Plant Manager</div>
+          <div class="t-role">Cabinet manufacturer · Floyd County</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ CLOSING ============ -->
+<section class="closing">
+  <div class="container">
+    <div class="eyebrow">Send a drawing</div>
+    <h2 class="display-lg">
+      Have a part in mind?<br>
+      <em>We&rsquo;ll have it on your dock by Friday.</em>
+    </h2>
+    <div class="closing-row">
+      <div class="meta">
+        <strong>Cartersville, Georgia</strong>
+        Serving Bartow, Cherokee, Cobb, Floyd,<br>Gordon, Murray, Paulding, Pickens, Polk &amp; Whitfield
+      </div>
+      <div class="closing-socials">
+        <a href="https://www.instagram.com/everhaven.design/" class="closing-social-link" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.tiktok.com/@everhaven.design?lang=en" class="closing-social-link" target="_blank" rel="noopener noreferrer">TikTok</a>
+      </div>
+      <a href="contact.html" class="btn">Request a quote</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo" style="margin-bottom:20px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round">
+            <path d="M12 2 L21 7 L21 17 L12 22 L3 17 L3 7 Z"/>
+            <path d="M12 2 L12 12 L21 7"/>
+            <path d="M12 12 L3 7"/>
+            <path d="M12 12 L12 22" stroke-dasharray="1.2 2"/>
+          </svg>
+          EVERHAVEN
+        </a>
+        <p style="margin-top:18px; max-width:30ch;">Custom additive manufacturing from Cartersville, Georgia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Studio</h4>
+        <a href="index.html">Home</a>
+        <a href="capabilities.html">Capabilities</a>
+        <a href="materials.html">Materials</a>
+        <a href="process.html">Process</a>
+        <a href="about.html">Studio</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="contact.html">Request a quote</a>
+        <a href="tel:+14703380243">470 · 338 · 0243</a>
+        <a href="mailto:hello@everhaven.design">hello@everhaven.design</a>
+      </div>
+      <div class="footer-col">
+        <h4>Studio Hours</h4>
+        <p class="meta">
+          <strong>Mon&ndash;Fri</strong> 8:00 – 17:00<br>
+          <strong>Sat</strong> By appointment<br>
+          <strong>Sun</strong> Closed
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Socials</h4>
+        <a href="https://www.instagram.com/everhaven.design/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.tiktok.com/@everhaven.design?lang=en" target="_blank" rel="noopener noreferrer">TikTok</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="meta">© 2025 Everhaven Manufacturing &middot; All rights reserved</div>
+      <div class="meta">Cartersville, GA</div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="Back to top">↑</button>
+<script src="script.js"></script>
+</body>
+</html>

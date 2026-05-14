@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Process — Everhaven</title>
+<meta name="description" content="From a sketch to parts on your dock in five to seven business days. Here is how Everhaven works.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Process — Everhaven">
+<meta property="og:description" content="From a sketch to parts on your dock in five to seven business days. Here is how Everhaven works.">
+<meta property="og:url" content="https://everhaven.design/process.html">
+<meta property="og:image" content="https://everhaven.design/img/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* ================================================================
+   PROCESS PAGE — LIQUID DARK THEME
+   ================================================================ */
+
+:root {
+  --p-bg:          #051622;
+  --p-surf:        #081d2b;
+  --p-surf2:       #0c2234;
+  --p-border:      rgba(27, 160, 152, 0.22);
+  --p-border-faint:rgba(27, 160, 152, 0.09);
+  --p-text:        #DEB992;
+  --p-text-soft:   rgba(222, 185, 146, 0.92);
+  --p-text-faint:  rgba(222, 185, 146, 0.72);
+  --p-accent:      #1BA098;
+  --p-glow:        rgba(27, 160, 152, 0.22);
+}
+
+/* Video bg settings for dark page */
+#page-video-bg.is-active { opacity: 0.55; }
+#page-video-bg .page-video-tint {
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 22, 34, 0.55) 0%,
+    rgba(5, 22, 34, 0.35) 50%,
+    rgba(5, 22, 34, 0.70) 100%
+  );
+}
+
+/* ---------- Liquid keyframe library ---------- */
+@keyframes blob-drift {
+  0%,100% { border-radius:60% 40% 30% 70%/60% 30% 70% 40%; transform:translate(0,0) scale(1); }
+  25%      { border-radius:30% 60% 70% 40%/50% 60% 30% 60%; transform:translate(-3%,2%) scale(1.02); }
+  50%      { border-radius:50% 60% 30% 40%/30% 40% 60% 70%; transform:translate(2%,-2%) scale(0.98); }
+  75%      { border-radius:40% 30% 60% 70%/60% 70% 30% 40%; transform:translate(-1%,3%) scale(1.01); }
+}
+@keyframes blob-drift-2 {
+  0%,100% { border-radius:40% 60% 70% 30%/40% 50% 60% 50%; transform:translate(0,0) rotate(0deg); }
+  33%      { border-radius:70% 30% 40% 60%/60% 40% 50% 40%; transform:translate(2%,-3%) rotate(15deg); }
+  66%      { border-radius:30% 70% 50% 50%/50% 60% 40% 60%; transform:translate(-2%,2%) rotate(-10deg); }
+}
+
+@keyframes liquid-rise {
+  0%    { clip-path: inset(100% 0 0 0 round 55% 55% 0 0); }
+  55%   { clip-path: inset(8%  0 0 0 round 58% 42% 0 0); }
+  75%   { clip-path: inset(3%  0 0 0 round 44% 56% 0 0); }
+  88%   { clip-path: inset(1%  0 0 0 round 52% 48% 0 0); }
+  100%  { clip-path: inset(0%  0 0 0 round 0   0   0 0); }
+}
+
+@keyframes light-travel {
+  0%   { top:-120px; opacity:0; }
+  5%   { opacity:0.9; }
+  90%  { opacity:0.7; }
+  100% { top:100%; opacity:0; }
+}
+
+@keyframes shimmer-pass {
+  0%   { transform:translateX(-100%) skewX(-12deg); }
+  100% { transform:translateX(300%)  skewX(-12deg); }
+}
+
+@keyframes proc-slide-in {
+  to { opacity:1; transform:translateX(0); }
+}
+@keyframes proc-word-rise {
+  to { opacity:1; transform:translateY(0); }
+}
+@keyframes proc-fade-up {
+  to { opacity:1; transform:translateY(0); }
+}
+
+@keyframes accent-pulse {
+  0%,100% { opacity:0.18; }
+  50%      { opacity:0.35; }
+}
+
+@keyframes ticker-in {
+  to { opacity:1; transform:translateY(0); }
+}
+
+/* CSS @property for animated conic border */
+@property --ba {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes conic-spin { to { --ba: 360deg; } }
+
+/* ---------- Hero ---------- */
+.proc-hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(96px,13vh,152px) 0 clamp(72px,9vh,108px);
+  overflow: hidden;
+  border-bottom: 1px solid var(--p-border-faint);
+}
+
+/* Ambient blobs */
+.proc-blob {
+  position: absolute;
+  pointer-events: none;
+  filter: blur(90px);
+  will-change: transform, border-radius;
+}
+.proc-blob-1 {
+  width: clamp(380px,52vw,860px);
+  height: clamp(380px,52vw,860px);
+  background: radial-gradient(circle, rgba(27,160,152,0.70) 0%, transparent 68%);
+  right: -14%;
+  top: -18%;
+  opacity: 0.32;
+  animation: blob-drift 20s ease-in-out infinite;
+}
+.proc-blob-2 {
+  width: clamp(220px,28vw,480px);
+  height: clamp(220px,28vw,480px);
+  background: radial-gradient(circle, rgba(15,80,75,0.90) 0%, transparent 70%);
+  left: -8%;
+  bottom: -12%;
+  opacity: 0.28;
+  animation: blob-drift-2 26s ease-in-out infinite;
+}
+.proc-blob-3 {
+  width: clamp(150px,18vw,320px);
+  height: clamp(150px,18vw,320px);
+  background: radial-gradient(circle, rgba(27,160,152,0.50) 0%, transparent 70%);
+  left: 38%;
+  top: 55%;
+  opacity: 0.18;
+  animation: blob-drift 30s ease-in-out infinite reverse;
+}
+
+/* Hero content */
+.proc-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 960px;
+}
+
+.proc-hero-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--p-accent);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: clamp(28px,4vw,52px);
+  opacity: 0;
+  transform: translateX(-18px);
+  animation: proc-slide-in 0.9s cubic-bezier(0.2,0.7,0.2,1) 0.25s forwards;
+}
+.proc-eyebrow-line {
+  width: 36px;
+  height: 1px;
+  background: linear-gradient(to right, var(--p-accent), transparent);
+  flex-shrink: 0;
+}
+
+.proc-hero-title {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(56px,9.2vw,144px);
+  line-height: 0.92;
+  letter-spacing: -0.032em;
+  font-variation-settings: "opsz" 144, "SOFT" 0;
+  color: var(--p-text);
+  margin-bottom: clamp(28px,3.5vw,48px);
+}
+.proc-title-line {
+  display: block;
+  overflow: hidden;
+}
+.proc-title-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(110%);
+  animation: proc-word-rise 1.05s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+.proc-title-word:nth-child(1) { animation-delay: 0.28s; }
+.proc-title-word:nth-child(2) { animation-delay: 0.44s; }
+.proc-title-word:nth-child(3) { animation-delay: 0.60s; }
+.proc-hero-title em {
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 100;
+  color: var(--p-accent);
+}
+
+.proc-hero-lede {
+  font-family: var(--serif);
+  font-size: clamp(16px,1.45vw,21px);
+  line-height: 1.65;
+  color: var(--p-text-soft);
+  max-width: 52ch;
+  font-variation-settings: "opsz" 18, "SOFT" 50;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: proc-fade-up 0.9s cubic-bezier(0.2,0.7,0.2,1) 0.78s forwards;
+}
+
+/* Step tickers at bottom of hero */
+.proc-steps-ticker {
+  position: relative;
+  z-index: 2;
+  margin-top: clamp(56px,9vw,104px);
+  display: flex;
+  gap: 0;
+  border-top: 1px solid var(--p-border-faint);
+  opacity: 0;
+  transform: translateY(14px);
+  animation: ticker-in 0.9s cubic-bezier(0.2,0.7,0.2,1) 1.0s forwards;
+}
+.proc-ticker-item {
+  flex: 1;
+  padding: 22px 0;
+  border-right: 1px solid var(--p-border-faint);
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+.proc-ticker-item:last-child { border-right: none; }
+.proc-ticker-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--p-accent);
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+.proc-ticker-text {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--p-text-faint);
+  line-height: 1.6;
+}
+.proc-ticker-text strong {
+  display: block;
+  color: var(--p-text-soft);
+  font-weight: 500;
+  margin-bottom: 2px;
+  letter-spacing: 0.12em;
+}
+
+/* ---------- Steps section ---------- */
+.proc-steps-section {
+  position: relative;
+  background: #F5F1EC;
+}
+
+/* Vertical spine */
+.proc-flow-spine {
+  position: absolute;
+  left: var(--pad-x);
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.proc-flow-spine::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--p-border-faint) 15%,
+    var(--p-border) 50%,
+    var(--p-border-faint) 85%,
+    transparent 100%
+  );
+}
+.proc-flow-spine::after {
+  content: '';
+  position: absolute;
+  left: -1px;
+  right: -1px;
+  height: 140px;
+  background: linear-gradient(to bottom, transparent, var(--p-accent), transparent);
+  animation: light-travel 5s ease-in-out infinite;
+  filter: blur(1px);
+}
+
+/* Individual step row */
+.proc-step {
+  position: relative;
+  border-bottom: 1px solid var(--p-border-faint);
+  padding: clamp(64px,9vw,120px) 0;
+  transition: background 0.7s ease;
+}
+.proc-step:hover { background: rgba(27, 160, 152, 0.04); }
+
+/* Left accent bar, revealed on hover */
+.proc-step::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, var(--p-accent), transparent);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.proc-step:hover::before { opacity: 1; }
+
+/* Two-column layout: number left, content right */
+.proc-step-layout {
+  display: grid;
+  grid-template-columns: clamp(200px,20vw,280px) 1fr;
+  gap: clamp(36px,6vw,96px);
+  align-items: start;
+}
+
+.proc-step-num-wrap {
+  position: sticky;
+  top: clamp(96px,14vh,120px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+/* Big outlined numeral with liquid fill overlay */
+.proc-step-numeral {
+  position: relative;
+  font-family: var(--mono);
+  font-size: clamp(88px,13vw,180px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.06em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(27,160,152,0.38);
+  user-select: none;
+  display: block;
+}
+/* Liquid fill via clip-path animation */
+.proc-step-numeral::after {
+  content: attr(data-num);
+  position: absolute;
+  inset: 0;
+  color: var(--p-accent);
+  -webkit-text-stroke: 0;
+  clip-path: inset(100% 0 0 0 round 55% 55% 0 0);
+  transition: clip-path 1.6s cubic-bezier(0.16,1,0.3,1);
+  filter: drop-shadow(0 0 24px rgba(27,160,152,0.55));
+}
+.proc-step.liq-filled .proc-step-numeral::after {
+  clip-path: inset(0% 0 0 0 round 0 0 0 0);
+}
+
+/* Glow ring that pulses once filled */
+.proc-step-numeral::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--p-glow) 0%, transparent 65%);
+  opacity: 0;
+  transition: opacity 0.8s ease 0.8s;
+  pointer-events: none;
+}
+.proc-step.liq-filled .proc-step-numeral::before { opacity: 1; }
+
+.proc-step-sublabel {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #5580A0;
+  border-left: 2px solid var(--p-accent);
+  padding-left: 12px;
+  line-height: 1.6;
+  opacity: 0;
+  transition: opacity 0.8s ease 1.0s;
+}
+.proc-step.liq-filled .proc-step-sublabel { opacity: 1; }
+
+/* Step content */
+.proc-step-content { padding-top: 6px; }
+
+.proc-step-headline {
+  font-family: var(--serif);
+  font-weight: 360;
+  font-size: clamp(30px,3.6vw,54px);
+  line-height: 1.06;
+  letter-spacing: -0.022em;
+  font-variation-settings: "opsz" 80, "SOFT" 0;
+  color: #051622;
+  margin-bottom: clamp(18px,2.4vw,30px);
+  opacity: 0;
+  transform: translateX(28px);
+  transition: opacity 1.1s cubic-bezier(0.2,0.7,0.2,1),
+              transform 1.1s cubic-bezier(0.2,0.7,0.2,1);
+}
+.proc-step.liq-filled .proc-step-headline {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.proc-step-body {
+  max-width: 50ch;
+  margin-bottom: clamp(28px,3.5vw,44px);
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 1.0s cubic-bezier(0.2,0.7,0.2,1) 0.12s,
+              transform 1.0s cubic-bezier(0.2,0.7,0.2,1) 0.12s;
+}
+.proc-step.liq-filled .proc-step-body { opacity:1; transform:translateY(0); }
+.proc-step-body p {
+  font-family: var(--serif);
+  font-size: clamp(15px,1.2vw,17.5px);
+  line-height: 1.68;
+  color: #2D4F70;
+  font-variation-settings: "opsz" 14, "SOFT" 50;
+}
+.proc-step-body p + p { margin-top: 1.0em; }
+
+/* Callout cards */
+.proc-callouts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 1.0s cubic-bezier(0.2,0.7,0.2,1) 0.28s,
+              transform 1.0s cubic-bezier(0.2,0.7,0.2,1) 0.28s;
+}
+.proc-step.liq-filled .proc-callouts { opacity:1; transform:translateY(0); }
+
+.proc-callout {
+  background: #FFFFFF;
+  border: 1px solid rgba(27, 160, 152, 0.20);
+  padding: 20px 22px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.35s ease, background 0.35s ease;
+}
+.proc-callout:hover {
+  border-color: rgba(27, 160, 152, 0.48);
+  background: #F5F1EC;
+}
+/* Shimmer sweep on hover */
+.proc-callout::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 35%,
+    rgba(27,160,152,0.07) 50%,
+    transparent 65%
+  );
+  transform: translateX(-100%) skewX(-12deg);
+  pointer-events: none;
+}
+.proc-callout:hover::after {
+  animation: shimmer-pass 0.6s ease forwards;
+}
+.proc-callout h5 {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--p-accent);
+  margin-bottom: 9px;
+  font-weight: 500;
+}
+.proc-callout p {
+  font-family: var(--serif);
+  font-size: 14px;
+  line-height: 1.58;
+  color: #2D4F70;
+  font-variation-settings: "opsz" 14, "SOFT" 50;
+}
+
+/* ---------- FAQ section ---------- */
+.proc-faq-section {
+  padding: clamp(80px,12vw,160px) 0;
+  background: #F5F1EC;
+  border-top: 1px solid rgba(27, 160, 152, 0.15);
+  border-bottom: 1px solid rgba(27, 160, 152, 0.15);
+}
+
+.proc-faq-head {
+  margin-bottom: clamp(44px,6vw,80px);
+}
+.proc-faq-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--p-accent);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.proc-faq-eyebrow::before {
+  content: '§ 04';
+  color: #9ABACF;
+  font-size: 10px;
+}
+.proc-faq-head h2 {
+  font-family: var(--serif);
+  font-weight: 360;
+  font-size: clamp(26px,3vw,46px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-variation-settings: "opsz" 80, "SOFT" 0;
+  color: #051622;
+  max-width: 32ch;
+}
+
+.proc-faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(27, 160, 152, 0.18);
+  border: 1px solid rgba(27, 160, 152, 0.18);
+}
+
+.proc-faq-item {
+  background: #FFFFFF;
+  padding: 34px 30px;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s ease;
+  --ba: 0deg;
+}
+.proc-faq-item:hover {
+  background: #F5F1EC;
+}
+/* Animated conic gradient border on hover */
+.proc-faq-item::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: conic-gradient(
+    from var(--ba) at 50% 50%,
+    transparent 0deg,
+    var(--p-accent) 55deg,
+    rgba(27,160,152,0.4) 90deg,
+    transparent 140deg
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  animation: conic-spin 3.5s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  padding: 1px;
+}
+.proc-faq-item:hover::before { opacity: 0.7; }
+
+.proc-faq-item > * { position: relative; z-index: 1; }
+
+.proc-faq-item h3 {
+  font-family: var(--serif);
+  font-size: clamp(17px,1.4vw,20px);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.012em;
+  font-variation-settings: "opsz" 24, "SOFT" 0;
+  color: #051622;
+  margin-bottom: 13px;
+}
+.proc-faq-item p {
+  font-family: var(--serif);
+  font-size: clamp(13.5px,1.05vw,15px);
+  line-height: 1.68;
+  color: #2D4F70;
+  font-variation-settings: "opsz" 14, "SOFT" 50;
+}
+.proc-faq-item.faq-wide { grid-column: 1 / -1; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 820px) {
+  .proc-step-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .proc-step-num-wrap {
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+  }
+  .proc-step-numeral {
+    font-size: clamp(64px,18vw,96px);
+  }
+  .proc-callouts { grid-template-columns: 1fr; }
+  .proc-faq-grid { grid-template-columns: 1fr; }
+  .proc-steps-ticker {
+    flex-direction: column;
+  }
+  .proc-ticker-item {
+    border-right: none;
+    border-bottom: 1px solid var(--p-border-faint);
+    padding: 18px 0;
+  }
+  .proc-ticker-item:last-child { border-bottom: none; }
+  .proc-flow-spine { display: none; }
+}
+</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2315130E' stroke-width='1.5'%3E%3Cpath d='M12 2 L21 7 L21 17 L12 22 L3 17 L3 7 Z'/%3E%3Cpath d='M12 2 L12 12 L21 7'/%3E%3Cpath d='M12 12 L3 7'/%3E%3Cpath d='M12 12 L12 22'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<!-- SVG filter definitions: liquid distortion -->
+<svg style="position:absolute;width:0;height:0;overflow:hidden;" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="liquid-warp" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.022 0.018" numOctaves="3" result="noise" seed="4">
+        <animate attributeName="seed" values="4;42;4" dur="22s" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="7" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+</svg>
+
+<div class="grain"></div>
+
+<div class="page-video-bg is-active" id="page-video-bg">
+  <video autoplay muted loop playsinline preload="auto" disablepictureinpicture src="process-loop.mp4"></video>
+  <div class="page-video-tint"></div>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round">
+        <path d="M12 2 L21 7 L21 17 L12 22 L3 17 L3 7 Z"/>
+        <path d="M12 2 L12 12 L21 7"/>
+        <path d="M12 12 L3 7"/>
+        <path d="M12 12 L12 22" stroke-dasharray="1.2 2"/>
+      </svg>
+      EVERHAVEN
+    </a>
+    <nav class="primary-nav">
+      <a href="index.html">Home</a>
+      <a href="capabilities.html">Capabilities</a>
+      <a href="materials.html">Materials</a>
+      <a href="process.html" class="is-active">Process</a>
+      <a href="about.html">Studio</a>
+      <a href="contact.html" class="cta-link">Request a quote</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="proc-hero" id="video-zone">
+  <div class="proc-blob proc-blob-1" aria-hidden="true"></div>
+  <div class="proc-blob proc-blob-2" aria-hidden="true"></div>
+  <div class="proc-blob proc-blob-3" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="proc-hero-inner">
+      <div class="proc-hero-eyebrow">
+        <span class="proc-eyebrow-line"></span>
+        § Process · From drawing to dock
+      </div>
+      <h1 class="proc-hero-title">
+        <span class="proc-title-line"><span class="proc-title-word">A short,</span></span>
+        <span class="proc-title-line"><span class="proc-title-word"><em>deliberate</em></span></span>
+        <span class="proc-title-line"><span class="proc-title-word">process.</span></span>
+      </h1>
+      <p class="proc-hero-lede">
+        The studio runs on three steps, deliberately kept short so the work moves. Most jobs follow this path exactly. Where it doesn&rsquo;t fit, we say so before we quote.
+      </p>
+    </div>
+
+    <div class="proc-steps-ticker">
+      <div class="proc-ticker-item">
+        <span class="proc-ticker-num">01</span>
+        <div class="proc-ticker-text">
+          <strong>Send</strong>
+          Drawing, sample, or sketch
+        </div>
+      </div>
+      <div class="proc-ticker-item">
+        <span class="proc-ticker-num">02</span>
+        <div class="proc-ticker-text">
+          <strong>Quote</strong>
+          Firm number by next day
+        </div>
+      </div>
+      <div class="proc-ticker-item">
+        <span class="proc-ticker-num">03</span>
+        <div class="proc-ticker-text">
+          <strong>Deliver</strong>
+          Parts on dock in 5&ndash;7 days
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STEPS ============ -->
+<section class="proc-steps-section">
+  <div class="proc-flow-spine" aria-hidden="true"></div>
+
+  <!-- Step 01 -->
+  <div class="proc-step" id="proc-step-1">
+    <div class="container">
+      <div class="proc-step-layout">
+        <div class="proc-step-num-wrap">
+          <span class="proc-step-numeral" data-num="01" aria-hidden="true">01</span>
+          <div class="proc-step-sublabel">Send what<br>you have</div>
+        </div>
+        <div class="proc-step-content">
+          <h2 class="proc-step-headline">Send what you have.</h2>
+          <div class="proc-step-body">
+            <p>We work from whatever you can put in an email. A CAD file is ideal — STEP, IGES, X_T, or 3MF — but a hand sketch with dimensions, a photograph of a worn-out original, or a description with a reference part is enough to start a conversation.</p>
+            <p>If the part needs to be reverse-engineered from a sample, mail it to the studio or drop it off in Cartersville. We&rsquo;ll measure, model, and quote from the physical object.</p>
+          </div>
+          <div class="proc-callouts">
+            <div class="proc-callout">
+              <h5>Accepted formats</h5>
+              <p>STEP · STL · IGES · X_T · 3MF · DWG · DXF · PDF · PNG · JPG</p>
+            </div>
+            <div class="proc-callout">
+              <h5>What to include</h5>
+              <p>Critical dimensions, fit requirements, intended use, and rough quantity. Tolerances if you have them.</p>
+            </div>
+            <div class="proc-callout">
+              <h5>If you have no drawing</h5>
+              <p>Send a photo next to a ruler or a known reference. We&rsquo;ll work from that.</p>
+            </div>
+            <div class="proc-callout">
+              <h5>Sample for reverse engineering</h5>
+              <p>Ship to the studio. Add &ldquo;Sample for quote&rdquo; in the subject line.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 02 -->
+  <div class="proc-step" id="proc-step-2">
+    <div class="container">
+      <div class="proc-step-layout">
+        <div class="proc-step-num-wrap">
+          <span class="proc-step-numeral" data-num="02" aria-hidden="true">02</span>
+          <div class="proc-step-sublabel">Receive a<br>firm quote</div>
+        </div>
+        <div class="proc-step-content">
+          <h2 class="proc-step-headline">Receive a firm quote.</h2>
+          <div class="proc-step-body">
+            <p>Within one business day, you&rsquo;ll receive a line-itemed quote covering material, quantity, dimensional tolerance, expected lead time, and total cost. The number on the page is the number on the invoice &mdash; no surprise add-ons, no per-revision charges within scope, no minimums.</p>
+            <p>If we have questions about the part &mdash; fit, load case, exposure, tolerance &mdash; we pick up the phone. The quote follows the conversation.</p>
+          </div>
+          <div class="proc-callouts">
+            <div class="proc-callout">
+              <h5>Quote turnaround</h5>
+              <p>Within 24 business hours for most jobs.</p>
+            </div>
+            <div class="proc-callout">
+              <h5>Minimum order</h5>
+              <p>None. One-piece quantities are quoted the same way as fifty.</p>
+            </div>
+            <div class="proc-callout">
+              <h5>Revisions</h5>
+              <p>Two rounds of design revision included in every quote.</p>
+            </div>
+            <div class="proc-callout">
+              <h5>Payment</h5>
+              <p>50% at PO, balance on shipment. Net-30 available for established accounts.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 03 -->
+  <div class="proc-step" id="proc-step-3">
+    <div class="container">
+      <div class="proc-step-layout">
+        <div class="proc-step-num-wrap">
+          <span class="proc-step-numeral" data-num="03" aria-hidden="true">03</span>
+          <div class="proc-step-sublabel">Parts on<br>your dock</div>
+        </div>
+        <div class="proc-step-content">
+          <h2 class="proc-step-headline">Parts on your dock.</h2>
+          <div class="proc-step-body">
+            <p>Five to seven business days for most jobs &mdash; sometimes faster when the schedule allows. Parts are inspected against your drawing or sample, packaged with a printed inspection sheet, and shipped UPS Ground unless you specify otherwise. Local pickup in Cartersville is welcome and saves a day.</p>
+            <p>For maintenance-critical replacements that stop production, we can usually quote a 48&ndash;72-hour rush at a published premium.</p>
+          </div>
+          <div class="proc-callouts">
+            <div class="proc-callout">
+              <h5>Standard lead time</h5>
+              <p>5–7 business days from PO.</p>
+            </div>
+            <div class="proc-callout">
+              <h5>Rush service</h5>
+              <p>48–72 hours where production has stopped. +35% premium.</p>
+            </div>
+            <div class="proc-callout">
+              <h5>Shipping</h5>
+              <p>UPS Ground by default. Expedited on request. Pickup in Cartersville is free.</p>
+            </div>
+            <div class="proc-callout">
+              <h5>Inspection</h5>
+              <p>Each order ships with a printed dimensional inspection sheet on critical features.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="proc-faq-section reveal">
+  <div class="container">
+
+    <div class="proc-faq-head">
+      <div class="proc-faq-eyebrow">Frequent questions</div>
+      <h2>Things customers ask before the first job.</h2>
+    </div>
+
+    <div class="proc-faq-grid">
+      <div class="proc-faq-item">
+        <h3>How small or large will you go?</h3>
+        <p>Single piece up to runs of several hundred. Larger jobs are quoted but typically passed to a vendor better suited to volume. Maximum single-part envelope is 350 × 320 × 325 mm; larger geometries are bonded sub-assemblies.</p>
+      </div>
+      <div class="proc-faq-item">
+        <h3>What tolerances can you hold?</h3>
+        <p>Typically ±0.10–0.20 mm on critical features for PETG CF and PAHT-CF; ±0.15–0.30 mm for PETG HF; ±0.15–0.25 mm for ASA. Tighter tolerances on small features can be machined or reamed in-house as a secondary operation.</p>
+      </div>
+      <div class="proc-faq-item">
+        <h3>Do you handle threaded inserts?</h3>
+        <p>Yes. Heat-set brass inserts in standard imperial and metric sizes are installed before shipment. Through-tapped plastic is offered for low-load applications.</p>
+      </div>
+      <div class="proc-faq-item">
+        <h3>Can you reverse-engineer a worn part?</h3>
+        <p>For most parts under 200 mm, yes. Send the sample to the studio or drop it off. We&rsquo;ll measure, model, print a verification sample, and quote production from there.</p>
+      </div>
+      <div class="proc-faq-item">
+        <h3>What if I don&rsquo;t have a drawing?</h3>
+        <p>Most of our jobs don&rsquo;t start with one. A sketch, a sample, or a photograph is enough. We&rsquo;ll do the engineering and confirm dimensions with you before production.</p>
+      </div>
+      <div class="proc-faq-item">
+        <h3>Do you ship outside Georgia?</h3>
+        <p>Yes. Most of our work is for North Georgia manufacturers, but we ship throughout the Southeast and beyond. Local pickup is welcome and saves a day on lead time.</p>
+      </div>
+      <div class="proc-faq-item faq-wide">
+        <h3>What does a typical job cost?</h3>
+        <p>Small one-off brackets and fixtures typically run $25&ndash;$80. Larger fixtures and production runs scale from there &mdash; a set of 12 sensor brackets might run $180&ndash;$320 depending on material and complexity. Rush service carries a published +35% premium. Request a quote and you&rsquo;ll have a firm, line-itemed number by the next business day. No commitment required to see a number.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="closing">
+  <div class="container">
+    <div class="eyebrow">Ready to start?</div>
+    <h2 class="display-lg">
+      Send us what you have.<br>
+      <em>We&rsquo;ll quote it tomorrow.</em>
+    </h2>
+    <div class="closing-row">
+      <div class="meta">
+        <strong>Need to talk it through first?</strong>
+        Call the studio. We answer.<br>
+        470 · 338 · 0243
+      </div>
+      <div class="closing-socials">
+        <a href="https://www.instagram.com/everhaven.design/" class="closing-social-link" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.tiktok.com/@everhaven.design?lang=en" class="closing-social-link" target="_blank" rel="noopener noreferrer">TikTok</a>
+      </div>
+      <a href="contact.html" class="btn">Request a quote</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo" style="margin-bottom:20px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round">
+            <path d="M12 2 L21 7 L21 17 L12 22 L3 17 L3 7 Z"/>
+            <path d="M12 2 L12 12 L21 7"/>
+            <path d="M12 12 L3 7"/>
+            <path d="M12 12 L12 22" stroke-dasharray="1.2 2"/>
+          </svg>
+          EVERHAVEN
+        </a>
+        <p style="margin-top:18px; max-width:30ch;">Custom additive manufacturing from Cartersville, Georgia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Studio</h4>
+        <a href="index.html">Home</a>
+        <a href="capabilities.html">Capabilities</a>
+        <a href="materials.html">Materials</a>
+        <a href="process.html">Process</a>
+        <a href="about.html">Studio</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="contact.html">Request a quote</a>
+        <a href="tel:+14703380243">470 · 338 · 0243</a>
+        <a href="mailto:hello@everhaven.design">hello@everhaven.design</a>
+      </div>
+      <div class="footer-col">
+        <h4>Studio Hours</h4>
+        <p class="meta">
+          <strong>Mon&ndash;Fri</strong> 8:00 – 17:00<br>
+          <strong>Sat</strong> By appointment<br>
+          <strong>Sun</strong> Closed
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Socials</h4>
+        <a href="https://www.instagram.com/everhaven.design/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.tiktok.com/@everhaven.design?lang=en" target="_blank" rel="noopener noreferrer">TikTok</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="meta">© 2025 Everhaven Manufacturing · All rights reserved</div>
+      <div class="meta">Cartersville, GA</div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="Back to top">↑</button>
+
+<script src="script.js"></script>
+<script>
+(function () {
+  /* Liquid fill observer for step numbers */
+  var steps = document.querySelectorAll('.proc-step');
+  if (steps.length && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('liq-filled');
+        }
+      });
+    }, { threshold: 0.18, rootMargin: '0px 0px -60px 0px' });
+    steps.forEach(function (s) { io.observe(s); });
+  } else {
+    steps.forEach(function (s) { s.classList.add('liq-filled'); });
+  }
+})();
+</script>
+</body>
+</html>

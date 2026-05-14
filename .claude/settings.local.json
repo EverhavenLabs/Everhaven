@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__claude_ai_higgsfield__generate_image",
+      "mcp__claude_ai_higgsfield__job_status",
+      "mcp__claude_ai_higgsfield__job_display",
+      "WebFetch(domain:d8j0ntlcm91z4.cloudfront.net)",
+      "mcp__claude_ai_higgsfield__models_explore",
+      "mcp__claude_ai_higgsfield__generate_video"
+    ]
+  }
+}

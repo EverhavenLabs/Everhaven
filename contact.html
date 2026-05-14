@@ -1,0 +1,307 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Request a Quote — Everhaven</title>
+<meta name="description" content="Send a drawing, sketch, or photograph and we'll quote your part within one business day. No minimum order.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Request a Quote — Everhaven">
+<meta property="og:description" content="Send a drawing, sketch, or photograph and we'll quote your part within one business day. No minimum order.">
+<meta property="og:url" content="https://everhaven.design/contact.html">
+<meta property="og:image" content="https://everhaven.design/img/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Contact page — hero ambient blobs */
+  .page-hero {
+    position: relative;
+    overflow: hidden;
+  }
+  .c-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .c-blob-1 {
+    width: 560px; height: 560px;
+    background: radial-gradient(circle, rgba(27,160,152,0.18) 0%, transparent 65%);
+    top: -160px; right: -80px;
+    animation: c-blob-drift 20s ease-in-out infinite;
+  }
+  .c-blob-2 {
+    width: 380px; height: 380px;
+    background: radial-gradient(circle, rgba(19,120,111,0.14) 0%, transparent 65%);
+    bottom: -60px; left: 5%;
+    animation: c-blob-drift 26s ease-in-out infinite reverse;
+  }
+  .c-blob-3 {
+    width: 260px; height: 260px;
+    background: radial-gradient(circle, rgba(27,160,152,0.10) 0%, transparent 65%);
+    top: 40%; left: 40%;
+    animation: c-blob-drift 18s ease-in-out infinite;
+    animation-delay: -9s;
+  }
+  @keyframes c-blob-drift {
+    0%   { transform: translate(0,    0)   scale(1.00); }
+    30%  { transform: translate(24px, -20px) scale(1.08); }
+    60%  { transform: translate(-18px, 28px) scale(0.93); }
+    100% { transform: translate(0,    0)   scale(1.00); }
+  }
+  .page-hero > .container { position: relative; z-index: 1; }
+  /* Hero text styling */
+  .page-hero .meta,
+  .page-hero .meta strong { color: var(--ink-soft); }
+  .page-hero .display-lg,
+  .page-hero .display-lg em { color: var(--ink); }
+  .page-hero .lede { color: var(--ink-soft); }
+</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2315130E' stroke-width='1.5'%3E%3Cpath d='M12 2 L21 7 L21 17 L12 22 L3 17 L3 7 Z'/%3E%3Cpath d='M12 2 L12 12 L21 7'/%3E%3Cpath d='M12 12 L3 7'/%3E%3Cpath d='M12 12 L12 22'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round">
+        <path d="M12 2 L21 7 L21 17 L12 22 L3 17 L3 7 Z"/>
+        <path d="M12 2 L12 12 L21 7"/>
+        <path d="M12 12 L3 7"/>
+        <path d="M12 12 L12 22" stroke-dasharray="1.2 2"/>
+      </svg>
+      EVERHAVEN
+    </a>
+    <nav class="primary-nav">
+      <a href="index.html">Home</a>
+      <a href="capabilities.html">Capabilities</a>
+      <a href="materials.html">Materials</a>
+      <a href="process.html">Process</a>
+      <a href="about.html">Studio</a>
+      <a href="contact.html" class="cta-link is-active">Request a quote</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<section class="page-hero">
+  <div class="c-blob c-blob-1"></div>
+  <div class="c-blob c-blob-2"></div>
+  <div class="c-blob c-blob-3"></div>
+  <div class="container">
+    <div class="topline">
+      <div class="meta"><strong>§ Quote request</strong> · One business-day response</div>
+      <div class="meta">No minimum order<br>Two revision rounds included</div>
+    </div>
+    <h1 class="display-lg reveal-right" style="max-width: 18ch;">Send a drawing. <em>Get parts.</em></h1>
+    <p class="lede reveal-right delay-1">
+      Fill out as much as you can. A photograph and a sentence is enough &mdash; we&rsquo;ll follow up with anything else we need. Quote within one business day.
+    </p>
+  </div>
+</section>
+
+<div id="sent-banner" style="display:none; background:#1BA098; color:#051622; padding:18px var(--pad-x); font-family:var(--mono); font-size:12px; letter-spacing:0.14em; text-transform:uppercase; text-align:center;">
+  Quote request received &mdash; we&rsquo;ll be in touch within one business day.
+</div>
+
+<section class="section" style="padding-top: clamp(48px, 6vw, 88px);">
+  <div class="container">
+
+    <div class="contact-grid reveal">
+
+      <!-- FORM -->
+      <form class="quote-form" action="https://formspree.io/f/mnjwkdpz" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_subject" value="New quote request — Everhaven">
+        <input type="hidden" name="_next" value="https://everhaven.design/contact.html?sent=1">
+
+        <div class="form-row">
+          <div class="form-field">
+            <label>Name <span class="req">*</span></label>
+            <input type="text" name="name" required placeholder="Your name">
+          </div>
+          <div class="form-field">
+            <label>Company</label>
+            <input type="text" name="company" placeholder="Shop or company name">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label>Email <span class="req">*</span></label>
+            <input type="email" name="email" required placeholder="you@company.com">
+          </div>
+          <div class="form-field">
+            <label>Phone</label>
+            <input type="tel" name="phone" placeholder="470 · 338 · 0243">
+          </div>
+        </div>
+
+        <div class="form-row single">
+          <div class="form-field">
+            <label>What kind of part?</label>
+            <select name="category">
+              <option>— Select a category —</option>
+              <option>Jig or Fixture</option>
+              <option>Replacement Part</option>
+              <option>Sensor or Equipment Mount</option>
+              <option>Custom Tooling</option>
+              <option>Other / Not sure</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label>Quantity</label>
+            <input type="text" name="quantity" placeholder="1, 25, 100…">
+          </div>
+          <div class="form-field">
+            <label>Needed by</label>
+            <input type="text" name="timeline" placeholder="Standard 5–7 days, or specify">
+          </div>
+        </div>
+
+        <div class="form-row single">
+          <div class="form-field">
+            <label>Tell us about the part <span class="req">*</span></label>
+            <textarea name="description" required placeholder="What does the part do? What does it fit into? Anything you can tell us about fit, load, environment, or tolerance. A photo of a worn original is gold."></textarea>
+          </div>
+        </div>
+
+        <div class="form-row single">
+          <div class="form-field">
+            <label>Attach drawing, sketch, or photo</label>
+            <div class="file-drop" onclick="document.getElementById('file-in').click();">
+              <span class="drop-label">+  Add file (or drag &amp; drop here)</span>
+              <span class="drop-hint">STEP · STL · IGES · X_T · 3MF · DWG · DXF · PDF · PNG · JPG  ·  up to 25 MB</span>
+              <input type="file" id="file-in" name="file" style="display:none;" multiple>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-submit-row">
+          <p class="meta" style="max-width: 36ch;">By submitting you agree to be contacted about this request. We do not share contact information.</p>
+          <button type="submit" class="btn">Send to the studio</button>
+        </div>
+
+      </form>
+
+      <!-- CONTACT INFO -->
+      <aside class="contact-info">
+
+        <div class="contact-block">
+          <span class="label">Call</span>
+          <a href="tel:+14703380243" class="value">470 · 338 · 0243</a>
+        </div>
+
+        <div class="contact-block">
+          <span class="label">Write</span>
+          <a href="mailto:hello@everhaven.design" class="value">hello@everhaven.design</a>
+        </div>
+
+        <div class="contact-block">
+          <span class="label">Studio</span>
+          <p class="value" style="font-size:18px; line-height:1.5;">
+            Cartersville, Georgia<br>
+            Bartow County · 30120
+          </p>
+        </div>
+
+        <div class="contact-block">
+          <span class="label">Hours</span>
+          <p class="value" style="font-size:17px; line-height:1.8;">
+            <strong style="font-weight:500;">Mon&ndash;Fri</strong> &nbsp; 8:00 – 17:00<br>
+            <strong style="font-weight:500;">Sat</strong> &nbsp; By appointment<br>
+            <strong style="font-weight:500;">Sun</strong> &nbsp; Closed
+          </p>
+        </div>
+
+        <div class="contact-block" style="padding-top: 28px; border-top: 1px solid var(--line-faint);">
+          <span class="label">Rush jobs</span>
+          <p class="value" style="font-size:16px; line-height:1.55;">
+            Production down? Call. We can usually quote a 48–72 hour rush at a published premium.
+          </p>
+        </div>
+
+      </aside>
+
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo" style="margin-bottom:20px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round">
+            <path d="M12 2 L21 7 L21 17 L12 22 L3 17 L3 7 Z"/>
+            <path d="M12 2 L12 12 L21 7"/>
+            <path d="M12 12 L3 7"/>
+            <path d="M12 12 L12 22" stroke-dasharray="1.2 2"/>
+          </svg>
+          EVERHAVEN
+        </a>
+        <p style="margin-top:18px; max-width:30ch;">Custom additive manufacturing from Cartersville, Georgia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Studio</h4>
+        <a href="index.html">Home</a>
+        <a href="capabilities.html">Capabilities</a>
+        <a href="materials.html">Materials</a>
+        <a href="process.html">Process</a>
+        <a href="about.html">Studio</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="contact.html">Request a quote</a>
+        <a href="tel:+14703380243">470 · 338 · 0243</a>
+        <a href="mailto:hello@everhaven.design">hello@everhaven.design</a>
+      </div>
+      <div class="footer-col">
+        <h4>Studio Hours</h4>
+        <p class="meta">
+          <strong>Mon&ndash;Fri</strong> 8:00 – 17:00<br>
+          <strong>Sat</strong> By appointment<br>
+          <strong>Sun</strong> Closed
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Socials</h4>
+        <a href="https://www.instagram.com/everhaven.design/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.tiktok.com/@everhaven.design?lang=en" target="_blank" rel="noopener noreferrer">TikTok</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="meta">© 2025 Everhaven Manufacturing · All rights reserved</div>
+      <div class="meta">Cartersville, GA</div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="Back to top">↑</button>
+<script src="script.js"></script>
+<script>
+  if (window.location.search.indexOf('sent=1') !== -1) {
+    var banner = document.getElementById('sent-banner');
+    if (banner) {
+      banner.style.display = 'block';
+      window.scrollTo({ top: banner.offsetTop - 80, behavior: 'smooth' });
+    }
+  }
+</script>
+</body>
+</html>

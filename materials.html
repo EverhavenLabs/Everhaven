@@ -1,0 +1,530 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Materials & Specs — Everhaven</title>
+<meta name="description" content="Full mechanical, thermal, and chemical specifications for the engineering materials Everhaven prints with — PETG CF, PETG HF, ASA, and PAHT-CF.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Materials &amp; Specs — Everhaven">
+<meta property="og:description" content="Full mechanical, thermal, and chemical specifications for the engineering materials Everhaven prints with — PETG CF, PETG HF, ASA, and PAHT-CF.">
+<meta property="og:url" content="https://everhaven.design/materials.html">
+<meta property="og:image" content="https://everhaven.design/img/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Materials page — richer video colour */
+  #page-video-bg.is-active { opacity: 0.90; }
+  #page-video-bg .page-video-tint {
+    background: linear-gradient(
+      to bottom,
+      rgba(5, 22, 34, 0.58) 0%,
+      rgba(5, 22, 34, 0.42) 50%,
+      rgba(5, 22, 34, 0.58) 100%
+    );
+  }
+  /* Materials page — hero text warm gold, matching process page */
+  .page-hero .meta {
+    color: rgba(222, 185, 146, 0.72);
+    text-shadow: 0 1px 12px rgba(5, 22, 34, 0.65);
+  }
+  .page-hero .meta strong {
+    color: #1BA098;
+    font-weight: 500;
+    text-shadow: 0 1px 12px rgba(5, 22, 34, 0.65);
+  }
+  .page-hero .display-lg {
+    color: #DEB992;
+    text-shadow: 0 2px 28px rgba(5, 22, 34, 0.70);
+  }
+  .page-hero .lede {
+    color: rgba(222, 185, 146, 0.85);
+    text-shadow: 0 1px 14px rgba(5, 22, 34, 0.65);
+  }
+
+  /* ── Breathing keyframe ──────────────────────────────────────── */
+  @keyframes mat-breathe {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.68; }
+  }
+
+  /* ── Mat-detail text stagger animations ──────────────────────── */
+  /* Triggered when the existing IO adds .is-visible to .mat-detail */
+
+  .mat-detail .mat-id-large {
+    opacity: 0;
+    transform: translateX(-22px);
+    transition: opacity 0.65s cubic-bezier(0.2, 0.7, 0.2, 1) 0.06s,
+                transform 0.65s cubic-bezier(0.2, 0.7, 0.2, 1) 0.06s;
+  }
+  .mat-detail.is-visible .mat-id-large {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .mat-detail .mat-header-left .display-lg {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.18s,
+                transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.18s;
+  }
+  .mat-detail.is-visible .mat-header-left .display-lg {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .mat-detail .mat-header .body {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.70s cubic-bezier(0.2, 0.7, 0.2, 1) 0.32s,
+                transform 0.70s cubic-bezier(0.2, 0.7, 0.2, 1) 0.32s;
+  }
+  .mat-detail.is-visible .mat-header .body {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Breathing — fires after all stagger transitions finish (~1.05s) */
+  .mat-detail.is-visible .mat-header-left {
+    animation: mat-breathe 5.5s ease-in-out 1.1s infinite;
+  }
+</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2315130E' stroke-width='1.5'%3E%3Cpath d='M12 2 L21 7 L21 17 L12 22 L3 17 L3 7 Z'/%3E%3Cpath d='M12 2 L12 12 L21 7'/%3E%3Cpath d='M12 12 L3 7'/%3E%3Cpath d='M12 12 L12 22'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<div class="page-video-bg is-active" id="page-video-bg">
+  <video autoplay muted loop playsinline preload="auto" disablepictureinpicture src="materials-loop.mp4"></video>
+  <div class="page-video-tint"></div>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round">
+        <path d="M12 2 L21 7 L21 17 L12 22 L3 17 L3 7 Z"/>
+        <path d="M12 2 L12 12 L21 7"/>
+        <path d="M12 12 L3 7"/>
+        <path d="M12 12 L12 22" stroke-dasharray="1.2 2"/>
+      </svg>
+      EVERHAVEN
+    </a>
+    <nav class="primary-nav">
+      <a href="index.html">Home</a>
+      <a href="capabilities.html">Capabilities</a>
+      <a href="materials.html" class="is-active">Materials</a>
+      <a href="process.html">Process</a>
+      <a href="about.html">Studio</a>
+      <a href="contact.html" class="cta-link">Request a quote</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<div class="video-zone" id="video-zone">
+<section class="page-hero">
+  <div class="container">
+    <div class="topline">
+      <div class="meta"><strong>§ Materials</strong> · Specification 01 / 2025</div>
+      <div class="meta">Four production materials<br>Engineered for the floor</div>
+    </div>
+    <h1 class="display-lg reveal-right" style="max-width: 16ch;">Four materials. Specified honestly.</h1>
+    <p class="lede reveal-right delay-1">
+      Most filament catalogs list a hundred variants for the same five jobs. We standardize on a focused library — fewer variables, more dimensional discipline. Test data below is sourced from manufacturer datasheets and verified with our own bench testing. Where numbers disagreed, we report the lower.
+    </p>
+  </div>
+</section>
+
+<section class="section" style="padding-top: clamp(48px, 6vw, 88px);">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <div class="section-num"><span>§01</span> Comparison</div>
+      <div>
+        <h2 class="headline">A side-by-side of the working stock.</h2>
+      </div>
+    </div>
+
+    <table class="materials-table reveal delay-1">
+      <thead>
+        <tr>
+          <th style="width: 26%;">Property</th>
+          <th>PETG CF · Carbon Fiber</th>
+          <th>PETG HF · High Flow</th>
+          <th>ASA · Weather-Resistant</th>
+          <th>PAHT-CF · High-Temp CF</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="prop">Tensile Strength</td>
+          <td>52 <span class="unit">MPa</span></td>
+          <td>42 <span class="unit">MPa</span></td>
+          <td>45 <span class="unit">MPa</span></td>
+          <td>110 <span class="unit">MPa</span></td>
+        </tr>
+        <tr>
+          <td class="prop">Flexural Strength</td>
+          <td>78 <span class="unit">MPa</span></td>
+          <td>62 <span class="unit">MPa</span></td>
+          <td>68 <span class="unit">MPa</span></td>
+          <td>160 <span class="unit">MPa</span></td>
+        </tr>
+        <tr>
+          <td class="prop">Flexural Modulus</td>
+          <td>3.8 <span class="unit">GPa</span></td>
+          <td>1.8 <span class="unit">GPa</span></td>
+          <td>2.2 <span class="unit">GPa</span></td>
+          <td>8.5 <span class="unit">GPa</span></td>
+        </tr>
+        <tr>
+          <td class="prop">Elongation at Break</td>
+          <td>4 <span class="unit">%</span></td>
+          <td>11 <span class="unit">%</span></td>
+          <td>8 <span class="unit">%</span></td>
+          <td>2 <span class="unit">%</span></td>
+        </tr>
+        <tr>
+          <td class="prop">Impact (Charpy, notched)</td>
+          <td>5 <span class="unit">kJ/m²</span></td>
+          <td>7 <span class="unit">kJ/m²</span></td>
+          <td>6 <span class="unit">kJ/m²</span></td>
+          <td>4 <span class="unit">kJ/m²</span></td>
+        </tr>
+        <tr>
+          <td class="prop">Heat Deflection (0.45 MPa)</td>
+          <td>75 <span class="unit">°C</span></td>
+          <td>70 <span class="unit">°C</span></td>
+          <td>95 <span class="unit">°C</span></td>
+          <td>180 <span class="unit">°C</span></td>
+        </tr>
+        <tr>
+          <td class="prop">Density</td>
+          <td>1.30 <span class="unit">g/cm³</span></td>
+          <td>1.27 <span class="unit">g/cm³</span></td>
+          <td>1.07 <span class="unit">g/cm³</span></td>
+          <td>1.15 <span class="unit">g/cm³</span></td>
+        </tr>
+        <tr>
+          <td class="prop">Moisture Absorption (24h)</td>
+          <td>0.20 <span class="unit">%</span></td>
+          <td>0.25 <span class="unit">%</span></td>
+          <td>0.15 <span class="unit">%</span></td>
+          <td>1.20 <span class="unit">%</span></td>
+        </tr>
+        <tr>
+          <td class="prop">UV Resistance</td>
+          <td>Moderate · interior preferred</td>
+          <td>Moderate · interior preferred</td>
+          <td>Excellent · outdoor rated</td>
+          <td>Moderate · interior preferred</td>
+        </tr>
+        <tr>
+          <td class="prop">Chemical Resistance</td>
+          <td>Good · oils, fuels, mild solvents</td>
+          <td>Good · oils, fuels, mild solvents</td>
+          <td>Good · weathering, UV, oils</td>
+          <td>Excellent · fuels, oils, solvents</td>
+        </tr>
+        <tr>
+          <td class="prop">Typical Tolerance</td>
+          <td>± 0.10–0.20 <span class="unit">mm</span></td>
+          <td>± 0.15–0.30 <span class="unit">mm</span></td>
+          <td>± 0.15–0.25 <span class="unit">mm</span></td>
+          <td>± 0.10–0.20 <span class="unit">mm</span></td>
+        </tr>
+        <tr>
+          <td class="prop">Surface Finish</td>
+          <td>Matte composite, fiber-flecked</td>
+          <td>Smooth matte</td>
+          <td>Smooth matte · paintable</td>
+          <td>Matte composite, fiber-flecked</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="meta" style="max-width: 64ch; line-height: 1.7;">
+      <strong>Method —</strong> Properties stated for parts printed with 0.4 mm hardened steel nozzles, 100% rectilinear infill, four perimeters, on Bambu Lab H2S and X1C systems with AMS Pro 2. Performance varies with geometry, orientation, and print parameters; we tune accordingly per job.
+    </p>
+
+  </div>
+</section>
+
+</div><!-- /video-zone -->
+
+<!-- PETG CF DETAIL -->
+<section style="border-top: 1px solid var(--line-faint);">
+  <div class="container">
+
+    <div class="mat-detail reveal is-open" style="background: rgba(5, 22, 34, 0.10);">
+      <div class="mat-header" role="button" tabindex="0" aria-expanded="true">
+        <div class="mat-header-left">
+          <div class="mat-id-large">M · 01 / Primary</div>
+          <h2 class="display-lg">PETG <em>CF</em></h2>
+          <p class="body" style="max-width: 36ch;">
+            Carbon-fiber-reinforced PETG. Our default material — stiff, dimensionally stable, chemical-resistant, and finished in a matte black with visible fiber texture.
+          </p>
+        </div>
+        <span class="mat-toggle" aria-hidden="true">+</span>
+      </div>
+      <div class="mat-body">
+        <div class="mat-body-inner">
+          <p class="body" style="max-width: 56ch; font-size: 17px;">
+            PETG CF is the standard choice when a part needs to look engineered and survive the shop floor. The chopped carbon-fiber reinforcement reduces thermal warping, increases stiffness over neat PETG by a factor of two, and produces a surface that no longer reads as &ldquo;3D printed.&rdquo; It accepts threaded inserts, can be machined, drilled, and tapped, and bonds well with cyanoacrylate and epoxy.
+          </p>
+
+          <h4 class="eyebrow" style="margin-top: 40px;">Best for</h4>
+          <ul>
+            <li>Vise soft jaws, locating fixtures, drilling guides, and other workholding</li>
+            <li>Sensor and camera mounts that must hold position over time</li>
+            <li>Replacement parts for industrial equipment where stiffness matters</li>
+            <li>Custom tooling, brackets, adapters &mdash; anything that gets handled often</li>
+            <li>Parts that will be visible to engineers, customers, or auditors</li>
+          </ul>
+
+          <h4 class="eyebrow" style="margin-top: 40px;">Avoid for</h4>
+          <ul>
+            <li>Service temperatures above 75 °C (engine bay, near process heat)</li>
+            <li>Long-term outdoor UV exposure (use ASA when available, or coat)</li>
+            <li>Food-contact applications</li>
+            <li>Snap-fit parts requiring high elongation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- PETG HF DETAIL -->
+    <div class="mat-detail reveal">
+      <div class="mat-header" role="button" tabindex="0" aria-expanded="false">
+        <div class="mat-header-left">
+          <div class="mat-id-large">M · 02 / Production</div>
+          <h2 class="display-lg">PETG <em>HF</em></h2>
+          <p class="body" style="max-width: 36ch;">
+            High-flow PETG, tuned for speed. Specified when production volume and lead time matter more than absolute stiffness.
+          </p>
+        </div>
+        <span class="mat-toggle" aria-hidden="true">+</span>
+      </div>
+      <div class="mat-body">
+        <div class="mat-body-inner">
+          <p class="body" style="max-width: 56ch; font-size: 17px;">
+            PETG HF is a chemistry-tuned variant that prints at roughly twice the throughput of standard PETG with no loss in part strength. We specify it for runs of 20+ identical parts, for shop-floor consumables like kanban bins and label holders, and for replacement parts where the cosmetic finish matters less than the unit economics. Available in a small palette of solid colors for organization-by-color shop systems.
+          </p>
+
+          <h4 class="eyebrow" style="margin-top: 40px;">Best for</h4>
+          <ul>
+            <li>Production runs of 20+ identical parts</li>
+            <li>Kanban bins, label holders, and shop-floor organizers</li>
+            <li>Color-coded sub-assembly fixtures</li>
+            <li>Replacement consumables where cosmetic finish is secondary</li>
+          </ul>
+
+          <h4 class="eyebrow" style="margin-top: 40px;">Avoid for</h4>
+          <ul>
+            <li>Parts requiring high stiffness or tight tolerance (specify PETG CF)</li>
+            <li>Visible-customer-facing surfaces in matte black (specify PETG CF)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ASA DETAIL -->
+    <div class="mat-detail reveal">
+      <div class="mat-header" role="button" tabindex="0" aria-expanded="false">
+        <div class="mat-header-left">
+          <div class="mat-id-large">M · 03 / Weather-Resistant</div>
+          <h2 class="display-lg">ASA</h2>
+          <p class="body" style="max-width: 36ch;">
+            Acrylonitrile Styrene Acrylate. The outdoor-rated choice — UV-stable, impact-resistant, and unaffected by rain, sun, and temperature swing.
+          </p>
+        </div>
+        <span class="mat-toggle" aria-hidden="true">+</span>
+      </div>
+      <div class="mat-body">
+        <div class="mat-body-inner">
+          <p class="body" style="max-width: 56ch; font-size: 17px;">
+            ASA is specified wherever a part lives outside or in direct sunlight. Unlike PETG, it does not yellow, embrittle, or lose surface quality with UV exposure. It prints with good dimensional accuracy, accepts paint and primer without adhesion issues, and has enough impact resistance for enclosures and mounting hardware that take incidental knocks. The go-to material for exterior equipment mounts, weatherproof enclosures, and outdoor signage or sensor housings.
+          </p>
+
+          <h4 class="eyebrow" style="margin-top: 40px;">Best for</h4>
+          <ul>
+            <li>Outdoor equipment mounts, enclosures, and cable management</li>
+            <li>Sensor housings exposed to direct sunlight or weather</li>
+            <li>Exterior brackets and clips that see temperature cycling</li>
+            <li>Parts that will be painted or finished after printing</li>
+            <li>Replacement covers and guards on outdoor machinery</li>
+          </ul>
+
+          <h4 class="eyebrow" style="margin-top: 40px;">Avoid for</h4>
+          <ul>
+            <li>High mechanical loads requiring maximum stiffness (specify PETG CF or PAHT-CF)</li>
+            <li>Service temperatures above 95 °C</li>
+            <li>Strong solvent environments</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAHT-CF DETAIL -->
+    <div class="mat-detail reveal">
+      <div class="mat-header" role="button" tabindex="0" aria-expanded="false">
+        <div class="mat-header-left">
+          <div class="mat-id-large">M · 04 / High-Temperature CF</div>
+          <h2 class="display-lg">PAHT&#8202;&#8201;<em>CF</em></h2>
+          <p class="body" style="max-width: 36ch;">
+            Polyamide high-temperature with carbon-fiber reinforcement. Maximum stiffness and heat resistance for the most demanding environments.
+          </p>
+        </div>
+        <span class="mat-toggle" aria-hidden="true">+</span>
+      </div>
+      <div class="mat-body">
+        <div class="mat-body-inner">
+          <p class="body" style="max-width: 56ch; font-size: 17px;">
+            PAHT-CF is the highest-performance material in the studio. The carbon-fiber-reinforced polyamide matrix delivers a flexural modulus of 8.5 GPa — more than twice PETG CF — and a heat deflection temperature of 180 °C, making it suitable for parts in engine bays, near process heat, or in sustained high-load structural applications. Filament is dried before every run; dimensional stability is excellent when printed and stored dry. Requires careful design review for features sensitive to moisture-induced dimensional shift.
+          </p>
+
+          <h4 class="eyebrow" style="margin-top: 40px;">Best for</h4>
+          <ul>
+            <li>Engine bay brackets, heat shields, and under-hood tooling</li>
+            <li>Parts operating near process heat or continuous high loads</li>
+            <li>Structural fixtures where maximum stiffness is the primary requirement</li>
+            <li>Jigs and fixtures used in welding or heat-adjacent operations</li>
+            <li>High-performance replacement parts for industrial machinery</li>
+          </ul>
+
+          <h4 class="eyebrow" style="margin-top: 40px;">Avoid for</h4>
+          <ul>
+            <li>High-humidity or immersed environments (hygroscopic — moisture degrades performance)</li>
+            <li>Snap-fit features or flexible applications (very low elongation at break)</li>
+            <li>Applications needing color options (available in natural/black only)</li>
+            <li>Cost-sensitive production runs (specify PETG CF or PETG HF)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Print envelope / studio capability -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-num"><span>§02</span> Print envelope</div>
+      <div>
+        <h2 class="headline">What we can fit on the build plate.</h2>
+      </div>
+    </div>
+
+    <div class="mat-specs reveal delay-1" style="grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line-faint);">
+      <div class="mat-spec" style="padding: 28px; border-right: 1px solid var(--line-faint); border-bottom: none;">
+        <span class="k">Maximum X</span>
+        <span class="v" style="font-size: 28px;">350<small>mm</small></span>
+      </div>
+      <div class="mat-spec" style="padding: 28px; border-right: 1px solid var(--line-faint); border-bottom: none;">
+        <span class="k">Maximum Y</span>
+        <span class="v" style="font-size: 28px;">320<small>mm</small></span>
+      </div>
+      <div class="mat-spec" style="padding: 28px; border-right: 1px solid var(--line-faint); border-bottom: none;">
+        <span class="k">Maximum Z</span>
+        <span class="v" style="font-size: 28px;">325<small>mm</small></span>
+      </div>
+      <div class="mat-spec" style="padding: 28px; border-bottom: none;">
+        <span class="k">Multi-Color</span>
+        <span class="v" style="font-size: 28px;">4<small>simultaneous</small></span>
+      </div>
+    </div>
+
+    <p class="meta" style="margin-top: 32px; max-width: 60ch; line-height: 1.7;">
+      Larger parts are produced as bonded or fastened sub-assemblies. Multi-color capability via AMS Pro 2 allows embossed labels, two-tone branding, and color-coded sub-systems with no post-processing.
+    </p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="closing">
+  <div class="container">
+    <div class="eyebrow">Have a question?</div>
+    <h2 class="display-lg">
+      Not sure which material is right?<br>
+      <em>Send us the part. We&rsquo;ll specify it.</em>
+    </h2>
+    <div class="closing-row">
+      <div class="meta">
+        <strong>No spec sheet required</strong>
+        A photograph and a sentence about the use case<br>is enough to start the conversation.
+      </div>
+      <div class="closing-socials">
+        <a href="https://www.instagram.com/everhaven.design/" class="closing-social-link" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.tiktok.com/@everhaven.design?lang=en" class="closing-social-link" target="_blank" rel="noopener noreferrer">TikTok</a>
+      </div>
+      <a href="contact.html" class="btn">Request a quote</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo" style="margin-bottom:20px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round">
+            <path d="M12 2 L21 7 L21 17 L12 22 L3 17 L3 7 Z"/>
+            <path d="M12 2 L12 12 L21 7"/>
+            <path d="M12 12 L3 7"/>
+            <path d="M12 12 L12 22" stroke-dasharray="1.2 2"/>
+          </svg>
+          EVERHAVEN
+        </a>
+        <p style="margin-top:18px; max-width:30ch;">Custom additive manufacturing from Cartersville, Georgia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Studio</h4>
+        <a href="index.html">Home</a>
+        <a href="capabilities.html">Capabilities</a>
+        <a href="materials.html">Materials</a>
+        <a href="process.html">Process</a>
+        <a href="about.html">Studio</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="contact.html">Request a quote</a>
+        <a href="tel:+14703380243">470 · 338 · 0243</a>
+        <a href="mailto:hello@everhaven.design">hello@everhaven.design</a>
+      </div>
+      <div class="footer-col">
+        <h4>Studio Hours</h4>
+        <p class="meta">
+          <strong>Mon&ndash;Fri</strong> 8:00 – 17:00<br>
+          <strong>Sat</strong> By appointment<br>
+          <strong>Sun</strong> Closed
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Socials</h4>
+        <a href="https://www.instagram.com/everhaven.design/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.tiktok.com/@everhaven.design?lang=en" target="_blank" rel="noopener noreferrer">TikTok</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="meta">© 2025 Everhaven Manufacturing · All rights reserved</div>
+      <div class="meta">Cartersville, GA</div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="Back to top">↑</button>
+<script src="script.js"></script>
+</body>
+</html>

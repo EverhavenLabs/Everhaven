@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio — Everhaven</title>
+<meta name="description" content="Everhaven Manufacturing is a custom additive manufacturing studio based in Cartersville, Georgia. Carbon-fiber composite parts from drawing to dock in five to seven business days.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Studio — Everhaven">
+<meta property="og:description" content="Everhaven Manufacturing is a custom additive manufacturing studio based in Cartersville, Georgia. Carbon-fiber composite parts from drawing to dock in five to seven business days.">
+<meta property="og:url" content="https://everhaven.design/about.html">
+<meta property="og:image" content="https://everhaven.design/img/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2315130E' stroke-width='1.5'%3E%3Cpath d='M12 2 L21 7 L21 17 L12 22 L3 17 L3 7 Z'/%3E%3Cpath d='M12 2 L12 12 L21 7'/%3E%3Cpath d='M12 12 L3 7'/%3E%3Cpath d='M12 12 L12 22'/%3E%3C/svg%3E">
+<style>
+/* ================================================================
+   STUDIO PAGE
+   ================================================================ */
+
+#page-video-bg.is-active { opacity: 0.90; }
+#page-video-bg .page-video-tint {
+  background: linear-gradient(
+    to bottom,
+    rgba(5,22,34,0.58) 0%,
+    rgba(5,22,34,0.42) 50%,
+    rgba(5,22,34,0.62) 100%
+  );
+}
+
+/* ── HERO ──────────────────────────────────────────────────────── */
+.studio-hero {
+  padding: clamp(96px,13vh,152px) 0 0;
+  position: relative;
+  border-bottom: 1px solid rgba(27,160,152,0.14);
+}
+.studio-hero .topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: clamp(40px,5vw,60px);
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.studio-hero .meta { color: rgba(222,185,146,0.65); text-shadow: 0 1px 14px rgba(5,22,34,0.80); }
+.studio-hero .meta strong { color: #1BA098; font-weight: 500; }
+.studio-hero .display-lg {
+  color: #DEB992;
+  text-shadow: 0 2px 36px rgba(5,22,34,0.75);
+  max-width: 22ch;
+}
+.studio-hero .lede {
+  color: rgba(222,185,146,0.80);
+  text-shadow: 0 1px 16px rgba(5,22,34,0.80);
+  max-width: 54ch;
+  margin-top: clamp(22px,3vw,32px);
+  margin-bottom: clamp(52px,8vw,88px);
+}
+
+/* Stats ticker */
+.studio-ticker {
+  display: flex;
+  border-top: 1px solid rgba(27,160,152,0.14);
+  opacity: 0;
+  transform: translateY(14px);
+  animation: fade 0.8s cubic-bezier(0.2,0.7,0.2,1) 0.9s forwards;
+}
+.studio-ticker-item {
+  flex: 1;
+  padding: 22px 0;
+  border-right: 1px solid rgba(27,160,152,0.10);
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.studio-ticker-item:last-child { border-right: none; }
+.studio-ticker-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.10em;
+  color: #1BA098;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+.studio-ticker-text {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: rgba(222,185,146,0.50);
+  line-height: 1.7;
+}
+.studio-ticker-text strong {
+  display: block;
+  color: rgba(222,185,146,0.82);
+  font-weight: 500;
+  margin-bottom: 1px;
+  letter-spacing: 0.12em;
+}
+@media (max-width: 640px) {
+  .studio-ticker { flex-wrap: wrap; }
+  .studio-ticker-item { flex: 1 1 100%; border-right: none; border-bottom: 1px solid rgba(27,160,152,0.10); }
+  .studio-ticker-item:last-child { border-bottom: none; }
+}
+
+/* ── LETTER (uses .section cream bg) ──────────────────────────── */
+.pull-quote {
+  margin-top: clamp(52px,7vw,88px);
+  padding-top: clamp(44px,5vw,64px);
+  border-top: 1px solid var(--line-faint);
+}
+.pull-quote blockquote {
+  font-family: var(--serif);
+  font-weight: 340;
+  font-size: clamp(24px,2.8vw,40px);
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  font-variation-settings: "opsz" 80, "SOFT" 80;
+  font-style: italic;
+  color: var(--ink);
+  max-width: 26ch;
+  padding-left: clamp(22px,3vw,40px);
+  border-left: 2px solid var(--accent);
+}
+.pull-quote blockquote em {
+  color: var(--accent);
+  font-style: normal;
+  font-variation-settings: "opsz" 80, "SOFT" 0;
+}
+.pull-quote cite {
+  display: block;
+  margin-top: 22px;
+  padding-left: clamp(22px,3vw,40px);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-mid);
+  font-style: normal;
+}
+
+/* ── NUMBERS STRIP ─────────────────────────────────────────────── */
+.studio-numbers {
+  background: #030d14;
+  padding: clamp(52px,7vw,88px) 0;
+  border-top: 1px solid rgba(27,160,152,0.12);
+  border-bottom: 1px solid rgba(27,160,152,0.12);
+}
+.studio-numbers .container {
+  display: flex;
+  gap: 0;
+}
+.studio-num-item {
+  flex: 1;
+  padding: 0 clamp(20px,2.4vw,36px);
+  border-right: 1px solid rgba(27,160,152,0.10);
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s cubic-bezier(0.2,0.7,0.2,1),
+              transform 0.6s cubic-bezier(0.2,0.7,0.2,1);
+}
+.studio-num-item:first-child { padding-left: 0; }
+.studio-num-item:last-child  { border-right: none; padding-right: 0; }
+.studio-numbers.is-visible .studio-num-item:nth-child(1) { opacity:1; transform:translateY(0); transition-delay:0.00s; }
+.studio-numbers.is-visible .studio-num-item:nth-child(2) { opacity:1; transform:translateY(0); transition-delay:0.08s; }
+.studio-numbers.is-visible .studio-num-item:nth-child(3) { opacity:1; transform:translateY(0); transition-delay:0.16s; }
+.studio-numbers.is-visible .studio-num-item:nth-child(4) { opacity:1; transform:translateY(0); transition-delay:0.24s; }
+.studio-numbers.is-visible .studio-num-item:nth-child(5) { opacity:1; transform:translateY(0); transition-delay:0.32s; }
+
+.studio-num-val {
+  font-family: var(--mono);
+  font-size: clamp(26px,3.2vw,48px);
+  font-weight: 500;
+  color: #DEB992;
+  letter-spacing: -0.02em;
+  display: block;
+  margin-bottom: 10px;
+  line-height: 1;
+}
+.studio-num-label {
+  font-family: var(--serif);
+  font-size: 14.5px;
+  color: rgba(222,185,146,0.48);
+  line-height: 1.45;
+  font-variation-settings: "opsz" 14, "SOFT" 50;
+}
+@media (max-width: 900px) {
+  .studio-numbers .container { flex-wrap: wrap; }
+  .studio-num-item {
+    flex: 1 1 calc(33.3% - 1px);
+    padding: 24px 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(27,160,152,0.10);
+  }
+  .studio-num-item:nth-child(3),
+  .studio-num-item:nth-child(5) { border-bottom: none; }
+}
+@media (max-width: 560px) {
+  .studio-num-item { flex: 1 1 50%; }
+  .studio-num-item:nth-child(3) { border-bottom: 1px solid rgba(27,160,152,0.10); }
+  .studio-num-item:nth-child(4) { border-bottom: none; }
+}
+
+/* ── EQUIPMENT ROWS ────────────────────────────────────────────── */
+.equip-rows {
+  border-top: 1px solid var(--line);
+  margin-top: 0;
+}
+.equip-row {
+  display: grid;
+  grid-template-columns: 44px minmax(160px,210px) 1fr auto;
+  gap: clamp(20px,2.5vw,44px);
+  padding: clamp(26px,3.2vw,40px) 0;
+  border-bottom: 1px solid var(--line-faint);
+  align-items: start;
+  border-left: 2px solid transparent;
+  padding-left: 0;
+  transition: border-color 0.28s ease, background 0.28s ease, padding-left 0.28s ease;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.65s cubic-bezier(0.2,0.7,0.2,1),
+              transform 0.65s cubic-bezier(0.2,0.7,0.2,1),
+              border-color 0.28s ease,
+              background 0.28s ease;
+}
+.equip-rows.is-visible .equip-row:nth-child(1) { opacity:1; transform:translateY(0); transition-delay:0.04s; }
+.equip-rows.is-visible .equip-row:nth-child(2) { opacity:1; transform:translateY(0); transition-delay:0.10s; }
+.equip-rows.is-visible .equip-row:nth-child(3) { opacity:1; transform:translateY(0); transition-delay:0.16s; }
+.equip-rows.is-visible .equip-row:nth-child(4) { opacity:1; transform:translateY(0); transition-delay:0.22s; }
+.equip-rows.is-visible .equip-row:nth-child(5) { opacity:1; transform:translateY(0); transition-delay:0.28s; }
+.equip-row:hover {
+  border-left-color: var(--accent);
+  background: rgba(27,160,152,0.025);
+  padding-left: 14px;
+}
+.equip-idx {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  padding-top: 5px;
+}
+.equip-name {
+  font-family: var(--serif);
+  font-size: clamp(18px,1.6vw,23px);
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  font-variation-settings: "opsz" 36, "SOFT" 0;
+}
+.equip-desc {
+  font-family: var(--serif);
+  font-size: 15px;
+  color: var(--ink-soft);
+  line-height: 1.58;
+  font-variation-settings: "opsz" 14, "SOFT" 50;
+}
+.equip-spec {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-align: right;
+  padding-top: 5px;
+  white-space: nowrap;
+}
+@media (max-width: 860px) {
+  .equip-row { grid-template-columns: 36px 1fr; gap: 16px; }
+  .equip-desc { grid-column: 2; }
+  .equip-spec { grid-column: 2; color: var(--ink-mid); text-align: left; }
+}
+@media (max-width: 540px) {
+  .equip-row { grid-template-columns: 1fr; gap: 8px; }
+  .equip-idx { display: none; }
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<div class="page-video-bg is-active" id="page-video-bg">
+  <video autoplay muted loop playsinline preload="auto" disablepictureinpicture src="studio-loop.mp4"></video>
+  <div class="page-video-tint"></div>
+</div>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round">
+        <path d="M12 2 L21 7 L21 17 L12 22 L3 17 L3 7 Z"/>
+        <path d="M12 2 L12 12 L21 7"/>
+        <path d="M12 12 L3 7"/>
+        <path d="M12 12 L12 22" stroke-dasharray="1.2 2"/>
+      </svg>
+      EVERHAVEN
+    </a>
+    <nav class="primary-nav">
+      <a href="index.html">Home</a>
+      <a href="capabilities.html">Capabilities</a>
+      <a href="materials.html">Materials</a>
+      <a href="process.html">Process</a>
+      <a href="about.html" class="is-active">Studio</a>
+      <a href="contact.html" class="cta-link">Request a quote</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO (inside video-zone so video plays here) ============ -->
+<div class="video-zone" id="video-zone">
+<section class="studio-hero">
+  <div class="container">
+
+    <div class="topline">
+      <div class="meta"><strong>§ Studio</strong> &middot; Cartersville, GA</div>
+      <div class="meta" style="text-align:right;">Est. 2025<br>Cartersville, GA</div>
+    </div>
+
+    <h1 class="display-lg reveal-right" style="max-width:22ch;">
+      A small studio doing <em>specific work</em> for manufacturers who can&rsquo;t wait.
+    </h1>
+
+    <p class="lede reveal-right delay-1">
+      Founded to solve one problem: the part too small for a CNC quote and too specific for an off-the-shelf solution. We design and produce it in carbon-fiber composite &mdash; with the discipline of an engineering shop and the speed of a service bureau.
+    </p>
+
+    <div class="studio-ticker">
+      <div class="studio-ticker-item">
+        <span class="studio-ticker-num">01</span>
+        <div class="studio-ticker-text">
+          <strong>Cartersville, Georgia</strong>
+          Bartow County &middot; 30120
+        </div>
+      </div>
+      <div class="studio-ticker-item">
+        <span class="studio-ticker-num">02</span>
+        <div class="studio-ticker-text">
+          <strong>Industrial Printers</strong>
+          Bambu Lab H2S &amp; X1C
+        </div>
+      </div>
+      <div class="studio-ticker-item">
+        <span class="studio-ticker-num">03</span>
+        <div class="studio-ticker-text">
+          <strong>Five&ndash;to&ndash;Seven Days</strong>
+          Drawing in &middot; Parts on dock
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</div><!-- /video-zone -->
+
+<!-- ============ §01 WHY THIS EXISTS ============ -->
+<section class="section" style="padding-top: clamp(52px,7vw,96px);">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <div class="section-num"><span>§01</span> Why this exists</div>
+      <div>
+        <h2 class="headline">The bracket your supplier doesn&rsquo;t make.</h2>
+      </div>
+    </div>
+
+    <div class="about-grid reveal delay-1">
+      <div>
+        <div class="eyebrow">A short letter</div>
+      </div>
+      <div class="body">
+        <p>
+          Everhaven was founded on a frustration that anyone running a small shop or maintenance crew will recognize. The bracket is too small for a CNC quote. The replacement part is discontinued. The fixture would take a week to design and another to machine. Meanwhile, production is waiting.
+        </p>
+        <p>
+          We started this studio to close that gap &mdash; to be the shop a plant manager or a working machinist can call on Monday morning and have parts on the dock by Friday. We run a focused library of four engineering materials &mdash; PETG CF, PETG HF, ASA, and PAHT-CF &mdash; because each has a specific job: stiffness, throughput, UV resistance, or high-temperature performance. The right material for the right part, specified before the quote goes out.
+        </p>
+        <p>
+          We&rsquo;re located in Cartersville and we work primarily with manufacturers within an hour&rsquo;s drive &mdash; though parts ship anywhere. The work is the work, regardless of zip code.
+        </p>
+        <p style="margin-top:36px; padding-top:28px; border-top:1px solid var(--line-faint);">
+          <span class="meta" style="display:block; margin-bottom:8px;">About the founder</span>
+          Started Everhaven after years on the plant floor and in machine shops where the answer to &ldquo;can you make one of these by Friday?&rdquo; was always &ldquo;no.&rdquo; This studio exists to change that answer.
+        </p>
+      </div>
+    </div>
+
+    <div class="pull-quote reveal">
+      <blockquote>
+        &ldquo;The bracket too small for a CNC quote. The replacement part nobody makes anymore. <em>That&rsquo;s our work.</em>&rdquo;
+      </blockquote>
+      <cite>Everhaven Manufacturing &middot; Cartersville, GA &middot; Est. 2025</cite>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ NUMBERS STRIP ============ -->
+<div class="studio-numbers">
+  <div class="container">
+    <div class="studio-num-item">
+      <span class="studio-num-val" style="font-size:clamp(18px,2vw,30px); padding-top:4px; letter-spacing:0.04em;">CF</span>
+      <span class="studio-num-label">Composite-ready<br>industrial systems</span>
+    </div>
+    <div class="studio-num-item">
+      <span class="studio-num-val">04</span>
+      <span class="studio-num-label">Engineering<br>materials</span>
+    </div>
+    <div class="studio-num-item">
+      <span class="studio-num-val">350<small style="font-size:0.55em;opacity:0.6;">mm</small></span>
+      <span class="studio-num-label">Maximum build<br>dimension</span>
+    </div>
+    <div class="studio-num-item">
+      <span class="studio-num-val">&lt;24<small style="font-size:0.55em;opacity:0.6;">h</small></span>
+      <span class="studio-num-label">Quote<br>turnaround</span>
+    </div>
+    <div class="studio-num-item">
+      <span class="studio-num-val">5&ndash;7</span>
+      <span class="studio-num-label">Business days<br>typical lead time</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ §02 EQUIPMENT ============ -->
+<section class="section">
+  <div class="container">
+
+    <div class="section-head reveal">
+      <div class="section-num"><span>§02</span> Equipment</div>
+      <div>
+        <h2 class="headline">The hardware that does the work.</h2>
+        <p class="lede" style="max-width:46ch; margin-top:20px;">Enclosed industrial systems, hardened-steel nozzles for carbon-fiber composite, and full secondary operations in-house.</p>
+      </div>
+    </div>
+
+    <div class="equip-rows">
+      <div class="equip-row">
+        <span class="equip-idx">01</span>
+        <div class="equip-name">Bambu Lab H2S</div>
+        <div class="equip-desc">Large-format dual-extrusion system. The studio workhorse for fixtures, trays, and parts beyond standard envelope.</div>
+        <span class="equip-spec">350 &times; 320 &times; 325 mm</span>
+      </div>
+      <div class="equip-row">
+        <span class="equip-idx">02</span>
+        <div class="equip-name">Bambu Lab X1C</div>
+        <div class="equip-desc">Industrial-grade production system with enclosed chamber. Used for tight-tolerance work and small-quantity production.</div>
+        <span class="equip-spec">256 &times; 256 &times; 256 mm</span>
+      </div>
+      <div class="equip-row">
+        <span class="equip-idx">03</span>
+        <div class="equip-name">AMS Pro 2</div>
+        <div class="equip-desc">Automated material system. Enables four-material printing for embossed labels, color-coded parts, and uninterrupted production runs.</div>
+        <span class="equip-spec">4 simultaneous filaments</span>
+      </div>
+      <div class="equip-row">
+        <span class="equip-idx">04</span>
+        <div class="equip-name">Hardened-steel nozzles</div>
+        <div class="equip-desc">Required for printing carbon-fiber composite. We run 0.4 and 0.6 mm in production.</div>
+        <span class="equip-spec">0.2 &ndash; 0.8 mm available</span>
+      </div>
+      <div class="equip-row">
+        <span class="equip-idx">05</span>
+        <div class="equip-name">Secondary operations</div>
+        <div class="equip-desc">Heat-set insert station, drill press, deburring, hand finishing &mdash; for parts that need more than what comes off the build plate.</div>
+        <span class="equip-spec">In-house</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ CLOSING ============ -->
+<section class="closing">
+  <div class="container">
+    <div class="eyebrow">Get in touch</div>
+    <h2 class="display-lg">
+      Local, fast, and<br>
+      <em>actually picks up the phone.</em>
+    </h2>
+    <div class="closing-row">
+      <div class="meta">
+        <strong>470 &middot; 338 &middot; 0243</strong>
+        Mon&ndash;Fri &middot; 8:00 &ndash; 17:00 Eastern<br>
+        hello@everhaven.design
+      </div>
+      <div class="closing-socials">
+        <a href="https://www.instagram.com/everhaven.design/" class="closing-social-link" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.tiktok.com/@everhaven.design?lang=en" class="closing-social-link" target="_blank" rel="noopener noreferrer">TikTok</a>
+      </div>
+      <a href="contact.html" class="btn">Request a quote</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo" style="margin-bottom:20px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round">
+            <path d="M12 2 L21 7 L21 17 L12 22 L3 17 L3 7 Z"/>
+            <path d="M12 2 L12 12 L21 7"/>
+            <path d="M12 12 L3 7"/>
+            <path d="M12 12 L12 22" stroke-dasharray="1.2 2"/>
+          </svg>
+          EVERHAVEN
+        </a>
+        <p style="margin-top:18px; max-width:30ch;">Custom additive manufacturing from Cartersville, Georgia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Studio</h4>
+        <a href="index.html">Home</a>
+        <a href="capabilities.html">Capabilities</a>
+        <a href="materials.html">Materials</a>
+        <a href="process.html">Process</a>
+        <a href="about.html">Studio</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="contact.html">Request a quote</a>
+        <a href="tel:+14703380243">470 &middot; 338 &middot; 0243</a>
+        <a href="mailto:hello@everhaven.design">hello@everhaven.design</a>
+      </div>
+      <div class="footer-col">
+        <h4>Studio Hours</h4>
+        <p class="meta">
+          <strong>Mon&ndash;Fri</strong> 8:00 &ndash; 17:00<br>
+          <strong>Sat</strong> By appointment<br>
+          <strong>Sun</strong> Closed
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Socials</h4>
+        <a href="https://www.instagram.com/everhaven.design/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.tiktok.com/@everhaven.design?lang=en" target="_blank" rel="noopener noreferrer">TikTok</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="meta">&copy; 2025 Everhaven Manufacturing &middot; All rights reserved</div>
+      <div class="meta">Cartersville, GA</div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="Back to top">&uarr;</button>
+
+<script src="script.js"></script>
+<script>
+(function () {
+  var staggerIO = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        staggerIO.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.10 });
+
+  var numbers   = document.querySelector('.studio-numbers');
+  var equipRows = document.querySelector('.equip-rows');
+  if (numbers)   staggerIO.observe(numbers);
+  if (equipRows) staggerIO.observe(equipRows);
+})();
+</script>
+</body>
+</html>
