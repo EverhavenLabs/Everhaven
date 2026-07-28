@@ -16,7 +16,7 @@
           "type": "button",
           "settings": {
             "label": "Get a quote →",
-            "link": "",
+            "link": "shopify://pages/get-a-quote",
             "style": "primary"
           }
         },
@@ -24,7 +24,7 @@
           "type": "button",
           "settings": {
             "label": "Shop products",
-            "link": "",
+            "link": "shopify://collections/all",
             "style": "secondary"
           }
         }
