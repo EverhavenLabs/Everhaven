@@ -79,7 +79,7 @@
       "settings": {
         "caption_text": "Not sure where to start?",
         "caption_link_label": "Describe your problem — that's enough.",
-        "caption_link": ""
+        "caption_link": "shopify://pages/contact"
       }
     }
   },
