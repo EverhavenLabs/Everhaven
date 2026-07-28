@@ -34,9 +34,48 @@
         "image_position": "right",
         "color_scheme": "scheme-1"
       }
+    },
+    "path-cards": {
+      "type": "eh-path-cards",
+      "blocks": {
+        "shoppers": {
+          "type": "card",
+          "settings": {
+            "appearance": "light",
+            "eyebrow": "For shoppers",
+            "heading": "Products we make",
+            "body": "<p>Original physical products and print-ready STL files — designed, tested, and made in-house.</p>",
+            "cta_label": "Browse the shop →",
+            "cta_link": "",
+            "cta_style": "text_link"
+          }
+        },
+        "projects": {
+          "type": "card",
+          "settings": {
+            "appearance": "dark",
+            "eyebrow": "For projects",
+            "heading": "Things we make for you",
+            "body": "<p>Prototyping, product design support, custom FDM printing, replacement parts — from a file or a sketch.</p>",
+            "cta_label": "Get a quote →",
+            "cta_link": "",
+            "cta_style": "button"
+          }
+        }
+      },
+      "block_order": [
+        "shoppers",
+        "projects"
+      ],
+      "settings": {
+        "caption_text": "Not sure where to start?",
+        "caption_link_label": "Describe your problem — that's enough.",
+        "caption_link": ""
+      }
     }
   },
   "order": [
-    "hero"
+    "hero",
+    "path-cards"
   ]
 }
