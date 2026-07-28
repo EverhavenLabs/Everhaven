@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
@@ -26,9 +35,9 @@
       ],
       "settings": {
         "heading_tag": "h1",
-        "heading_size": "lg",
         "eyebrow": "Product design · Prototyping · Small-batch manufacturing",
         "heading": "From idea to object.",
+        "heading_size": "lg",
         "body": "<p>We design, prototype, and produce original products — and help customers bring their own ideas to life.</p>",
         "image_placeholder": "Environment — printer operating, warm light, shallow depth",
         "image_position": "right",
@@ -58,7 +67,7 @@
             "heading": "Things we make for you",
             "body": "<p>Prototyping, product design support, custom FDM printing, replacement parts — from a file or a sketch.</p>",
             "cta_label": "Get a quote →",
-            "cta_link": "",
+            "cta_link": "shopify://pages/get-a-quote",
             "cta_style": "button"
           }
         }
