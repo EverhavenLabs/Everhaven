@@ -95,7 +95,7 @@
         "text_WCyWW3": {
           "type": "text",
           "settings": {
-            "text": "<p>Hey — I'm Dylan. EverHaven was built from my passion for engineering, manufacturing, and solving real-world problems. I started with 3D printing, but my goal has always been much bigger than making products—it's about helping bring great ideas from concept to production.</p><p>Today I partner with businesses, startups, and innovators to create prototypes, functional parts, and low-volume production runs. Every project is designed, manufactured, and carefully finished in my shop here in Georgia, with the same attention to detail I'd expect for my own products.</p><h4>—<strong> Dylan</strong></h4>",
+            "text": "<p>Hey — I'm Dylan. EverHaven was built from my passion for engineering, manufacturing, and solving real-world problems. I started with 3D printing, but my goal has always been much bigger than making products—it's about helping bring great ideas from concept to production.</p><h4>—<strong> Dylan</strong></h4>",
             "text_style": "body"
           }
         },
@@ -115,7 +115,7 @@
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
-        "height": "adapt",
+        "height": "medium",
         "desktop_image_width": "medium",
         "layout": "image_first",
         "image_behavior": "none",
