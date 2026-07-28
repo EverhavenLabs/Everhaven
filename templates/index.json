@@ -1,11 +1,42 @@
 {
   "sections": {
-    "diagnostic": {
-      "type": "eh-home-diagnostic",
-      "settings": {}
+    "hero": {
+      "type": "eh-hero-split",
+      "blocks": {
+        "btn-quote": {
+          "type": "button",
+          "settings": {
+            "label": "Get a quote →",
+            "link": "",
+            "style": "primary"
+          }
+        },
+        "btn-shop": {
+          "type": "button",
+          "settings": {
+            "label": "Shop products",
+            "link": "",
+            "style": "secondary"
+          }
+        }
+      },
+      "block_order": [
+        "btn-quote",
+        "btn-shop"
+      ],
+      "settings": {
+        "heading_tag": "h1",
+        "heading_size": "lg",
+        "eyebrow": "Product design · Prototyping · Small-batch manufacturing",
+        "heading": "From idea to object.",
+        "body": "<p>We design, prototype, and produce original products — and help customers bring their own ideas to life.</p>",
+        "image_placeholder": "Environment — printer operating, warm light, shallow depth",
+        "image_position": "right",
+        "color_scheme": "scheme-1"
+      }
     }
   },
   "order": [
-    "diagnostic"
+    "hero"
   ]
 }
