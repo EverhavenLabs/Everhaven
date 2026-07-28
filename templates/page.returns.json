@@ -1,0 +1,42 @@
+{
+  "sections": {
+    "policy-header": {
+      "type": "eh-policy-header",
+      "blocks": {
+        "point-1": { "type": "summary_point", "settings": { "text": "Returns accepted within 14 days." } },
+        "point-2": { "type": "summary_point", "settings": { "text": "Items must be unused and undamaged." } },
+        "point-3": { "type": "summary_point", "settings": { "text": "The customer pays return shipping unless the item arrived damaged or incorrect." } },
+        "point-4": { "type": "summary_point", "settings": { "text": "Original shipping charges are nonrefundable." } },
+        "point-5": { "type": "summary_point", "settings": { "text": "Damaged or incorrect orders must be reported within 7 days and include photos." } },
+        "point-6": { "type": "summary_point", "settings": { "text": "Contact email: support@everhaven.design" } }
+      },
+      "block_order": [
+        "point-1",
+        "point-2",
+        "point-3",
+        "point-4",
+        "point-5",
+        "point-6"
+      ],
+      "settings": {
+        "eyebrow": "Policies · Returns",
+        "last_updated": "Pending",
+        "summary_label": "Returns at a glance",
+        "summary_intro": "",
+        "show_specimen_badge": true,
+        "specimen_badge_text": "ADDITIONAL LEGAL LANGUAGE PENDING REVIEW — the summary above is final, everything else on this page is not"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 12,
+        "padding_bottom": 88
+      }
+    }
+  },
+  "order": [
+    "policy-header",
+    "main"
+  ]
+}

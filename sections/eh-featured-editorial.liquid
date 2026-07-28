@@ -1,0 +1,149 @@
+{% comment %}
+  EverHaven editorial feature row — alternating image/text rows for low-count
+  collections and homepage projects. Desktop & tablet stay 6/6; only mobile
+  stacks (image first).
+{% endcomment %}
+
+<section class="eh-featured-editorial eh-section">
+  <div class="eh-container">
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'row' -%}
+          {%- liquid
+            assign eh_mod = forloop.index0 | modulo: 2
+            assign eh_reverse = false
+            if eh_mod == 1
+              assign eh_reverse = true
+            endif
+          -%}
+          <div
+            class="eh-featured-editorial__row{% if eh_reverse %} eh-featured-editorial__row--reverse{% endif %}"
+            {{ block.shopify_attributes }}
+          >
+            <div class="eh-featured-editorial__media">
+              {%- if block.settings.product != blank and block.settings.image == blank -%}
+                {%- render 'eh-image-slot',
+                  image: block.settings.product.featured_image,
+                  placeholder: block.settings.image_placeholder,
+                  radius: 14,
+                  ratio: '1.4'
+                -%}
+              {%- else -%}
+                {%- render 'eh-image-slot',
+                  image: block.settings.image,
+                  placeholder: block.settings.image_placeholder,
+                  radius: 14,
+                  ratio: '1.4'
+                -%}
+              {%- endif -%}
+            </div>
+            <div class="eh-featured-editorial__content">
+              {%- if block.settings.eyebrow != blank -%}
+                <div class="eh-eyebrow eh-featured-editorial__eyebrow">{{ block.settings.eyebrow | escape }}</div>
+              {%- endif -%}
+              {%- if block.settings.heading != blank -%}
+                <div class="eh-display-md eh-featured-editorial__heading">{{ block.settings.heading | escape }}</div>
+              {%- endif -%}
+              {%- if block.settings.body != blank -%}
+                <div class="eh-body-md eh-featured-editorial__body">{{ block.settings.body }}</div>
+              {%- endif -%}
+              <div class="eh-featured-editorial__meta">
+                {%- if block.settings.product != blank -%}
+                  <span class="eh-title-md eh-featured-editorial__price">{{ block.settings.product.price | money }}</span>
+                {%- elsif block.settings.price != blank -%}
+                  <span class="eh-title-md eh-featured-editorial__price">{{ block.settings.price | escape }}</span>
+                {%- endif -%}
+                {%- if block.settings.cta_label != blank -%}
+                  {%- liquid
+                    assign eh_row_link = block.settings.cta_link
+                    if block.settings.product != blank and eh_row_link == blank
+                      assign eh_row_link = block.settings.product.url
+                    endif
+                  -%}
+                  <a href="{{ eh_row_link | default: '#' }}" class="eh-btn eh-btn-secondary">
+                    {{- block.settings.cta_label | escape -}}
+                  </a>
+                {%- endif -%}
+              </div>
+            </div>
+          </div>
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "EH Featured editorial",
+  "tag": "section",
+  "class": "eh-section-wrapper",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Editorial row",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product",
+          "info": "Optional. Supplies image and price automatically if left unset below."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image override"
+        },
+        {
+          "type": "text",
+          "id": "image_placeholder",
+          "label": "Placeholder shot brief",
+          "default": "Object on set — product hero, warm seamless"
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Desk organizer, iterated eleven times."
+        },
+        {
+          "type": "richtext",
+          "id": "body",
+          "label": "Body copy",
+          "default": "<p>Editorial rows carry collections with one to three products — image, story, action.</p>"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price override",
+          "info": "Ignored if a product is selected above."
+        },
+        {
+          "type": "text",
+          "id": "cta_label",
+          "label": "CTA label",
+          "default": "View product"
+        },
+        {
+          "type": "url",
+          "id": "cta_link",
+          "label": "CTA link override",
+          "info": "Ignored if a product is selected above."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "EH Featured editorial",
+      "blocks": [{ "type": "row" }]
+    }
+  ]
+}
+{% endschema %}

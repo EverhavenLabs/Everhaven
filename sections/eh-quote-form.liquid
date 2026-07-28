@@ -1,0 +1,377 @@
+{% comment %}
+  EverHaven quote form — 6/6 copy + form split.
+
+  ============================================================
+  INTEGRATION BOUNDARY — READ BEFORE WIRING A REAL BACKEND
+  ============================================================
+  No form app or endpoint is selected yet (by design — see Handoff section H:
+  Shopify's native contact form cannot accept file attachments, so a form
+  app or custom endpoint is required, and that choice is deliberately
+  deferred). This section renders a fully interactive, fully validated form
+  with a SIMULATED submission — see assets/eh-quote-form.js, function
+  `submitQuoteForm()`, for the exact stub to replace once a backend is
+  chosen. The <form> below has no `action`/`method` wired to a real
+  endpoint; the JS intercepts submit entirely client-side.
+  ============================================================
+{% endcomment %}
+
+<section id="quote-form" class="eh-quote color-{{ section.settings.color_scheme }} eh-section">
+  <div class="eh-container">
+    <div class="eh-quote__grid">
+      <div class="eh-quote__copy">
+        {%- render 'eh-section-header',
+          eyebrow: section.settings.eyebrow,
+          heading: section.settings.heading,
+          heading_tag: 'h1',
+          size: 'lg',
+          intro: section.settings.intro
+        -%}
+
+        <details class="eh-quote__steps-accordion">
+          <summary class="eh-quote__steps-summary">
+            <span>What happens next</span>
+            <span class="eh-spec eh-quote__steps-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="eh-quote__steps">
+            <div class="eh-quote__step">
+              <span class="eh-spec eh-quote__step-number">01</span>
+              <div>
+                <div class="eh-title-sm eh-quote__step-title">{{ section.settings.step1_title | escape }}</div>
+                <p class="eh-body-sm eh-quote__step-body">{{ section.settings.step1_body | escape }}</p>
+              </div>
+            </div>
+            <div class="eh-quote__step">
+              <span class="eh-spec eh-quote__step-number">02</span>
+              <div>
+                <div class="eh-title-sm eh-quote__step-title">{{ section.settings.step2_title | escape }}</div>
+                <p class="eh-body-sm eh-quote__step-body">{{ section.settings.step2_body | escape }}</p>
+              </div>
+            </div>
+            <div class="eh-quote__step">
+              <span class="eh-spec eh-quote__step-number">03</span>
+              <div>
+                <div class="eh-title-sm eh-quote__step-title">{{ section.settings.step3_title | escape }}</div>
+                <p class="eh-body-sm eh-quote__step-body">{{ section.settings.step3_body | escape }}</p>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        {%- if section.settings.helpful_heading != blank or section.settings.helpful_lines != blank -%}
+          <div class="eh-quote__helpful">
+            {%- if section.settings.helpful_heading != blank -%}
+              <div class="eh-eyebrow eh-quote__helpful-heading">{{ section.settings.helpful_heading | escape }}</div>
+            {%- endif -%}
+            {%- assign eh_helpful_lines = section.settings.helpful_lines | newline_to_br | split: '<br />' -%}
+            <div class="eh-quote__helpful-list">
+              {%- for line in eh_helpful_lines -%}
+                {%- assign eh_line = line | strip -%}
+                {%- if eh_line != blank -%}
+                  <span class="eh-body-sm">— {{ eh_line }}</span>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="eh-quote__form-wrap">
+        <eh-quote-form>
+          <form id="EhQuoteForm" class="eh-quote__form" data-eh-quote-form>
+            <div
+              class="eh-quote__error-summary"
+              id="EhQuoteErrorSummary"
+              role="alert"
+              tabindex="-1"
+              hidden
+            >
+              <p class="eh-body-sm eh-quote__error-summary-title">Please check the following:</p>
+              <ul class="eh-quote__error-summary-list" id="EhQuoteErrorList"></ul>
+            </div>
+
+            <div class="eh-quote__field-row">
+              <div class="eh-quote__field">
+                <label class="eh-quote__label" for="EhQuoteName">Name</label>
+                <input
+                  type="text"
+                  id="EhQuoteName"
+                  name="name"
+                  class="eh-quote__input"
+                  autocomplete="name"
+                  required
+                  aria-required="true"
+                  aria-describedby="EhQuoteName-error"
+                >
+                <span class="eh-quote__field-error" id="EhQuoteName-error" role="alert"></span>
+              </div>
+              <div class="eh-quote__field">
+                <label class="eh-quote__label" for="EhQuoteEmail">Email</label>
+                <input
+                  type="email"
+                  id="EhQuoteEmail"
+                  name="email"
+                  class="eh-quote__input"
+                  autocomplete="email"
+                  required
+                  aria-required="true"
+                  aria-describedby="EhQuoteEmail-error"
+                >
+                <span class="eh-quote__field-error" id="EhQuoteEmail-error" role="alert"></span>
+              </div>
+            </div>
+
+            <div class="eh-quote__field">
+              <label class="eh-quote__label" for="EhQuoteProjectType">Project type — optional</label>
+              <select id="EhQuoteProjectType" name="project_type" class="eh-quote__input eh-quote__select">
+                <option value="Prototype">Prototype</option>
+                <option value="Replacement part">Replacement part</option>
+                <option value="Small production run">Small production run</option>
+                <option value="Product design help">Product design help</option>
+                <option value="Existing 3D model or CAD file">Existing 3D model or CAD file</option>
+                <option value="Need help creating the file">Need help creating the file</option>
+                <option value="Not sure yet" selected>Not sure yet</option>
+              </select>
+            </div>
+
+            <div class="eh-quote__field">
+              <label class="eh-quote__label" for="EhQuoteDescription">What are you making?</label>
+              <textarea
+                id="EhQuoteDescription"
+                name="description"
+                class="eh-quote__input eh-quote__textarea"
+                rows="5"
+                placeholder="The part or product, roughly how many, and any deadline."
+                required
+                aria-required="true"
+                aria-describedby="EhQuoteDescription-error"
+              ></textarea>
+              <span class="eh-quote__field-error" id="EhQuoteDescription-error" role="alert"></span>
+            </div>
+
+            <div class="eh-quote__field-row">
+              <div class="eh-quote__field">
+                <label class="eh-quote__label" for="EhQuoteQuantity">Quantity — optional</label>
+                <input type="text" id="EhQuoteQuantity" name="quantity" class="eh-quote__input" placeholder="e.g. 25">
+              </div>
+              <div class="eh-quote__field">
+                <label class="eh-quote__label" for="EhQuoteDeadline">Deadline — optional</label>
+                <input type="text" id="EhQuoteDeadline" name="deadline" class="eh-quote__input" placeholder="If you have one">
+              </div>
+            </div>
+
+            <div class="eh-quote__field">
+              <label class="eh-quote__label" for="EhQuoteFiles">Files — optional</label>
+              <label class="eh-quote__dropzone" for="EhQuoteFiles" data-eh-dropzone>
+                <input
+                  type="file"
+                  id="EhQuoteFiles"
+                  name="files"
+                  class="eh-quote__file-input"
+                  multiple
+                  aria-describedby="EhQuoteFiles-hint"
+                >
+                <span class="eh-quote__dropzone-text">Drop files here or browse</span>
+                <span class="eh-spec eh-quote__dropzone-hint" id="EhQuoteFiles-hint">
+                  A file, image, sketch, drawing, or reference
+                </span>
+                <span class="eh-quote__file-list" data-eh-file-list aria-live="polite"></span>
+              </label>
+            </div>
+
+            <button type="submit" class="eh-btn eh-btn-primary eh-quote__submit">
+              {{- section.settings.submit_label | escape -}}
+            </button>
+
+            <div class="eh-quote__trust">
+              <span>REVIEWED PERSONALLY</span>
+              <span aria-hidden="true">·</span>
+              <span>NO OBLIGATION</span>
+              <span aria-hidden="true">·</span>
+              <span>FILES KEPT PRIVATE</span>
+            </div>
+          </form>
+
+          <div class="eh-confirmation-card eh-quote__confirmation" id="EhQuoteConfirmation" tabindex="-1" hidden>
+            <div class="eh-confirmation-card__icon">
+              {%- render 'eh-icon', icon: 'check', size: 20 -%}
+            </div>
+            <div class="eh-title-lg eh-confirmation-card__title">Request received.</div>
+            <p class="eh-body-sm eh-confirmation-card__body">
+              We'll reply by email with any questions or a quote.
+            </p>
+            <button type="button" class="eh-btn-tertiary" data-eh-quote-reset>Back to the form</button>
+          </div>
+        </eh-quote-form>
+      </div>
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="eh-quote__reassurance">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'reassurance' -%}
+              <div class="eh-card eh-quote__reassurance-item" {{ block.shopify_attributes }}>
+                {%- if block.settings.heading != blank -%}
+                  <div class="eh-title-sm eh-quote__reassurance-heading">{{ block.settings.heading | escape }}</div>
+                {%- endif -%}
+                {%- if block.settings.body != blank -%}
+                  <p class="eh-body-sm eh-quote__reassurance-body">{{ block.settings.body }}</p>
+                {%- endif -%}
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+<script src="{{ 'eh-quote-form.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "EH Quote form",
+  "tag": "section",
+  "class": "eh-section-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Get a quote"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Tell us what you're making."
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Intro copy",
+      "default": "<p>Share what you can — we'll come back with questions, options, and a price. A sketch is enough to start, and a quote is a conversation, not a contract.</p>"
+    },
+    {
+      "type": "header",
+      "content": "What happens next (3 steps)"
+    },
+    {
+      "type": "text",
+      "id": "step1_title",
+      "label": "Step 1 title",
+      "default": "We review your project"
+    },
+    {
+      "type": "text",
+      "id": "step1_body",
+      "label": "Step 1 body",
+      "default": "And reply with any questions — a real person, not an automated estimate."
+    },
+    {
+      "type": "text",
+      "id": "step2_title",
+      "label": "Step 2 title",
+      "default": "You get a clear quote"
+    },
+    {
+      "type": "text",
+      "id": "step2_body",
+      "label": "Step 2 body",
+      "default": "Price, material, and timeline, with the reasoning behind each."
+    },
+    {
+      "type": "text",
+      "id": "step3_title",
+      "label": "Step 3 title",
+      "default": "Approve it, and we start making"
+    },
+    {
+      "type": "text",
+      "id": "step3_body",
+      "label": "Step 3 body",
+      "default": "Prototyped, printed, and inspected before it's prepared for delivery."
+    },
+    {
+      "type": "header",
+      "content": "Helpful to include"
+    },
+    {
+      "type": "text",
+      "id": "helpful_heading",
+      "label": "Heading",
+      "default": "Helpful to include"
+    },
+    {
+      "type": "textarea",
+      "id": "helpful_lines",
+      "label": "Lines (one per line)",
+      "default": "What you're making, and roughly how many\nYour timeline, if you have one\nHow the part will be used\nAnything else we should know"
+    },
+    {
+      "type": "header",
+      "content": "Form"
+    },
+    {
+      "type": "text",
+      "id": "submit_label",
+      "label": "Submit button label",
+      "default": "Request a quote →"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-2"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "reassurance",
+      "name": "Reassurance card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "No file? No problem."
+        },
+        {
+          "type": "richtext",
+          "id": "body",
+          "label": "Body copy",
+          "default": "<p>Product design support takes ideas and sketches to printable models — describing the problem is enough to start.</p>"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "EH Quote form",
+      "blocks": [
+        {
+          "type": "reassurance",
+          "settings": {
+            "heading": "No file? No problem.",
+            "body": "<p>Product design support takes ideas and sketches to printable models — describing the problem is enough to start.</p>"
+          }
+        },
+        {
+          "type": "reassurance",
+          "settings": {
+            "heading": "Honest feasibility, first.",
+            "body": "<p>If a part isn't a good fit for FDM printing in PLA or PETG, we'll tell you before any money changes hands.</p>"
+          }
+        },
+        {
+          "type": "reassurance",
+          "settings": {
+            "heading": "One part or a repeat run.",
+            "body": "<p>One-off prototypes and repeat production runs are equally welcome — scope shapes the approach, never the attention.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

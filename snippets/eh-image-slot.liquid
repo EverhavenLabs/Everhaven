@@ -1,0 +1,34 @@
+{% comment %}
+  Photo frame with a styled empty state carrying its shot brief (Design System 04).
+  Real photography drops straight in once uploaded — no template changes needed.
+
+  Usage:
+  {% render 'eh-image-slot', image: section.settings.image, placeholder: section.settings.image_placeholder, radius: 14, ratio: '4/3' %}
+
+  Params:
+    image       — image object from an image_picker setting, may be blank
+    placeholder — plain text shot brief, e.g. "Environment — printer operating, warm light"
+    radius      — corner radius in px, default 10
+    ratio       — CSS aspect-ratio value, default '4/3'
+{% endcomment %}
+{%- liquid
+  assign eh_radius = radius | default: 10
+  assign eh_ratio = ratio | default: '4/3'
+-%}
+<div class="eh-image-slot" style="--eh-image-radius: {{ eh_radius }}px; aspect-ratio: {{ eh_ratio }};">
+  {%- if image != blank -%}
+    {{
+      image
+      | image_url: width: 1600
+      | image_tag:
+        loading: 'lazy',
+        widths: '400, 600, 800, 1000, 1200, 1600',
+        class: 'eh-image-slot__img',
+        alt: image.alt
+    }}
+  {%- else -%}
+    <div class="eh-image-slot__placeholder">
+      <span class="eh-spec eh-image-slot__placeholder-text">{{ placeholder | default: 'Photo' | escape }}</span>
+    </div>
+  {%- endif -%}
+</div>

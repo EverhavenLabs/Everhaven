@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+body { margin:0; background:#F7F6F3; }
+a { color:#16181A; text-decoration:none; }
+a:hover { color:#B04713; text-decoration:underline; }
+</style>
+</helmet>
+<div style="font-family:'IBM Plex Sans',sans-serif; color:#16181A; background:#F7F6F3">
+
+  <div style="background:#F7F6F3; border-bottom:1px solid #E0DEDA; padding:40px 32px">
+    <div style="max-width:1200px; margin:0 auto">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:1.8px; text-transform:uppercase; color:#6B7076; margin-bottom:12px">EverHaven · Supporting pages · Phase 3</div>
+      <h1 style="font-family:'Archivo',sans-serif; font-weight:500; font-size:40px; letter-spacing:-1px; margin:0 0 12px">Five utility screens, zero new patterns.</h1>
+      <p style="font-size:15px; line-height:1.7; color:#3F4348; max-width:620px; margin:0">FAQ, contact, 404, policy template, and order confirmation — all composed from approved components. Shared header/footer chrome as on the homepage design.</p>
+    </div>
+  </div>
+
+  <!-- 01 FAQ page -->
+  <div style="background:#16181A; padding:13px 32px"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.8px; color:#F2F1ED">SCREEN 01 · FAQ PAGE — GROUPED ACCORDIONS</span></div>
+  <section data-screen-label="FAQ page" style="max-width:1200px; margin:0 auto; padding:88px 32px 112px">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:1.8px; text-transform:uppercase; color:#6B7076; margin-bottom:16px">FAQ</div>
+    <h2 style="font-family:'Archivo',sans-serif; font-weight:500; font-size:52px; letter-spacing:-1.3px; margin:0 0 12px">Common questions.</h2>
+    <div style="display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:1.5px; color:#B04713; background:#F8E9E0; border-radius:99px; padding:5px 12px; margin-bottom:56px">SPECIMEN ANSWERS — REPLACE BEFORE PUBLISHING</div>
+    <div style="display:grid; grid-template-columns:220px 1fr; gap:64px; align-items:start; max-width:1000px">
+      <div style="display:grid; gap:12px; position:sticky; top:24px">
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.2px; color:#D95B1E">PROJECTS &amp; QUOTES</span>
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.2px; color:#6B7076">MATERIALS &amp; PRINTING</span>
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.2px; color:#6B7076">SHOP &amp; ORDERS</span>
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.2px; color:#6B7076">DIGITAL FILES</span>
+      </div>
+      <div style="border-top:1px solid #E0DEDA">
+        <div style="border-bottom:1px solid #E0DEDA">
+          <button onClick="{{ toggleFaq0 }}" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:16px; color:#16181A; background:none; border:none; width:100%; text-align:left; padding:22px 0; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:16px">What can I send you to start a project?<span style="font-family:'IBM Plex Mono',monospace; font-size:16px; color:#6B7076">{{ faqIcon0 }}</span></button>
+          <sc-if value="{{ faqOpen0 }}" hint-placeholder-val="{{ true }}"><p style="font-size:15px; line-height:1.7; color:#3F4348; margin:0; padding:0 0 24px">A file, image, sketch, drawing, or reference — any starting point works. Specimen answer.</p></sc-if>
+        </div>
+        <div style="border-bottom:1px solid #E0DEDA">
+          <button onClick="{{ toggleFaq1 }}" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:16px; color:#16181A; background:none; border:none; width:100%; text-align:left; padding:22px 0; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:16px">How does quoting work?<span style="font-family:'IBM Plex Mono',monospace; font-size:16px; color:#6B7076">{{ faqIcon1 }}</span></button>
+          <sc-if value="{{ faqOpen1 }}" hint-placeholder-val="{{ false }}"><p style="font-size:15px; line-height:1.7; color:#3F4348; margin:0; padding:0 0 24px">A real person reviews the request and replies by email with questions or an itemized quote — no automated estimates. Specimen answer.</p></sc-if>
+        </div>
+        <div style="border-bottom:1px solid #E0DEDA">
+          <button onClick="{{ toggleFaq2 }}" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:16px; color:#16181A; background:none; border:none; width:100%; text-align:left; padding:22px 0; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:16px">What materials do you print in?<span style="font-family:'IBM Plex Mono',monospace; font-size:16px; color:#6B7076">{{ faqIcon2 }}</span></button>
+          <sc-if value="{{ faqOpen2 }}" hint-placeholder-val="{{ false }}"><p style="font-size:15px; line-height:1.7; color:#3F4348; margin:0; padding:0 0 24px">FDM printing in PLA and PETG, matched to how your part will be used. Specimen answer.</p></sc-if>
+        </div>
+        <div style="border-bottom:1px solid #E0DEDA">
+          <button onClick="{{ toggleFaq3 }}" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:16px; color:#16181A; background:none; border:none; width:100%; text-align:left; padding:22px 0; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:16px">How do shipping and returns work?<span style="font-family:'IBM Plex Mono',monospace; font-size:16px; color:#6B7076">{{ faqIcon3 }}</span></button>
+          <sc-if value="{{ faqOpen3 }}" hint-placeholder-val="{{ false }}"><p style="font-size:15px; line-height:1.7; color:#3F4348; margin:0; padding:0 0 24px">Pending real policy — specimen answer awaiting shipping and returns terms.</p></sc-if>
+        </div>
+        <div style="border-bottom:1px solid #E0DEDA">
+          <button onClick="{{ toggleFaq4 }}" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:16px; color:#16181A; background:none; border:none; width:100%; text-align:left; padding:22px 0; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:16px">How are STL downloads licensed?<span style="font-family:'IBM Plex Mono',monospace; font-size:16px; color:#6B7076">{{ faqIcon4 }}</span></button>
+          <sc-if value="{{ faqOpen4 }}" hint-placeholder-val="{{ false }}"><p style="font-size:15px; line-height:1.7; color:#3F4348; margin:0; padding:0 0 24px">Instant download after checkout; license terms pending legal review — specimen answer.</p></sc-if>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 Contact -->
+  <div style="background:#16181A; padding:13px 32px"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.8px; color:#F2F1ED">SCREEN 02 · CONTACT</span></div>
+  <section data-screen-label="Contact" style="max-width:1200px; margin:0 auto; padding:88px 32px 112px">
+    <div style="display:grid; grid-template-columns:1fr 1.2fr; gap:64px; align-items:start">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:1.8px; text-transform:uppercase; color:#6B7076; margin-bottom:16px">Contact</div>
+        <h2 style="font-family:'Archivo',sans-serif; font-weight:500; font-size:52px; letter-spacing:-1.3px; margin:0 0 16px">Say hello.</h2>
+        <p style="font-size:15px; line-height:1.7; color:#3F4348; max-width:400px; margin:0 0 28px">Questions about an order, a product, or anything that isn't a quote request — this is the place. Project inquiries move faster through <a href="#" style="text-decoration:underline">Get a quote</a>.</p>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.2px; color:#6B7076">EMAIL · PENDING REAL ADDRESS<br><br>RESPONSE TIME · UNCOMMITTED UNTIL REAL</div>
+      </div>
+      <div style="background:#FFFFFF; border:1px solid #E0DEDA; border-radius:10px; padding:40px">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:18px">
+          <div><label style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:#6B7076; display:block; margin-bottom:8px">Name</label><input style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#16181A; background:#F7F6F3; border:1px solid #E0DEDA; border-radius:6px; padding:12px 14px; width:100%; box-sizing:border-box; outline:none" style-focus="border-color:#D95B1E"></div>
+          <div><label style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:#6B7076; display:block; margin-bottom:8px">Email</label><input style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#16181A; background:#F7F6F3; border:1px solid #E0DEDA; border-radius:6px; padding:12px 14px; width:100%; box-sizing:border-box; outline:none" style-focus="border-color:#D95B1E"></div>
+        </div>
+        <div style="margin-bottom:18px"><label style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:#6B7076; display:block; margin-bottom:8px">Topic</label><select style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#16181A; background:#F7F6F3; border:1px solid #E0DEDA; border-radius:6px; padding:12px 14px; width:100%; box-sizing:border-box; outline:none"><option>An order</option><option>A product</option><option>A digital file</option><option>Something else</option></select></div>
+        <div style="margin-bottom:24px"><label style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:#6B7076; display:block; margin-bottom:8px">Message</label><textarea rows="5" style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#16181A; background:#F7F6F3; border:1px solid #E0DEDA; border-radius:6px; padding:12px 14px; width:100%; box-sizing:border-box; outline:none; resize:vertical" style-focus="border-color:#D95B1E"></textarea></div>
+        <button style="font-family:'Archivo',sans-serif; font-weight:600; font-size:15px; color:#FFFFFF; background:#D95B1E; border:none; border-radius:6px; padding:15px; width:100%; cursor:pointer" style-hover="background:#B04713">Send message</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 404 -->
+  <div style="background:#16181A; padding:13px 32px"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.8px; color:#F2F1ED">SCREEN 03 · 404 — ROUTED, NEVER DEAD</span></div>
+  <section data-screen-label="404" style="max-width:1200px; margin:0 auto; padding:112px 32px; text-align:center">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:1.8px; color:#D95B1E; margin-bottom:20px">ERROR 404</div>
+    <h2 style="font-family:'Archivo',sans-serif; font-weight:500; font-size:52px; letter-spacing:-1.3px; margin:0 0 12px">This page doesn't exist.</h2>
+    <p style="font-size:15px; line-height:1.7; color:#3F4348; max-width:420px; margin:0 auto 32px">Like a part that never got printed. Here's where to go instead.</p>
+    <div style="display:flex; gap:14px; justify-content:center">
+      <a href="#" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:14px; color:#16181A; border:1px solid #16181A; border-radius:6px; padding:13px 26px; display:inline-block" style-hover="background:#ECEAE5">Browse the shop</a>
+      <a href="#" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:14px; color:#16181A; border:1px solid #16181A; border-radius:6px; padding:13px 26px; display:inline-block" style-hover="background:#ECEAE5">See services</a>
+      <a href="#" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:14px; color:#FFFFFF; background:#D95B1E; border-radius:6px; padding:14px 26px; display:inline-block" style-hover="background:#B04713">Get a quote →</a>
+    </div>
+  </section>
+
+  <!-- 04 Policy template -->
+  <div style="background:#16181A; padding:13px 32px"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.8px; color:#F2F1ED">SCREEN 04 · POLICY-PAGE TEMPLATE — PRIVACY / RETURNS / TERMS</span></div>
+  <section data-screen-label="Policy template" style="max-width:1200px; margin:0 auto; padding:88px 32px 112px">
+    <div style="max-width:720px">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:1.8px; text-transform:uppercase; color:#6B7076; margin-bottom:16px">Policies · Returns</div>
+      <h2 style="font-family:'Archivo',sans-serif; font-weight:500; font-size:44px; letter-spacing:-1.1px; margin:0 0 8px">Returns policy.</h2>
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.2px; color:#6B7076; margin-bottom:20px">LAST UPDATED · DATE</div>
+      <div style="display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:1.5px; color:#B04713; background:#F8E9E0; border-radius:99px; padding:5px 12px; margin-bottom:36px">PLACEHOLDER — NEEDS REAL POLICY &amp; LEGAL REVIEW</div>
+      <div style="border-top:1px solid #E0DEDA; padding-top:32px">
+        <h3 style="font-family:'Archivo',sans-serif; font-weight:600; font-size:19px; margin:0 0 10px">Section heading</h3>
+        <p style="font-size:15px; line-height:1.8; color:#3F4348; margin:0 0 32px">Body text at 15/1.8 in a 720px measure. Plain-language policies — headings every few paragraphs, no legalese walls. Real content pending.</p>
+        <h3 style="font-family:'Archivo',sans-serif; font-weight:600; font-size:19px; margin:0 0 10px">Second section heading</h3>
+        <p style="font-size:15px; line-height:1.8; color:#3F4348; margin:0">The same template serves privacy, returns, terms, and any future policy — one Shopify page template, different content.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 Confirmation -->
+  <div style="background:#16181A; padding:13px 32px"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.8px; color:#F2F1ED">SCREEN 05 · CONFIRMATION STATES — ORDER &amp; FORM</span></div>
+  <section data-screen-label="Confirmation states" style="max-width:1200px; margin:0 auto; padding:88px 32px 112px">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:1000px; margin:0 auto">
+      <div style="background:#FFFFFF; border:1px solid #E0DEDA; border-radius:10px; padding:48px 40px; text-align:center">
+        <div style="width:52px; height:52px; border-radius:50%; background:#EAF3EE; display:flex; align-items:center; justify-content:center; margin:0 auto 20px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2F7D4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:1.5px; color:#6B7076; margin-bottom:10px">ORDER CONFIRMED · #1024</div>
+        <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:22px; letter-spacing:-0.3px; margin-bottom:10px">Thank you — it's in the queue.</div>
+        <p style="font-size:14px; line-height:1.7; color:#6B7076; margin:0 0 20px">Physical items are printed, inspected, and packed in-house; digital files are in your inbox now.</p>
+        <a href="#" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:14px; color:#16181A">Back to the shop →</a>
+      </div>
+      <div style="background:#FFFFFF; border:1px solid #E0DEDA; border-radius:10px; padding:48px 40px; text-align:center">
+        <div style="width:52px; height:52px; border-radius:50%; background:#EAF3EE; display:flex; align-items:center; justify-content:center; margin:0 auto 20px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2F7D4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:1.5px; color:#6B7076; margin-bottom:10px">MESSAGE SENT</div>
+        <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:22px; letter-spacing:-0.3px; margin-bottom:10px">Got it.</div>
+        <p style="font-size:14px; line-height:1.7; color:#6B7076; margin:0 0 20px">We'll reply by email. A real person reads every message.</p>
+        <a href="#" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:14px; color:#16181A">Back home →</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { faq: 0 };
+  renderVals() {
+    const { faq } = this.state;
+    const vals = {};
+    [0, 1, 2, 3, 4].forEach(i => {
+      vals['faqOpen' + i] = faq === i;
+      vals['faqIcon' + i] = faq === i ? '−' : '+';
+      vals['toggleFaq' + i] = () => this.setState({ faq: this.state.faq === i ? -1 : i });
+    });
+    return vals;
+  }
+}
+</script>
+</body>
+</html>

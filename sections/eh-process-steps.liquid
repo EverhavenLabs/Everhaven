@@ -1,0 +1,93 @@
+{% comment %}
+  EverHaven "How it works" — dark numbered process band.
+  4-up desktop, 2x2 tablet, stacked mobile. Numbers are auto-generated from block order.
+{% endcomment %}
+
+<section class="eh-process-steps color-{{ section.settings.color_scheme }} eh-section">
+  <div class="eh-container">
+    {%- render 'eh-section-header',
+      eyebrow: section.settings.eyebrow,
+      heading: section.settings.heading,
+      on_dark: true
+    -%}
+    <div class="eh-process-steps__spacer"></div>
+    <div class="eh-process-steps__grid">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'step' -%}
+            <div class="eh-process-steps__card" {{ block.shopify_attributes }}>
+              <div class="eh-spec eh-process-steps__number">
+                {%- if forloop.index < 10 -%}0{%- endif -%}{{ forloop.index }}
+              </div>
+              {%- if block.settings.title != blank -%}
+                <div class="eh-title-md eh-process-steps__title">{{ block.settings.title | escape }}</div>
+              {%- endif -%}
+              {%- if block.settings.body != blank -%}
+                <div class="eh-body-sm eh-process-steps__body">{{ block.settings.body }}</div>
+              {%- endif -%}
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "EH Process steps",
+  "tag": "section",
+  "class": "eh-section-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "How it works"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Four steps, no mystery."
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-4"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Describe"
+        },
+        {
+          "type": "richtext",
+          "id": "body",
+          "label": "Body copy",
+          "default": "<p>Send a file, a sketch, or a problem. Any starting point works.</p>"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "EH Process steps",
+      "blocks": [
+        { "type": "step", "settings": { "title": "Describe", "body": "<p>Send a file, a sketch, or a problem. Any starting point works.</p>" } },
+        { "type": "step", "settings": { "title": "Quote", "body": "<p>We review it together and price the work to your exact spec.</p>" } },
+        { "type": "step", "settings": { "title": "Make", "body": "<p>Prototyped, printed, and inspected before it's prepared for delivery.</p>" } },
+        { "type": "step", "settings": { "title": "Deliver", "body": "<p>Packed carefully and shipped to your requested destination.</p>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

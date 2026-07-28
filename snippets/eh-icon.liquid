@@ -1,0 +1,47 @@
+{% comment %}
+  Renders one of the approved stroke icons (Design System 05 — Lucide set, 1.5px stroke, ink or muted, never signal).
+
+  Usage:
+  {% render 'eh-icon', icon: block.settings.icon, size: 24 %}
+
+  Accepts icon: 'box' | 'layers' | 'wrench' | 'boxes' | 'file' | 'check'
+{% endcomment %}
+{%- liquid
+  assign eh_icon_size = size | default: 24
+-%}
+<svg
+  width="{{ eh_icon_size }}"
+  height="{{ eh_icon_size }}"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="eh-icon eh-icon--{{ icon }}"
+  aria-hidden="true"
+  focusable="false"
+>
+  {%- case icon -%}
+    {%- when 'box' -%}
+      <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+      <path d="m3.3 7 8.7 5 8.7-5"></path>
+      <path d="M12 22V12"></path>
+    {%- when 'layers' -%}
+      <path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"></path>
+      <path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"></path>
+      <path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"></path>
+    {%- when 'wrench' -%}
+      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+    {%- when 'boxes' -%}
+      <path d="M16.5 9.4 7.55 4.24"></path>
+      <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+      <path d="m3.3 7 8.7 5 8.7-5"></path>
+      <path d="M12 22V12"></path>
+    {%- when 'file' -%}
+      <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+      <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+    {%- when 'check' -%}
+      <path d="M20 6 9 17l-5-5"></path>
+  {%- endcase -%}
+</svg>

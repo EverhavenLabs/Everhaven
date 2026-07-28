@@ -1,0 +1,141 @@
+{% comment %}
+  EverHaven FAQ accordion — native <details>/<summary> for full keyboard and
+  screen-reader support; a small custom element enforces single-open (only
+  one answer visible at a time), matching every approved design file's
+  interaction spec. Blocks for now; the Handoff maps this to a `faq_item`
+  metaobject (grouped), planned for a later phase once that exists.
+
+  assets/eh-faq-accordion.js is loaded once, globally, from
+  layout/theme.liquid — not from here. A page can render this section many
+  times (the general FAQ page's 9 categories), and a script tag emitted
+  per-instance would repeat once per instance.
+{% endcomment %}
+
+<section class="eh-faq eh-faq--{{ section.settings.layout }} eh-section">
+  <div class="eh-container">
+    <div class="eh-faq__layout">
+      <div class="eh-faq__header">
+        {%- render 'eh-section-header',
+          eyebrow: section.settings.eyebrow,
+          heading: section.settings.heading,
+          heading_tag: section.settings.heading_tag
+        -%}
+        {%- if section.settings.show_specimen_badge -%}
+          <span class="eh-specimen-badge">SPECIMEN ANSWERS — REPLACE BEFORE PUBLISHING</span>
+        {%- endif -%}
+      </div>
+      <eh-faq-accordion class="eh-faq__list">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'question' -%}
+              <details class="eh-faq__item" {{ block.shopify_attributes }} {% if forloop.first %}open{% endif %}>
+                <summary class="eh-faq__question">
+                  <span class="eh-title-md eh-faq__question-text">{{ block.settings.question | escape }}</span>
+                  <span class="eh-spec eh-faq__icon" aria-hidden="true"></span>
+                </summary>
+                <div class="eh-body-lg eh-faq__answer">{{ block.settings.answer }}</div>
+              </details>
+          {%- endcase -%}
+        {%- endfor -%}
+      </eh-faq-accordion>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "EH FAQ",
+  "tag": "section",
+  "class": "eh-section-wrapper",
+  "settings": [
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "Heading level",
+      "info": "Use H1 only when this section carries the page's main heading.",
+      "options": [
+        { "value": "h1", "label": "H1 (page hero)" },
+        { "value": "h2", "label": "H2" }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "FAQ"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Common questions."
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "options": [
+        { "value": "stacked", "label": "Header above, single column" },
+        { "value": "sidebar", "label": "Header beside list (2-column)" }
+      ],
+      "default": "stacked"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_specimen_badge",
+      "label": "Show \"specimen answers\" badge",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "What can I send you to start a project?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>A file, image, sketch, drawing, or reference — any starting point works.</p>"
+        },
+        {
+          "type": "text",
+          "id": "group",
+          "label": "Category (optional)",
+          "info": "Reserved for the grouped FAQ page layout."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "EH FAQ",
+      "blocks": [
+        { "type": "question" },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Can you work from a sketch instead of a 3D file?",
+            "answer": "<p>Yes — design assistance takes ideas from sketch to printable model.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "How are digital STL files licensed?",
+            "answer": "<p>Awaiting final license terms.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

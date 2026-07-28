@@ -1,0 +1,17 @@
+{
+  "sections": {
+    "service-detail": {
+      "type": "eh-service-detail",
+      "settings": {
+        "quote_link": "",
+        "services_overview_link": "",
+        "capabilities_link": "",
+        "process_color_scheme": "scheme-4",
+        "cta_color_scheme": "scheme-4"
+      }
+    }
+  },
+  "order": [
+    "service-detail"
+  ]
+}

@@ -1,0 +1,24 @@
+{% comment %}
+  Success-state card — reusable for the quote form's "Request received",
+  the contact form's "Got it", and order confirmation.
+
+  Usage:
+  {% render 'eh-confirmation-card', kicker: 'ORDER CONFIRMED · #1024', title: "Thank you — it's in the queue.", body: '...', link_label: 'Back to the shop →', link: routes.root_url %}
+{% endcomment %}
+<div class="eh-confirmation-card">
+  <div class="eh-confirmation-card__icon">
+    {%- render 'eh-icon', icon: 'check', size: 20 -%}
+  </div>
+  {%- if kicker != blank -%}
+    <div class="eh-spec eh-confirmation-card__kicker">{{ kicker | escape }}</div>
+  {%- endif -%}
+  {%- if title != blank -%}
+    <div class="eh-title-lg eh-confirmation-card__title">{{ title | escape }}</div>
+  {%- endif -%}
+  {%- if body != blank -%}
+    <p class="eh-body-sm eh-confirmation-card__body">{{ body }}</p>
+  {%- endif -%}
+  {%- if link_label != blank -%}
+    <a href="{{ link | default: '#' }}" class="eh-btn-tertiary">{{ link_label | escape }}</a>
+  {%- endif -%}
+</div>

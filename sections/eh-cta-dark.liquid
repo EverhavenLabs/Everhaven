@@ -1,0 +1,80 @@
+{% comment %}
+  EverHaven dark CTA band — final section on every page. Single CTA, centered,
+  no blocks (not repeated content).
+{% endcomment %}
+
+<section class="eh-cta-dark color-{{ section.settings.color_scheme }} eh-section">
+  <div class="eh-container eh-cta-dark__inner">
+    {%- render 'eh-section-header',
+      eyebrow: section.settings.eyebrow,
+      heading: section.settings.heading,
+      intro: section.settings.body,
+      align: 'center',
+      on_dark: true
+    -%}
+    {%- if section.settings.button_label != blank -%}
+      <a href="{{ section.settings.button_link | default: '#' }}" class="eh-btn eh-btn-primary eh-cta-dark__button">
+        {{- section.settings.button_label | escape -}}
+      </a>
+    {%- endif -%}
+    {%- if section.settings.caption != blank -%}
+      <p class="eh-body-sm eh-cta-dark__caption">{{ section.settings.caption | escape }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "EH Dark CTA",
+  "tag": "section",
+  "class": "eh-section-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Start a project"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Tell us what you're making."
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body copy",
+      "default": "<p>A file, a sketch, or a description is enough to start. We'll take it from there.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Get a quote →"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "Caption (below button)",
+      "default": "No commitment — a quote is a conversation, not a contract."
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-4"
+    }
+  ],
+  "presets": [
+    {
+      "name": "EH Dark CTA"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+body { margin:0; background:#F7F6F3; }
+a { color:#16181A; text-decoration:none; }
+a:hover { color:#B04713; text-decoration:underline; }
+</style>
+</helmet>
+<div style="font-family:'IBM Plex Sans',sans-serif; color:#16181A; background:#F7F6F3; min-height:100vh">
+
+  <div data-screen-label="Header" style="position:sticky; top:0; z-index:50">
+    <div style="background:#1A1D21; padding:11px 24px; text-align:center"><span style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:1px; color:#F2F1ED">Custom 3D printing and prototyping, quoted from a sketch or a file — <a href="#quote" style="color:#F2F1ED; text-decoration:underline">get a quote →</a></span></div>
+    <div style="background:#F7F6F3; border-bottom:1px solid #E0DEDA; height:72px; display:flex; align-items:center">
+      <div style="max-width:1200px; width:100%; margin:0 auto; padding:0 32px; display:flex; align-items:center; justify-content:space-between">
+        <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:19px; letter-spacing:-0.3px">EverHaven<span style="color:#D95B1E">.</span></div>
+        <nav style="display:flex; gap:32px; align-items:center">
+          <a href="#" style="font-size:14px; font-weight:500; color:#16181A">Shop</a>
+          <a href="#" style="font-size:14px; font-weight:500; color:#16181A">Services</a>
+          <a href="#" style="font-size:14px; font-weight:500; color:#16181A">Capabilities</a>
+          <a href="#" style="font-size:14px; font-weight:500; color:#16181A; text-decoration:underline; text-underline-offset:6px">About</a>
+          <a href="#quote" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:14px; color:#FFFFFF; background:#D95B1E; border-radius:6px; padding:11px 20px; display:inline-block" style-hover="background:#B04713">Get a quote</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- Why we exist -->
+  <section data-screen-label="Why EverHaven exists" style="max-width:1200px; margin:0 auto; padding:96px 32px 112px">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:1.8px; text-transform:uppercase; color:#6B7076; margin-bottom:20px">About EverHaven</div>
+    <h1 style="font-family:'Archivo',sans-serif; font-weight:500; font-size:56px; line-height:1.05; letter-spacing:-1.5px; margin:0 0 24px; max-width:760px">Built to bridge creativity and manufacturing.</h1>
+    <p style="font-size:17px; line-height:1.7; color:#3F4348; max-width:600px; margin:0 0 16px">Most good ideas die in the gap between a sketch and a finished object. EverHaven exists to close that gap — a studio that designs and makes its own products, and brings the same process to the parts and products our customers need.</p>
+    <p style="font-size:17px; line-height:1.7; color:#3F4348; max-width:600px; margin:0">A studio, not a portal: when you work with us, you're talking to the people who design and make your parts.</p>
+  </section>
+
+  <!-- How we work -->
+  <section data-screen-label="How we work" style="background:#ECEAE5">
+    <div style="max-width:1200px; margin:0 auto; padding:112px 32px">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:1.8px; text-transform:uppercase; color:#6B7076; margin-bottom:16px">How we work</div>
+      <h2 style="font-family:'Archivo',sans-serif; font-weight:500; font-size:44px; letter-spacing:-1.1px; margin:0 0 48px">Design-led. Made in-house. Said plainly.</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px">
+        <div style="background:#FFFFFF; border:1px solid #E0DEDA; border-radius:10px; padding:32px">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#D95B1E; margin-bottom:16px">01</div>
+          <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:17px; margin-bottom:8px">Design-led</div>
+          <p style="font-size:14px; line-height:1.65; color:#6B7076; margin:0">Every project starts as a design problem — we think about how a part should work before how it prints.</p>
+        </div>
+        <div style="background:#FFFFFF; border:1px solid #E0DEDA; border-radius:10px; padding:32px">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#D95B1E; margin-bottom:16px">02</div>
+          <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:17px; margin-bottom:8px">Made in-house</div>
+          <p style="font-size:14px; line-height:1.65; color:#6B7076; margin:0">FDM printing in PLA and PETG, on our own machines — prototyped, printed, and inspected under one roof.</p>
+        </div>
+        <div style="background:#FFFFFF; border:1px solid #E0DEDA; border-radius:10px; padding:32px">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#D95B1E; margin-bottom:16px">03</div>
+          <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:17px; margin-bottom:8px">Said plainly</div>
+          <p style="font-size:14px; line-height:1.65; color:#6B7076; margin:0">Real feasibility, real trade-offs, real prices — and an honest no when we're not the right shop.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder note -->
+  <section data-screen-label="Founder note" style="max-width:1200px; margin:0 auto; padding:112px 32px">
+    <div style="display:grid; grid-template-columns:1fr 1.1fr; gap:56px; align-items:center">
+      <div style="height:460px; border-radius:14px; overflow:hidden"><image-slot id="about-founder" shape="rounded" radius="14" placeholder="Environment — founder at work in the actual workshop"></image-slot></div>
+      <div>
+        <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-bottom:16px">
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:1.8px; text-transform:uppercase; color:#6B7076">A note from the founder</span>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:1.5px; color:#B04713; background:#F8E9E0; border-radius:99px; padding:5px 12px">PLACEHOLDER — NEEDS REAL FOUNDER STORY</span>
+        </div>
+        <h2 style="font-family:'Archivo',sans-serif; font-weight:500; font-size:40px; letter-spacing:-1px; margin:0 0 20px">Placeholder headline in the founder's words.</h2>
+        <p style="font-size:15px; line-height:1.75; color:#3F4348; max-width:480px; margin:0 0 16px">Two short paragraphs, written in first person by the real founder: why the studio exists, what making things means to them, and what a customer can expect. Nothing invented — this space waits for the real story.</p>
+        <p style="font-size:15px; line-height:1.75; color:#3F4348; max-width:480px; margin:0 0 24px">The section is signed, personal, and appears exactly once — the company opens and closes this page as a company.</p>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.2px; color:#6B7076">— FOUNDER NAME · SIGNATURE STYLE TBD</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision -->
+  <section data-screen-label="Long-term vision" style="background:#1A1D21">
+    <div style="max-width:1200px; margin:0 auto; padding:112px 32px">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:1.8px; text-transform:uppercase; color:#6B7076; margin-bottom:16px">Where this is going</div>
+      <h2 style="font-family:'Archivo',sans-serif; font-weight:500; font-size:44px; letter-spacing:-1.1px; color:#F2F1ED; margin:0 0 20px; max-width:640px">Built deliberately, for the long term.</h2>
+      <p style="font-size:16px; line-height:1.7; color:#A6AAAE; max-width:560px; margin:0 0 16px">EverHaven starts focused: FDM printing, PLA and PETG, prototyping, design support, and small-batch runs — done properly. New processes, materials, and products will be added as they become real, not before.</p>
+      <p style="font-size:16px; line-height:1.7; color:#A6AAAE; max-width:560px; margin:0">The goal isn't to look bigger than we are. It's to be the studio people return to as both they and we grow.</p>
+    </div>
+  </section>
+
+  <!-- Dual CTA -->
+  <section id="quote" data-screen-label="Dual CTA" style="max-width:1200px; margin:0 auto; padding:112px 32px">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px">
+      <div style="background:#ECEAE5; border-radius:10px; padding:48px; text-align:center">
+        <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:24px; letter-spacing:-0.3px; margin-bottom:10px">See what we make.</div>
+        <p style="font-size:15px; line-height:1.65; color:#3F4348; margin:0 0 24px">The shop is the proof — every product made in-house.</p>
+        <a href="#" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:14px; color:#16181A; border:1px solid #16181A; border-radius:6px; padding:13px 26px; display:inline-block" style-hover="background:#E5E2DB">Shop products</a>
+      </div>
+      <div style="background:#1A1D21; border-radius:10px; padding:48px; text-align:center">
+        <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:24px; letter-spacing:-0.3px; color:#F2F1ED; margin-bottom:10px">Make something with us.</div>
+        <p style="font-size:15px; line-height:1.65; color:#A6AAAE; margin:0 0 24px">A file, a sketch, or a description is enough to start.</p>
+        <a href="#" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:14px; color:#FFFFFF; background:#D95B1E; border-radius:6px; padding:14px 26px; display:inline-block" style-hover="background:#B04713">Get a quote →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer data-screen-label="Footer" style="background:#1A1D21; border-top:1px solid #33383E">
+    <div style="max-width:1200px; margin:0 auto; padding:72px 32px 32px">
+      <div style="display:grid; grid-template-columns:2fr 1fr 1fr 1.4fr; gap:48px; padding-bottom:48px; border-bottom:1px solid #33383E">
+        <div>
+          <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:19px; letter-spacing:-0.3px; color:#F2F1ED; margin-bottom:14px">EverHaven<span style="color:#D95B1E">.</span></div>
+          <p style="font-size:14px; line-height:1.7; color:#A6AAAE; max-width:280px; margin:0">Product design, prototyping, and small-batch manufacturing — from idea to finished object.</p>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#6B7076; margin-bottom:16px">Explore</div>
+          <div style="display:grid; gap:10px"><a href="#" style="font-size:14px; color:#F2F1ED">Shop</a><a href="#" style="font-size:14px; color:#F2F1ED">Services</a><a href="#" style="font-size:14px; color:#F2F1ED">Capabilities</a><a href="#" style="font-size:14px; color:#F2F1ED">About</a></div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#6B7076; margin-bottom:16px">Work with us</div>
+          <div style="display:grid; gap:10px"><a href="#" style="font-size:14px; color:#F2F1ED">Get a quote</a><a href="#" style="font-size:14px; color:#F2F1ED">FAQ</a><a href="#" style="font-size:14px; color:#F2F1ED">Contact</a></div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#6B7076; margin-bottom:16px">Updates</div>
+          <p style="font-size:13px; line-height:1.6; color:#A6AAAE; margin:0 0 14px">New products and capability updates. No noise.</p>
+          <div style="display:flex; gap:8px"><input placeholder="you@email.com" style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#F2F1ED; background:#22262B; border:1px solid #33383E; border-radius:6px; padding:10px 14px; flex:1; min-width:0; outline:none"><button style="font-family:'Archivo',sans-serif; font-weight:600; font-size:13px; color:#FFFFFF; background:#D95B1E; border:none; border-radius:6px; padding:10px 16px; cursor:pointer" style-hover="background:#B04713">Subscribe</button></div>
+        </div>
+      </div>
+      <div style="display:flex; justify-content:space-between; padding-top:24px"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#6B7076">© 2026 EverHaven</span><div style="display:flex; gap:24px"><a href="#" style="font-size:12px; color:#A6AAAE">Privacy</a><a href="#" style="font-size:12px; color:#A6AAAE">Returns</a><a href="#" style="font-size:12px; color:#A6AAAE">Terms</a></div></div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>

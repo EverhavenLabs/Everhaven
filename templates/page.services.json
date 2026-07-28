@@ -1,0 +1,201 @@
+{
+  "sections": {
+    "hero": {
+      "type": "eh-hero-split",
+      "blocks": {
+        "btn-quote": {
+          "type": "button",
+          "settings": {
+            "label": "Get a quote →",
+            "link": "",
+            "style": "primary"
+          }
+        },
+        "btn-capabilities": {
+          "type": "button",
+          "settings": {
+            "label": "See capabilities",
+            "link": "#shopify-section-capability-strip-services",
+            "style": "secondary"
+          }
+        }
+      },
+      "block_order": [
+        "btn-quote",
+        "btn-capabilities"
+      ],
+      "settings": {
+        "heading_tag": "h1",
+        "heading_size": "lg",
+        "eyebrow": "Services",
+        "heading": "Your project, on our machines.",
+        "body": "<p>Design, prototyping, and small-batch manufacturing — from one-off prototypes to repeat production. Every request is reviewed by the people who will make it.</p>",
+        "image_placeholder": "Environment — parts on build plate, warm light",
+        "image_position": "right",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "who-its-for": {
+      "type": "eh-path-cards",
+      "blocks": {
+        "individuals": {
+          "type": "card",
+          "settings": {
+            "appearance": "light",
+            "eyebrow": "Individuals & creators",
+            "heading": "",
+            "body": "<p>A replacement part, a first prototype, an idea that needs a file — small projects are welcome, and treated like real projects.</p>",
+            "cta_label": "",
+            "cta_link": "",
+            "cta_style": "text_link"
+          }
+        },
+        "startups": {
+          "type": "card",
+          "settings": {
+            "appearance": "light",
+            "eyebrow": "Startups & businesses",
+            "heading": "",
+            "body": "<p>Prototype iterations, design development, and repeat small-batch runs — a manufacturing partner you can reach directly.</p>",
+            "cta_label": "",
+            "cta_link": "",
+            "cta_style": "text_link"
+          }
+        }
+      },
+      "block_order": [
+        "individuals",
+        "startups"
+      ],
+      "settings": {
+        "caption_text": "",
+        "caption_link_label": "",
+        "caption_link": ""
+      }
+    },
+    "six-services": {
+      "type": "eh-icon-cards",
+      "blocks": {
+        "svc-3dp": {
+          "type": "card",
+          "settings": {
+            "icon": "box",
+            "heading": "Custom 3D printing",
+            "body": "<p>Made-to-spec FDM parts from your file — PLA or PETG, matched to the job.</p>",
+            "link_label": "View service →",
+            "link": ""
+          }
+        },
+        "svc-proto": {
+          "type": "card",
+          "settings": {
+            "icon": "layers",
+            "heading": "Rapid prototyping",
+            "body": "<p>Iterate fast — functional prototypes that tell you the truth about your design.</p>",
+            "link_label": "View service →",
+            "link": ""
+          }
+        },
+        "svc-design": {
+          "type": "card",
+          "settings": {
+            "icon": "wrench",
+            "heading": "Product design support",
+            "body": "<p>From an idea or sketch to a printable design — technical development shaped around how the part will be made.</p>",
+            "link_label": "View service →",
+            "link": ""
+          }
+        },
+        "svc-batch": {
+          "type": "card",
+          "settings": {
+            "icon": "boxes",
+            "heading": "Small-batch manufacturing",
+            "body": "<p>Repeat runs of a proven design, printed and inspected batch by batch.</p>",
+            "link_label": "View service →",
+            "link": ""
+          }
+        },
+        "svc-parts": {
+          "type": "card",
+          "settings": {
+            "icon": "wrench",
+            "heading": "Replacement parts",
+            "body": "<p>A broken bracket, a lost knob — recreated from the part, a photo, or a drawing.</p>",
+            "link_label": "View service →",
+            "link": ""
+          }
+        },
+        "svc-fileprep": {
+          "type": "card",
+          "settings": {
+            "icon": "file",
+            "heading": "File preparation & print optimization",
+            "body": "<p>Have a model that isn't ready to print? We review, repair, adapt, and prepare files for reliable production — subject to project review.</p>",
+            "link_label": "View service →",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "svc-3dp",
+        "svc-proto",
+        "svc-design",
+        "svc-batch",
+        "svc-parts",
+        "svc-fileprep"
+      ],
+      "settings": {
+        "eyebrow": "",
+        "heading": "Six ways to work with us.",
+        "intro": "",
+        "card_link_style": "whole_card",
+        "color_scheme": "scheme-2"
+      }
+    },
+    "capability-strip-services": {
+      "type": "eh-capability-strip",
+      "blocks": {
+        "pill-1": { "type": "pill", "settings": { "label": "FDM 3D PRINTING" } },
+        "pill-2": { "type": "pill", "settings": { "label": "PLA · PETG" } },
+        "pill-3": { "type": "pill", "settings": { "label": "RAPID PROTOTYPING" } },
+        "pill-4": { "type": "pill", "settings": { "label": "SMALL-BATCH RUNS" } },
+        "pill-5": { "type": "pill", "settings": { "label": "DESIGN SUPPORT" } }
+      },
+      "block_order": [
+        "pill-1",
+        "pill-2",
+        "pill-3",
+        "pill-4",
+        "pill-5"
+      ],
+      "settings": {
+        "label_text": "Current capabilities",
+        "pill_style": "filled",
+        "link_label": "All capabilities →",
+        "link": "",
+        "show_top_border": true,
+        "show_bottom_border": true
+      }
+    },
+    "final-cta": {
+      "type": "eh-cta-dark",
+      "settings": {
+        "eyebrow": "Start a project",
+        "heading": "Tell us what you're making.",
+        "body": "<p>A file, a sketch, or a description is enough to start. We'll take it from there.</p>",
+        "button_label": "Get a quote →",
+        "button_link": "",
+        "caption": "No commitment — a quote is a conversation, not a contract.",
+        "color_scheme": "scheme-4"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "who-its-for",
+    "six-services",
+    "capability-strip-services",
+    "final-cta"
+  ]
+}

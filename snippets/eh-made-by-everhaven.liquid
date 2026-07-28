@@ -1,0 +1,41 @@
+{% comment %}
+  "Made by EverHaven" cross-sell block — appears on both the physical and
+  STL product pages, linking back to services/quote. Copy varies slightly
+  by context since the physical-PDP framing ("made by us too") differs from
+  the STL-PDP framing ("no printer? we'll print it for you").
+
+  Usage:
+  {% render 'eh-made-by-everhaven', context: 'physical', link: quote_url %}
+
+  Params:
+    context — 'physical' (default) | 'digital'
+    kicker, body, link_label — optional overrides of the default copy
+    link — quote page URL
+{% endcomment %}
+{%- liquid
+  assign eh_context = context | default: 'physical'
+  assign eh_kicker = kicker
+  assign eh_body = body
+  assign eh_link_label = link_label | default: 'Get a quote →'
+
+  if eh_kicker == blank
+    if eh_context == 'digital'
+      assign eh_kicker = 'No printer?'
+    else
+      assign eh_kicker = 'Made by EverHaven'
+    endif
+  endif
+
+  if eh_body == blank
+    if eh_context == 'digital'
+      assign eh_body = "We'll print this design for you — made to order on our machines."
+    else
+      assign eh_body = 'This product comes off the same machines as our customer work. Need it in a different size or material — or something of your own made?'
+    endif
+  endif
+-%}
+<div class="eh-made-by-everhaven">
+  <div class="eh-spec eh-made-by-everhaven__kicker">{{ eh_kicker }}</div>
+  <p class="eh-body-sm eh-made-by-everhaven__body">{{ eh_body }}</p>
+  <a href="{{ link | default: '#' }}" class="eh-btn-tertiary eh-made-by-everhaven__link">{{ eh_link_label }}</a>
+</div>

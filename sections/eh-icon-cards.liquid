@@ -1,0 +1,186 @@
+{% comment %}
+  EverHaven icon card grid — 3-up desktop, 2-up tablet, 1-col mobile.
+  Used for: home services teaser (3 cards, text-link style),
+  Services overview (6 cards, whole-card-link style), Capabilities overview.
+{% endcomment %}
+
+<section class="eh-icon-cards color-{{ section.settings.color_scheme }} eh-section">
+  <div class="eh-container">
+    {%- if section.settings.eyebrow != blank or section.settings.heading != blank or section.settings.intro != blank -%}
+      {%- render 'eh-section-header',
+        eyebrow: section.settings.eyebrow,
+        heading: section.settings.heading,
+        heading_tag: section.settings.heading_tag,
+        intro: section.settings.intro
+      -%}
+      {%- if section.settings.header_link_label != blank -%}
+        <a href="{{ section.settings.header_link | default: '#' }}" class="eh-btn-tertiary eh-icon-cards__header-link">
+          {{- section.settings.header_link_label | escape -}}
+        </a>
+      {%- endif -%}
+      <div class="eh-icon-cards__spacer"></div>
+    {%- endif -%}
+
+    <div class="eh-icon-cards__grid">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'card' -%}
+            {%- liquid
+              assign eh_whole_card = false
+              if section.settings.card_link_style == 'whole_card' and block.settings.link != blank
+                assign eh_whole_card = true
+              endif
+            -%}
+            <{% if eh_whole_card %}a href="{{ block.settings.link }}"{% else %}div{% endif %}
+              class="eh-card eh-icon-cards__card{% if eh_whole_card %} eh-icon-cards__card--link{% endif %}"
+              {{ block.shopify_attributes }}
+            >
+              {%- if block.settings.icon != 'none' -%}
+                <div class="eh-icon-cards__icon">
+                  {%- render 'eh-icon', icon: block.settings.icon -%}
+                </div>
+              {%- endif -%}
+              {%- if block.settings.heading != blank -%}
+                <div class="eh-title-md eh-icon-cards__heading">{{ block.settings.heading | escape }}</div>
+              {%- endif -%}
+              {%- if block.settings.body != blank -%}
+                <div class="eh-body-sm eh-icon-cards__body">{{ block.settings.body }}</div>
+              {%- endif -%}
+              {%- if block.settings.link_label != blank -%}
+                {%- if eh_whole_card -%}
+                  <span class="eh-btn-tertiary eh-icon-cards__link">{{ block.settings.link_label | escape }}</span>
+                {%- else -%}
+                  <a href="{{ block.settings.link | default: '#' }}" class="eh-btn-tertiary eh-icon-cards__link">
+                    {{- block.settings.link_label | escape -}}
+                  </a>
+                {%- endif -%}
+              {%- endif -%}
+            </{% if eh_whole_card %}a{% else %}div{% endif %}>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "EH Icon cards",
+  "tag": "section",
+  "class": "eh-section-wrapper",
+  "settings": [
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "Heading level",
+      "info": "Use H1 only when this section carries the page's main heading (e.g. a page hero with no separate eh-hero-split).",
+      "options": [
+        { "value": "h1", "label": "H1 (page hero)" },
+        { "value": "h2", "label": "H2" }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Services"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Manufacturing as a service."
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Intro copy"
+    },
+    {
+      "type": "text",
+      "id": "header_link_label",
+      "label": "Header link label (optional)",
+      "info": "A single text link under the intro copy — for example, guidance toward another page. Leave blank to hide."
+    },
+    {
+      "type": "url",
+      "id": "header_link",
+      "label": "Header link"
+    },
+    {
+      "type": "select",
+      "id": "card_link_style",
+      "label": "Card link style",
+      "info": "Whole card only applies when a block has a link set.",
+      "options": [
+        { "value": "text_link", "label": "Text link only" },
+        { "value": "whole_card", "label": "Whole card is a link" }
+      ],
+      "default": "text_link"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "none", "label": "None" },
+            { "value": "box", "label": "Box" },
+            { "value": "layers", "label": "Layers" },
+            { "value": "wrench", "label": "Wrench" },
+            { "value": "boxes", "label": "Boxes" },
+            { "value": "file", "label": "File" },
+            { "value": "check", "label": "Check" }
+          ],
+          "default": "box"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Custom 3D printing"
+        },
+        {
+          "type": "richtext",
+          "id": "body",
+          "label": "Body copy",
+          "default": "<p>Made-to-spec FDM parts from your file — PLA or PETG, matched to the job.</p>"
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "Link label",
+          "default": "Learn more →"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 9,
+  "presets": [
+    {
+      "name": "EH Icon cards",
+      "blocks": [
+        { "type": "card" },
+        { "type": "card" },
+        { "type": "card" }
+      ]
+    }
+  ]
+}
+{% endschema %}

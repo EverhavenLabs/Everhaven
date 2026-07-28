@@ -1,0 +1,96 @@
+{% comment %}
+  EverHaven "Why EverHaven" — numbered principles, 2-col grid, auto-numbered.
+{% endcomment %}
+
+<section class="eh-principles eh-section">
+  <div class="eh-container">
+    {%- render 'eh-section-header',
+      eyebrow: section.settings.eyebrow,
+      heading: section.settings.heading,
+      intro: section.settings.intro
+    -%}
+    <div class="eh-principles__spacer"></div>
+    <div class="eh-principles__grid">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'principle' -%}
+            <div class="eh-principles__item" {{ block.shopify_attributes }}>
+              <span class="eh-spec eh-principles__number">
+                {%- if forloop.index < 10 -%}0{%- endif -%}{{ forloop.index }}
+              </span>
+              <div class="eh-principles__text">
+                {%- if block.settings.title != blank -%}
+                  <div class="eh-title-md eh-principles__title">{{ block.settings.title | escape }}</div>
+                {%- endif -%}
+                {%- if block.settings.body != blank -%}
+                  <div class="eh-body-sm eh-principles__body">{{ block.settings.body }}</div>
+                {%- endif -%}
+              </div>
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "EH Principles",
+  "tag": "section",
+  "class": "eh-section-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Why EverHaven"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "How we approach the work."
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Intro copy",
+      "default": "<p>No badges, no borrowed logos — the principles behind every project we take on.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "principle",
+      "name": "Principle",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Design-first thinking"
+        },
+        {
+          "type": "richtext",
+          "id": "body",
+          "label": "Body copy",
+          "default": "<p>Every project starts as a design problem, not a print job. We'll suggest a better way when we see one.</p>"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "EH Principles",
+      "blocks": [
+        { "type": "principle", "settings": { "title": "Design-first thinking", "body": "<p>Every project starts as a design problem, not a print job. We'll suggest a better way when we see one.</p>" } },
+        { "type": "principle", "settings": { "title": "Honest communication", "body": "<p>Real feasibility, real trade-offs, real prices. If we're not the right shop, we'll say so.</p>" } },
+        { "type": "principle", "settings": { "title": "Flexible project scope", "body": "<p>One-off prototypes and repeat runs are equally welcome — scope shapes the approach, never the attention.</p>" } },
+        { "type": "principle", "settings": { "title": "Products as proof", "body": "<p>Our own products come off the same machines, with the same care, as customer work — the shop shows how we build.</p>" } },
+        { "type": "principle", "settings": { "title": "Attention to detail", "body": "<p>Fit, print quality, and presentation — the details people may not request, but always notice.</p>" } },
+        { "type": "principle", "settings": { "title": "Long-term relationships", "body": "<p>We'd rather be the studio you return to for years than the vendor you used once.</p>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

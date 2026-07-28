@@ -1,0 +1,41 @@
+{% comment %}
+  Branded STL cover — dark background, mono kicker, Archivo title, signal
+  badge tag. Used on the STL product page hero, STL product/collection
+  cards, and (in 'micro' size) the STL cart line thumbnail.
+
+  LAUNCH BLOCKER (temporary content, not a design change): the approved
+  design's badge text is "INSTANT DOWNLOAD" (Handoff §G), but Digital
+  Downloads isn't installed yet, so nothing is actually delivered
+  instantly today. Defaults to "DIGITAL FILE" until that app is connected
+  — see docs/commerce.md and LAUNCH-BLOCKERS.md. Revert the `badge`
+  default below to 'INSTANT DOWNLOAD' once fulfillment is real; every
+  caller that doesn't pass an explicit `badge` picks up the fix in one
+  place.
+
+  Usage:
+  {% render 'eh-stl-cover', title: product.title, size: 'full', title_size: 'lg', ratio: '1' %}
+
+  Params:
+    title       — text shown as the cover title (full size only)
+    size        — 'full' (default) | 'micro' (small square thumbnail, no title/kicker)
+    title_size  — 'sm' | 'md' | 'lg', default 'md' (full size only)
+    ratio       — CSS aspect-ratio value, default '1'
+    badge       — badge text (full size only), default 'DIGITAL FILE'
+{% endcomment %}
+{%- liquid
+  assign eh_size = size | default: 'full'
+  assign eh_title_size = title_size | default: 'md'
+  assign eh_ratio = ratio | default: '1'
+  assign eh_badge = badge | default: 'DIGITAL FILE'
+-%}
+<div class="eh-stl-cover eh-stl-cover--{{ eh_size }}" style="aspect-ratio: {{ eh_ratio }};">
+  {%- if eh_size == 'micro' -%}
+    <span class="eh-spec eh-stl-cover__micro-label">STL</span>
+  {%- else -%}
+    <span class="eh-spec eh-stl-cover__kicker">EVERHAVEN · STL</span>
+    {%- if title != blank -%}
+      <span class="eh-stl-cover__title eh-stl-cover__title--{{ eh_title_size }}">{{ title | escape }}</span>
+    {%- endif -%}
+    <span class="eh-spec eh-stl-cover__badge">{{ eh_badge | escape }}</span>
+  {%- endif -%}
+</div>

@@ -1,0 +1,53 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": { "type": "title", "settings": {} },
+        "price": { "type": "price", "settings": {} },
+        "quantity_selector": { "type": "quantity_selector", "settings": {} },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": { "show_dynamic_checkout": true, "show_gift_card_recipient": false }
+        },
+        "description": { "type": "description", "settings": {} },
+        "digital-download": { "type": "eh_digital_download", "settings": {} },
+        "digital-license": { "type": "eh_digital_license", "settings": {} },
+        "made-by-everhaven": { "type": "eh_made_by_everhaven", "settings": { "quote_link": "" } }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "quantity_selector",
+        "buy_buttons",
+        "description",
+        "digital-download",
+        "digital-license",
+        "made-by-everhaven"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "stacked",
+        "mobile_thumbnails": "hide",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "disclosures": {
+      "type": "disclosures",
+      "settings": { "padding_top": 36, "padding_bottom": 0 }
+    }
+  },
+  "order": [
+    "main",
+    "disclosures"
+  ]
+}

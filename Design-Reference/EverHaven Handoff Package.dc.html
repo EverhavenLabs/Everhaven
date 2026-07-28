@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+body { margin:0; background:#F7F6F3; }
+a { color:#16181A; text-decoration:underline; }
+a:hover { color:#B04713; }
+</style>
+</helmet>
+<div style="font-family:'IBM Plex Sans',sans-serif; color:#16181A; background:#F7F6F3; min-height:100vh">
+<div style="max-width:960px; margin:0 auto; padding:80px 32px 120px">
+
+  <header style="padding-bottom:48px; border-bottom:1px solid #E0DEDA">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:1.8px; text-transform:uppercase; color:#D95B1E; margin-bottom:16px">EverHaven · Implementation handoff · For Claude Code</div>
+    <h1 style="font-family:'Archivo',sans-serif; font-weight:500; font-size:48px; line-height:1.06; letter-spacing:-1.2px; margin:0 0 16px">Design phase complete. Build from here.</h1>
+    <p style="font-size:16px; line-height:1.7; color:#3F4348; max-width:640px; margin:0">Everything Claude Code needs to implement EverHaven on Shopify Online Store 2.0 (Dawn base): page inventory, components, Shopify mapping, exact tokens, responsive rules, content status, asset list, app dependencies, naming, and build order. The design files in this project are the visual source of truth.</p>
+  </header>
+
+  <!-- A -->
+  <section style="padding:56px 0; border-bottom:1px solid #E0DEDA">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:1.8px; color:#6B7076; margin-bottom:12px">A · APPROVED PAGE INVENTORY</div>
+    <div style="background:#1A1D21; border-radius:10px; padding:28px 32px; overflow-x:auto">
+<pre style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; line-height:1.9; color:#F2F1ED; margin:0">DESIGN FILE                                CONTAINS
+EverHaven Design System.dc.html            Phase 0 — tokens, type, all component specimens
+EverHaven Homepage.dc.html                 Homepage (desktop + mobile band)
+EverHaven Get a Quote.dc.html              Quote page, validation, confirmation, mobile band
+EverHaven Services.dc.html                 Services overview
+EverHaven Service - Custom 3D Printing…    Service-detail template (template-setter)
+EverHaven Service Pages.dc.html            5 remaining services (tab switcher = same template)
+EverHaven Capabilities.dc.html             Capabilities overview + detail template (FDM)
+EverHaven Shop &amp; Commerce.dc.html          9 screens: shop landing · collection (grid + low-count)
+                                           · physical PDP · STL PDP · cart · empty cart
+                                           · search results · empty search
+EverHaven About.dc.html                    About page
+EverHaven Supporting Pages.dc.html         FAQ · contact · 404 · policy template · confirmations</pre>
+    </div>
+  </section>
+
+  <!-- B -->
+  <section style="padding:56px 0; border-bottom:1px solid #E0DEDA">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:1.8px; color:#6B7076; margin-bottom:12px">B · COMPONENT INVENTORY</div>
+    <div style="background:#1A1D21; border-radius:10px; padding:28px 32px; overflow-x:auto">
+<pre style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; line-height:1.9; color:#F2F1ED; margin:0">COMPONENT                 APPEARS ON
+announcement-bar          every page
+header-nav                every page (active link = underline, offset 6px)
+footer                    every page
+mobile-drawer             every page (mobile)
+hero-split (6/6)          home, services, service detail, about-adjacent
+path-cards (2-up)         home
+section-header            every content band (eyebrow + display + intro)
+icon-card grid (3-up)     home services, services overview, capabilities
+numbered-process (dark)   home, all service pages
+capability-strip          home, services, service detail, capabilities
+editorial-feature-row     low-count collections, homepage projects
+why-principles (2-col)    home
+dark-cta band             every page (final section)
+faq-accordion             home, service pages, capabilities, FAQ page
+product-card              shop landing, collections, empty cart, search
+collection-card           shop landing
+product-gallery           physical PDP
+stl-cover                 STL PDP, STL product cards
+made-by-everhaven block   both PDPs (cross-sell to services/quote)
+cart-line + summary       cart
+quote-form + dropzone     quote page (+ inline variant, phase 2 option)
+input-set                 quote, contact, newsletter
+confirmation-card         quote, contact, order
+photo-frame (briefed)     everywhere photography is pending</pre>
+    </div>
+  </section>
+
+  <!-- C -->
+  <section style="padding:56px 0; border-bottom:1px solid #E0DEDA">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:1.8px; color:#6B7076; margin-bottom:12px">C · SHOPIFY MAPPING</div>
+    <div style="background:#1A1D21; border-radius:10px; padding:28px 32px; overflow-x:auto">
+<pre style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; line-height:1.9; color:#F2F1ED; margin:0">announcement-bar         theme setting + section (sections/announcement-bar.liquid)
+header-nav / footer      sections/header.liquid · sections/footer.liquid
+hero-split               sections/hero-split.liquid (image_picker, 2 CTA blocks)
+path-cards               sections/path-cards.liquid (2 blocks)
+section-header           snippet: snippets/section-header.liquid
+icon-card grid           sections/icon-cards.liquid (repeatable blocks, icon select)
+numbered-process         sections/process-steps.liquid (4 blocks)
+capability-strip         sections/capability-strip.liquid ← metaobject: capability
+editorial-feature-row    sections/featured-editorial.liquid (product picker)
+why-principles           sections/principles.liquid (6 blocks)
+dark-cta                 sections/cta-dark.liquid
+faq-accordion            sections/faq.liquid ← metaobject: faq_item (grouped)
+product/collection card  snippets/card-product.liquid · card-collection.liquid
+collection modes         templates/collection.json — grid vs editorial via
+                         collection.products_count &lt; 4 in Liquid
+physical PDP             templates/product.json (main-product + made-by section)
+STL PDP                  templates/product.digital.json (cover, license metafields:
+                         product.metafields.everhaven.license / formats / print_notes)
+made-by-everhaven        snippets/made-by-everhaven.liquid
+cart / empty cart        sections/main-cart.liquid with empty-state merchandising
+search / empty           templates/search.json
+quote page               templates/page.quote.json (form section; app or custom)
+capabilities pages       templates/page.capabilities.json + metaobject: capability
+service pages            templates/page.service.json (one template, 6 pages)
+about                    templates/page.about.json
+policy template          templates/page.policy.json
+404                      templates/404.json
+spec-layer labels        CSS utility classes in assets/everhaven.css</pre>
+    </div>
+  </section>
+
+  <!-- D -->
+  <section style="padding:56px 0; border-bottom:1px solid #E0DEDA">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:1.8px; color:#6B7076; margin-bottom:12px">D · DESIGN TOKENS</div>
+    <div style="background:#1A1D21; border-radius:10px; padding:28px 32px; overflow-x:auto">
+<pre style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; line-height:1.9; color:#F2F1ED; margin:0">COLOR
+--canvas #F7F6F3   --surface #ECEAE5   --card #FFFFFF
+--dark #1A1D21     --dark-elevated #22262B
+--ink #16181A      --graphite #3F4348  --muted #6B7076
+--hairline #E0DEDA --hairline-dark #33383E
+--signal #D95B1E   --signal-active #B04713
+--on-dark #F2F1ED  --on-dark-soft #A6AAAE
+--specimen-bg #F8E9E0 (design-phase only — remove at launch)
+form only: success #2F7D4F · error #B3261E
+
+TYPE  display: Archivo · body: IBM Plex Sans · spec: IBM Plex Mono
+display-xl 68/1.04/-1.75 w500     display-lg 48/1.08/-1.2 w500
+display-md 34-44/1.15/-0.6 w500   title-lg 24/1.3/-0.3 w600
+title-md 19/1.35/-0.2 w600        body-lg 17/1.65 w400
+body-md 15/1.7 w400               body-sm 14/1.6 w400
+spec 12/1.5 mono w500 caps +1.6px button 14-15 Archivo w600 +0.2px
+Rule: display never bolder than w500 above 34px
+
+SPACE  base 4 · scale 4/8/12/16/24/32/48/64/112
+section 112 desktop / 64 mobile · card interior 32
+LAYOUT max 1200px · 12 col · 24px gutters
+RADIUS 6 buttons+inputs · 10 cards · 14 hero frames · pill badges
+BORDER 1px hairline everywhere · 1.5px dashed dropzone
+SHADOW one recipe: 0 1px 3px rgba(22,24,26,.08) — hover + overlays only
+MOTION 200ms ease-out hover · 300ms ease-in-out layout · fades and
+       ≤12px translates · prefers-reduced-motion respected
+BREAKPOINTS 1200 contained · 990 tablet · 750 mobile (Dawn-aligned)
+FOCUS 2px solid #D95B1E outline, 2px offset, all interactives</pre>
+    </div>
+  </section>
+
+  <!-- E -->
+  <section style="padding:56px 0; border-bottom:1px solid #E0DEDA">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:1.8px; color:#6B7076; margin-bottom:12px">E · RESPONSIVE BEHAVIOR</div>
+    <div style="background:#1A1D21; border-radius:10px; padding:28px 32px; overflow-x:auto">
+<pre style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; line-height:1.9; color:#F2F1ED; margin:0">COMPONENT           DESKTOP          TABLET (≤990)     MOBILE (≤750)
+hero-split          6/6              stacked, img 2nd  stacked, CTAs full-width
+path-cards          2-up             2-up              stacked
+icon-card grid      3-up             2-up              1-col
+numbered-process    4-up             2×2               stacked
+product grid        3-up             2-up              2-up
+editorial row       image/text 6/6   6/6               stacked image-first
+PDP                 gallery/info 6/6 stacked           stacked, sticky add-to-cart
+quote form          copy/form 6/6    stacked           1-col, steps → accordion
+footer              4 col            2×2               stacked
+nav                 inline links     inline            drawer; quote pinned bottom
+type                xl 68            48                36 · body floor 16px
+tap targets 44px min · inputs 16px font on mobile (no zoom)</pre>
+    </div>
+  </section>
+
+  <!-- F -->
+  <section style="padding:56px 0; border-bottom:1px solid #E0DEDA">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:1.8px; color:#6B7076; margin-bottom:12px">F · CONTENT STATUS</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px">
+      <div style="background:#FFFFFF; border:1px solid #E0DEDA; border-radius:10px; padding:24px 28px">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.2px; color:#2F7D4F; margin-bottom:12px">APPROVED FINAL COPY</div>
+        <p style="font-size:14px; line-height:1.8; color:#3F4348; margin:0">Hero headline + supporting sentence · path-card copy · six service names/descriptions · four-step process · Why EverHaven principles · About "why/how/vision" · quote-page copy · CTA wording · footer blurb · reassurance rows.</p>
+      </div>
+      <div style="background:#FFFFFF; border:1px solid #E0DEDA; border-radius:10px; padding:24px 28px">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.2px; color:#B04713; margin-bottom:12px">SPECIMEN — REPLACE</div>
+        <p style="font-size:14px; line-height:1.8; color:#3F4348; margin:0">All products, prices, counts · all FAQ answers · featured projects · capability use-case lists · order numbers.</p>
+      </div>
+      <div style="background:#FFFFFF; border:1px solid #E0DEDA; border-radius:10px; padding:24px 28px">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.2px; color:#B04713; margin-bottom:12px">NEEDS REAL BUSINESS INFO</div>
+        <p style="font-size:14px; line-height:1.8; color:#3F4348; margin:0">Contact email · quote response-time commitment · founder story + signature · file-ownership &amp; reorder terms · accepted-file details · shipping/returns basics.</p>
+      </div>
+      <div style="background:#FFFFFF; border:1px solid #E0DEDA; border-radius:10px; padding:24px 28px">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.2px; color:#B04713; margin-bottom:12px">NEEDS PHOTOGRAPHY / PRODUCT DATA / LEGAL</div>
+        <p style="font-size:14px; line-height:1.8; color:#3F4348; margin:0">Photography: all briefed frames (see G). Product data: real catalog, variants, dimensions, materials. Legal: STL license, privacy, returns, terms.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- G -->
+  <section style="padding:56px 0; border-bottom:1px solid #E0DEDA">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:1.8px; color:#6B7076; margin-bottom:12px">G · PHOTOGRAPHY SHOT LIST &amp; ASSETS</div>
+    <div style="background:#1A1D21; border-radius:10px; padding:28px 32px; overflow-x:auto">
+<pre style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; line-height:1.9; color:#F2F1ED; margin:0">All warm-neutral grade · no AI imagery · no stock · 3 shot types
+ENVIRONMENT  printer operating (home hero) · parts on build plate
+             (services hero) · workspace wide (about) · founder at
+             work (about) · batch packed (small-batch) · sketch beside
+             print (design support) · model on screen + print (fileprep)
+MACRO        printed surface detail PLA + PETG (3DP hero) · recreated
+             part beside broken original (replacement) · customization
+             detail (collection editorial)
+OBJECT/SET   every physical product ×4 angles (set·macro·in-use·scale)
+             on warm seamless, one lighting setup · product group
+             (shop landing card)
+OTHER ASSETS wordmark/logo files · favicon · STL cover template
+             (dark #1A1D21, mono kicker, Archivo title, signal
+             "INSTANT DOWNLOAD") · email templates later</pre>
+    </div>
+  </section>
+
+  <!-- H + I -->
+  <section style="padding:56px 0; border-bottom:1px solid #E0DEDA">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:1.8px; color:#6B7076; margin-bottom:12px">H · APP DEPENDENCIES &nbsp;&nbsp;/&nbsp;&nbsp; I · NAMING</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px">
+      <div style="background:#FFFFFF; border:1px solid #E0DEDA; border-radius:10px; padding:24px 28px">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.2px; color:#6B7076; margin-bottom:12px">REQUIRED FUNCTIONALITY</div>
+        <p style="font-size:14px; line-height:1.8; color:#3F4348; margin:0"><strong>Digital delivery</strong> — Shopify "Digital Downloads" app (free) for STL files.<br><strong>Quote file uploads</strong> — a form app with attachments (or custom endpoint); Shopify's native contact form can't take files.<br><strong>Spam protection</strong> — hCaptcha/reCAPTCHA via the form solution; no visible badge.<br><strong>Email notifications</strong> — Shopify native + form-app routing to the studio inbox.<br><strong>Customer accounts</strong> — optional at launch; enable "accounts optional".<br>Nothing else — no reviews, upsell, or popup apps.</p>
+      </div>
+      <div style="background:#FFFFFF; border:1px solid #E0DEDA; border-radius:10px; padding:24px 28px">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.2px; color:#6B7076; margin-bottom:12px">FILE &amp; TEMPLATE NAMES</div>
+        <p style="font-family:'IBM Plex Mono',monospace; font-size:12px; line-height:2; color:#3F4348; margin:0">assets/everhaven.css · everhaven.js<br>sections/eh-*.liquid (prefix all custom)<br>templates: index.json · page.quote.json ·<br>page.service.json · page.capabilities.json ·<br>page.capability-detail.json · page.about.json ·<br>page.policy.json · product.json ·<br>product.digital.json · collection.json ·<br>cart.json · search.json · 404.json<br>metaobjects: capability · faq_item</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- J -->
+  <section style="padding:56px 0; border-bottom:1px solid #E0DEDA">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:1.8px; color:#6B7076; margin-bottom:12px">J · IMPLEMENTATION ORDER</div>
+    <div style="background:#1A1D21; border-radius:10px; padding:28px 32px; overflow-x:auto">
+<pre style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; line-height:2; color:#F2F1ED; margin:0">01  Foundation: everhaven.css tokens + fonts (Google Fonts:
+    Archivo, IBM Plex Sans, IBM Plex Mono), Dawn color/type settings
+02  Global chrome: announcement bar · header · footer · mobile drawer
+03  Shared sections: section-header · icon-cards · process ·
+    capability-strip · dark-cta · faq · cards
+04  Homepage (index.json) — assembles everything from 03
+05  Quote page + form solution + email routing (core conversion)
+06  Services: page.service.json → 6 pages · services overview
+07  Commerce: collection.json (both modes) · product.json ·
+    product.digital.json + Digital Downloads · cart · search
+08  Capabilities: overview + detail template + metaobjects
+09  About · FAQ page · contact · policies · 404 · confirmations
+10  QA pass: focus states · reduced motion · AA contrast ·
+    mobile taps · empty states · specimen labels stripped ONLY
+    where real content has replaced them</pre>
+    </div>
+  </section>
+
+  <!-- Status -->
+  <section style="background:#1A1D21; border-radius:14px; padding:56px; margin-top:56px">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:1.8px; color:#D95B1E; margin-bottom:16px">STATUS · DESIGN PHASE COMPLETE</div>
+    <h2 style="font-family:'Archivo',sans-serif; font-weight:500; font-size:34px; letter-spacing:-0.6px; color:#F2F1ED; margin:0 0 16px">Ready for implementation.</h2>
+    <p style="font-size:15px; line-height:1.75; color:#A6AAAE; max-width:640px; margin:0">Every page and template in the approved scope is designed, consistent with the Graphite &amp; Signal system, and limited to confirmed capabilities. All unverified content is specimen-labeled. The consistency pass confirmed shared chrome, button hierarchy, type scale, spacing rhythm, capability accuracy, and CTA wording across all ten design files. Hand this document plus the design files to Claude Code and build in the order above.</p>
+  </section>
+
+</div>
+</div>
+</x-dc>
+</body>
+</html>

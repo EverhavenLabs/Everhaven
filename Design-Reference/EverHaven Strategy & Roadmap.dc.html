@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&family=Schibsted+Grotesk:wght@400;500;700&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+body { margin:0; background:#faf9f5; }
+a { color:#cc785c; text-decoration:none; }
+a:hover { color:#a9583e; text-decoration:underline; }
+</style>
+</helmet>
+<div style="font-family:'Inter',sans-serif; color:#141413; background:#faf9f5; min-height:100vh">
+  <div style="max-width:920px; margin:0 auto; padding:72px 32px 120px">
+
+    <!-- Cover -->
+    <header style="padding-bottom:56px; border-bottom:1px solid #e6dfd8">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#cc785c; margin-bottom:20px">EverHaven — Website strategy &amp; roadmap · For approval · v1</div>
+      <h1 style="font-family:'Fraunces',serif; font-weight:400; font-size:52px; line-height:1.08; letter-spacing:-1.2px; margin:0 0 24px">The digital headquarters of EverHaven.</h1>
+      <p style="font-size:17px; line-height:1.65; color:#43403a; max-width:640px; margin:0">Brand positioning, customer journeys, information architecture, design-system options, and a build roadmap. Nothing here is a page design — this is the direction document. Sections flagged <span style="font-family:'JetBrains Mono',monospace; font-size:12px; background:#f5e8e2; color:#a9583e; padding:2px 8px; border-radius:99px; white-space:nowrap">NEEDS APPROVAL</span> or <span style="font-family:'JetBrains Mono',monospace; font-size:12px; background:#efe9de; color:#6e6a63; padding:2px 8px; border-radius:99px; white-space:nowrap">NEEDS REAL INFO</span> wait on you.</p>
+    </header>
+
+    <!-- TOC -->
+    <nav style="display:grid; grid-template-columns:1fr 1fr; gap:8px 40px; padding:40px 0 56px; border-bottom:1px solid #e6dfd8; font-size:14px">
+      <a href="#positioning">1 · Brand positioning &amp; value proposition</a>
+      <a href="#messaging">2 · Messaging hierarchy</a>
+      <a href="#journeys">3 · Customer journeys</a>
+      <a href="#sitemap">4 · Sitemap</a>
+      <a href="#navigation">5 · Navigation</a>
+      <a href="#homepage">6 · Homepage content strategy</a>
+      <a href="#shop">7 · Shop architecture</a>
+      <a href="#services">8 · Services architecture</a>
+      <a href="#capabilities">9 · Capabilities architecture</a>
+      <a href="#quote">10 · Quote experience</a>
+      <a href="#about">11 · About page</a>
+      <a href="#color">12 · Color directions (choose one)</a>
+      <a href="#type">13 · Typography directions (choose one)</a>
+      <a href="#rules">14 · Spacing, grid, radius, motion</a>
+      <a href="#imagery">15 · Photography &amp; icons</a>
+      <a href="#components">16 · Component system</a>
+      <a href="#mobile">17 · Mobile behavior</a>
+      <a href="#a11y">18 · Accessibility</a>
+      <a href="#shopify">19 · Shopify considerations</a>
+      <a href="#roadmap">20 · Build roadmap</a>
+      <a href="#approvals">21 · Approvals &amp; open items</a>
+    </nav>
+
+    <!-- 1 Positioning -->
+    <section id="positioning" style="padding:64px 0; border-bottom:1px solid #e6dfd8">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#cc785c; margin-bottom:12px">01 · Positioning</div>
+      <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:34px; letter-spacing:-0.6px; margin:0 0 20px">From idea to object.</h2>
+      <p style="font-size:15px; line-height:1.7; color:#43403a; max-width:660px; margin:0 0 16px">EverHaven's structural risk is reading as two companies — a product shop and a job shop. The fix is to position the <strong>capability</strong> as the brand, and both audiences as customers of that capability. Whether someone buys a finished product or commissions a prototype, they are buying the same thing: EverHaven's ability to take an idea through design, engineering, and manufacturing to a finished object.</p>
+      <p style="font-size:15px; line-height:1.7; color:#43403a; max-width:660px; margin:0 0 28px"><strong>Positioning statement:</strong> EverHaven is a product design and manufacturing company. The shop is proof of the capability; the services are access to it. Every product page quietly sells the services ("designed and made by EverHaven"), and every service page quietly sells the products ("see what we make for ourselves").</p>
+      <div style="background:#efe9de; border-radius:12px; padding:32px">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#6e6a63; margin-bottom:10px">Core value proposition</div>
+        <p style="font-family:'Fraunces',serif; font-size:24px; line-height:1.35; letter-spacing:-0.3px; margin:0 0 12px">"We design, engineer, and manufacture original products — and we'll do the same for yours."</p>
+        <p style="font-size:14px; line-height:1.6; color:#43403a; margin:0">One sentence answers "what do you do," proves trust (our own products exist), and sets up both paths. Working copy — final headline wording comes with the homepage design.</p>
+      </div>
+    </section>
+
+    <!-- 2 Messaging -->
+    <section id="messaging" style="padding:64px 0; border-bottom:1px solid #e6dfd8">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#cc785c; margin-bottom:12px">02 · Messaging hierarchy</div>
+      <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:34px; letter-spacing:-0.6px; margin:0 0 20px">What every page says, in order.</h2>
+      <div style="display:grid; gap:12px; max-width:720px">
+        <div style="display:flex; gap:20px; align-items:baseline; background:#ffffff; border:1px solid #e6dfd8; border-radius:12px; padding:20px 24px"><span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#cc785c; min-width:24px">L1</span><div><strong style="font-size:15px">Capability</strong><p style="font-size:14px; line-height:1.6; color:#6e6a63; margin:4px 0 0">We take ideas to finished objects — design, engineering, manufacturing. The umbrella message; owns the homepage hero and the About story.</p></div></div>
+        <div style="display:flex; gap:20px; align-items:baseline; background:#ffffff; border:1px solid #e6dfd8; border-radius:12px; padding:20px 24px"><span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#cc785c; min-width:24px">L2</span><div><strong style="font-size:15px">Proof</strong><p style="font-size:14px; line-height:1.6; color:#6e6a63; margin:4px 0 0">Our own products, our process, our equipment and materials. Owns the Shop, Capabilities, and Featured Projects. No claims we can't show.</p></div></div>
+        <div style="display:flex; gap:20px; align-items:baseline; background:#ffffff; border:1px solid #e6dfd8; border-radius:12px; padding:20px 24px"><span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#cc785c; min-width:24px">L3</span><div><strong style="font-size:15px">Partnership</strong><p style="font-size:14px; line-height:1.6; color:#6e6a63; margin:4px 0 0">How working with us feels: responsive, precise, collaborative. Owns Services pages, How It Works, and the quote experience.</p></div></div>
+        <div style="display:flex; gap:20px; align-items:baseline; background:#ffffff; border:1px solid #e6dfd8; border-radius:12px; padding:20px 24px"><span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#cc785c; min-width:24px">L4</span><div><strong style="font-size:15px">Action</strong><p style="font-size:14px; line-height:1.6; color:#6e6a63; margin:4px 0 0">Two verbs only, everywhere: <strong>Shop products</strong> and <strong>Get a quote</strong>. Every page ends at one of the two. "Get a quote" is always the visually dominant CTA.</p></div></div>
+      </div>
+      <p style="font-size:14px; line-height:1.6; color:#6e6a63; max-width:660px; margin:24px 0 0"><strong>Voice:</strong> studio "we," sentence case, concrete verbs, no hype adjectives, no exclamation marks. Confident enough to use short declarative headlines; approachable enough to explain jargon the first time it appears.</p>
+    </section>
+
+    <!-- 3 Journeys -->
+    <section id="journeys" style="padding:64px 0; border-bottom:1px solid #e6dfd8">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#cc785c; margin-bottom:12px">03 · Customer journeys</div>
+      <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:34px; letter-spacing:-0.6px; margin:0 0 20px">Two paths, one front door.</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:24px">
+        <div style="background:#efe9de; border-radius:12px; padding:28px">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#6e6a63; margin-bottom:10px">Path A · Shopper</div>
+          <p style="font-size:14px; line-height:1.7; color:#43403a; margin:0">Home → Choose-your-path card → Shop → Collection → Product → Cart → Checkout.<br><br>Shortcuts: featured products on Home link straight to product pages; STL buyers get a dedicated digital collection with instant-download framing. Exit ramps into Path B on every product page ("want this customized? Get a quote").</p>
+        </div>
+        <div style="background:#efe9de; border-radius:12px; padding:28px">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#6e6a63; margin-bottom:10px">Path B · Project client</div>
+          <p style="font-size:14px; line-height:1.7; color:#43403a; margin:0">Home → Choose-your-path card → Services (or straight to Get a quote) → Service detail → Capabilities (for validation) → Quote form → human follow-up.<br><br>Trust is built in three beats before the form: what we do → how we do it → what it's like to work with us. The quote form itself stays short; detail gathering happens in follow-up.</p>
+        </div>
+      </div>
+      <p style="font-size:14px; line-height:1.6; color:#6e6a63; max-width:660px; margin:0">Undecided visitors (need a replacement part, have a sketch, not sure which service) get a third, quieter route: a "Not sure where to start?" link under the path cards that leads directly to the quote form with a low-pressure framing — describing the problem is enough.</p>
+    </section>
+
+    <!-- 4 Sitemap -->
+    <section id="sitemap" style="padding:64px 0; border-bottom:1px solid #e6dfd8">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#cc785c; margin-bottom:12px">04 · Sitemap</div>
+      <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:34px; letter-spacing:-0.6px; margin:0 0 20px">Built to grow without restructuring.</h2>
+      <div style="background:#181715; border-radius:12px; padding:32px; overflow-x:auto">
+<pre style="font-family:'JetBrains Mono',monospace; font-size:13px; line-height:1.85; color:#f0eee9; margin:0">Home
+├── Shop
+│   ├── All products
+│   ├── Physical products
+│   ├── Digital STL files
+│   ├── Functional products        (collection)
+│   ├── Fidget products            (collection)
+│   ├── Customizable products      (collection)
+│   ├── Best sellers               (automated collection)
+│   ├── New arrivals               (automated collection)
+│   └── Product detail pages
+├── Services
+│   ├── Services overview
+│   ├── Custom 3D printing
+│   ├── Rapid prototyping
+│   ├── Product development
+│   ├── Small-batch manufacturing
+│   ├── Replacement parts
+│   └── Design assistance
+├── Capabilities
+│   ├── Capabilities overview
+│   ├── Materials
+│   ├── Processes &amp; equipment
+│   ├── File requirements
+│   └── Finishing options          (later: quality, lead times, industries)
+├── Projects                       (launches hidden; add when 3+ real projects exist)
+├── About
+├── Get a quote
+├── FAQ
+└── Utility: Cart · Contact · Policies · 404 (merchandised, never dead)</pre>
+      </div>
+      <p style="font-size:14px; line-height:1.6; color:#6e6a63; max-width:660px; margin:20px 0 0">Growth logic: Services and Capabilities are parent sections with identical child-page templates — adding CNC machining or injection molding later means adding a page, not redesigning a section. Projects stays out of the nav until real work exists; the homepage "Featured projects" band collapses gracefully to a single project or hides entirely.</p>
+    </section>
+
+    <!-- 5 Navigation -->
+    <section id="navigation" style="padding:64px 0; border-bottom:1px solid #e6dfd8">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#cc785c; margin-bottom:12px">05 · Navigation</div>
+      <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:34px; letter-spacing:-0.6px; margin:0 0 20px">Six items, one dominant action.</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px">
+        <div style="background:#ffffff; border:1px solid #e6dfd8; border-radius:12px; padding:28px">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#6e6a63; margin-bottom:14px">Desktop</div>
+          <p style="font-size:14px; line-height:1.75; color:#43403a; margin:0">Sticky 64–72px header on the canvas color, hairline bottom border. Left: EverHaven wordmark. Center/right: Home is the logo; then <strong>Shop · Services · Capabilities · About</strong> as text links; then cart icon; then <strong>Get a quote</strong> as the only filled button in the header. Shop and Services get simple single-panel dropdowns listing their children — no mega-menu until the catalog earns it. Announcement bar above the header (dark, one line) reserved for a real message, e.g. the quote CTA — never a fake urgency banner.</p>
+        </div>
+        <div style="background:#ffffff; border:1px solid #e6dfd8; border-radius:12px; padding:28px">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#6e6a63; margin-bottom:14px">Mobile</div>
+          <p style="font-size:14px; line-height:1.75; color:#43403a; margin:0">Header keeps three things: menu button, wordmark, cart. <strong>Get a quote</strong> moves to a persistent full-width bar pinned above the fold inside the drawer AND appears as the first item when the menu opens. The drawer is a full-screen sheet: five primary links at large tap size (56px rows), children as indented accordions, quote button fixed at the bottom of the sheet. No hamburger-hidden CTA — the quote action is never more than one tap deep.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 Homepage -->
+    <section id="homepage" style="padding:64px 0; border-bottom:1px solid #e6dfd8">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#cc785c; margin-bottom:12px">06 · Homepage content strategy</div>
+      <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:34px; letter-spacing:-0.6px; margin:0 0 20px">Your eleven beats, tightened to nine.</h2>
+      <p style="font-size:15px; line-height:1.7; color:#43403a; max-width:660px; margin:0 0 24px">Your brief's homepage story is right; I recommend two merges so the page doesn't sprawl: fold <strong>Capabilities preview into the Services band</strong> (services say what, capabilities strip says with-what), and fold <strong>Industries &amp; Applications into Featured Projects</strong> (applications shown through real objects beat an abstract industries grid — and we can't name industries served yet anyway).</p>
+      <div style="display:grid; gap:8px; max-width:720px">
+        <div style="display:flex; gap:16px; padding:14px 20px; background:#ffffff; border:1px solid #e6dfd8; border-radius:8px; align-items:baseline"><span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#cc785c; min-width:20px">1</span><span style="font-size:14px; color:#43403a"><strong>Hero</strong> — capability statement + both CTAs + one strong workshop/product image or a quiet build-process artifact. No carousel.</span></div>
+        <div style="display:flex; gap:16px; padding:14px 20px; background:#ffffff; border:1px solid #e6dfd8; border-radius:8px; align-items:baseline"><span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#cc785c; min-width:20px">2</span><span style="font-size:14px; color:#43403a"><strong>Choose your path</strong> — two large cards (Shop / Commission a project) + the quiet "not sure?" third route.</span></div>
+        <div style="display:flex; gap:16px; padding:14px 20px; background:#ffffff; border:1px solid #e6dfd8; border-radius:8px; align-items:baseline"><span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#cc785c; min-width:20px">3</span><span style="font-size:14px; color:#43403a"><strong>Featured products</strong> — 3–4 products max, editorially framed ("designed and made by EverHaven"), link to Shop.</span></div>
+        <div style="display:flex; gap:16px; padding:14px 20px; background:#ffffff; border:1px solid #e6dfd8; border-radius:8px; align-items:baseline"><span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#cc785c; min-width:20px">4</span><span style="font-size:14px; color:#43403a"><strong>Services + capabilities strip</strong> — six service cards; beneath them a single-row strip of materials/processes acting as the Capabilities teaser.</span></div>
+        <div style="display:flex; gap:16px; padding:14px 20px; background:#ffffff; border:1px solid #e6dfd8; border-radius:8px; align-items:baseline"><span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#cc785c; min-width:20px">5</span><span style="font-size:14px; color:#43403a"><strong>How it works</strong> — numbered 01–04 process on a dark band: describe → quote → make → deliver.</span></div>
+        <div style="display:flex; gap:16px; padding:14px 20px; background:#ffffff; border:1px solid #e6dfd8; border-radius:8px; align-items:baseline"><span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#cc785c; min-width:20px">6</span><span style="font-size:14px; color:#43403a"><strong>Featured projects / applications</strong> — real objects when they exist; clearly-labeled placeholder tiles until then. Section hides cleanly if empty.</span></div>
+        <div style="display:flex; gap:16px; padding:14px 20px; background:#ffffff; border:1px solid #e6dfd8; border-radius:8px; align-items:baseline"><span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#cc785c; min-width:20px">7</span><span style="font-size:14px; color:#43403a"><strong>About preview</strong> — the company story in three sentences + link. Founder appears here as a human note, not the headline.</span></div>
+        <div style="display:flex; gap:16px; padding:14px 20px; background:#ffffff; border:1px solid #e6dfd8; border-radius:8px; align-items:baseline"><span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#cc785c; min-width:20px">8</span><span style="font-size:14px; color:#43403a"><strong>FAQ</strong> — 5–6 genuine questions (files, materials, quantities, shipping, STL licensing). Accordion.</span></div>
+        <div style="display:flex; gap:16px; padding:14px 20px; background:#ffffff; border:1px solid #e6dfd8; border-radius:8px; align-items:baseline"><span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#cc785c; min-width:20px">9</span><span style="font-size:14px; color:#43403a"><strong>Final CTA</strong> — dark closing band, single purpose: Get a quote, with a lightweight inline form variant considered in Phase 2.</span></div>
+      </div>
+    </section>
+
+    <!-- 7 Shop -->
+    <section id="shop" style="padding:64px 0; border-bottom:1px solid #e6dfd8">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#cc785c; margin-bottom:12px">07 · Shop architecture</div>
+      <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:34px; letter-spacing:-0.6px; margin:0 0 20px">A shop that never looks thin.</h2>
+      <p style="font-size:15px; line-height:1.7; color:#43403a; max-width:660px; margin:0 0 24px">The reference's weakest pages were collections exposed with one or two products. EverHaven's shop is designed around <strong>density-adaptive layouts</strong>:</p>
+      <ul style="font-size:14px; line-height:1.8; color:#43403a; max-width:660px; margin:0 0 24px; padding-left:20px">
+        <li><strong>Shop landing = collection storefront, not a grid.</strong> It opens with an editorial header, then collection cards (Physical / Digital STL / by-use collections), then a "new + best" strip. It looks complete with 6 products or 600.</li>
+        <li><strong>Collections switch layout by count:</strong> 1–3 products render as large editorial feature rows (image left, story right); 4+ switch to the standard 3-up grid. No orphaned single-card grids, no empty placeholder tiles.</li>
+        <li><strong>Digital STL files are first-class:</strong> a templated branded cover-art system (like the reference's guide covers) so digital listings look owned; product pages state license terms and print settings plainly.</li>
+        <li><strong>Every product page cross-sells the capability:</strong> a standard "Made by EverHaven" block linking to services ("need it in a different material or size? Get a quote").</li>
+        <li><strong>Collections that are empty don't exist publicly.</strong> Nav dropdowns and shop cards are driven by populated collections only.</li>
+      </ul>
+      <p style="font-size:14px; line-height:1.6; color:#6e6a63; max-width:660px; margin:0">Filtering/sorting stays minimal (availability, price, type) until the catalog exceeds ~20 items per collection.</p>
+    </section>
+
+    <!-- 8 Services -->
+    <section id="services" style="padding:64px 0; border-bottom:1px solid #e6dfd8">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#cc785c; margin-bottom:12px">08 · Services architecture</div>
+      <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:34px; letter-spacing:-0.6px; margin:0 0 20px">One template, six services.</h2>
+      <p style="font-size:15px; line-height:1.7; color:#43403a; max-width:660px; margin:0 0 20px">A Services overview page frames the offer (who it's for, how engagement works) and routes to six detail pages. Every detail page uses the same proven formula, so adding a seventh service later is a content task:</p>
+      <div style="background:#181715; border-radius:12px; padding:28px 32px; max-width:720px">
+        <pre style="font-family:'JetBrains Mono',monospace; font-size:13px; line-height:2; color:#f0eee9; margin:0">Hero: eyebrow · headline · 2-line promise · [Get a quote] [See capabilities]
+What this covers        → 3–6 concrete scope cards
+How it works            → numbered 01–04 process (shared component)
+What we need from you   → files / sketch / part — lowers the entry bar
+Related capability      → materials &amp; process strip relevant to this service
+Closing CTA             → dark quote band with service pre-selected in the form</pre>
+      </div>
+      <p style="font-size:14px; line-height:1.6; color:#6e6a63; max-width:660px; margin:20px 0 0">Tone: professional engineering services, priced by quote. No hobby framing, no invented tolerances or turnaround claims — scope cards describe what we do, not numbers we can't back yet.</p>
+    </section>
+
+    <!-- 9 Capabilities -->
+    <section id="capabilities" style="padding:64px 0; border-bottom:1px solid #e6dfd8">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#cc785c; margin-bottom:12px">09 · Capabilities architecture</div>
+      <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:34px; letter-spacing:-0.6px; margin:0 0 20px">The technical spine of the site.</h2>
+      <p style="font-size:15px; line-height:1.7; color:#43403a; max-width:660px; margin:0 0 20px">Capabilities is where engineers validate you. Launch with four child pages that can be filled honestly today — <strong>Materials, Processes &amp; equipment, File requirements, Finishing options</strong> — presented as clean reference tables and cards. The overview page is a directory with a short intro per area.</p>
+      <p style="font-size:15px; line-height:1.7; color:#43403a; max-width:660px; margin:0 0 20px">The section is deliberately a <strong>slotted system</strong>: Quality standards, Lead times, Industries, and Applications are designed as future child pages with the same template — they appear in the design system now, on the site only when real data exists. <span style="font-family:'JetBrains Mono',monospace; font-size:12px; background:#efe9de; color:#6e6a63; padding:2px 8px; border-radius:99px; white-space:nowrap">NEEDS REAL INFO</span></p>
+      <p style="font-size:14px; line-height:1.6; color:#6e6a63; max-width:660px; margin:0">I need your actual equipment list, material inventory, and accepted file formats before this section's content is written. The design will use clearly-marked specimen data until then.</p>
+    </section>
+
+    <!-- 10 Quote -->
+    <section id="quote" style="padding:64px 0; border-bottom:1px solid #e6dfd8">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#cc785c; margin-bottom:12px">10 · Quote experience</div>
+      <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:34px; letter-spacing:-0.6px; margin:0 0 20px">Short form, human follow-up.</h2>
+      <p style="font-size:15px; line-height:1.7; color:#43403a; max-width:660px; margin:0 0 20px">The quote page is a 6/6 split: reassurance left (what happens after you submit, what makes a good brief, "a sketch is enough to start"), form right. The form launches with <strong>seven fields</strong> — name, email, project type (pre-selected when arriving from a service page), description, quantity, deadline (optional), file upload (optional, multiple) — plus a note field. Material preference joins in Phase 2 once the materials page exists to link against.</p>
+      <ul style="font-size:14px; line-height:1.8; color:#43403a; max-width:660px; margin:0 0 20px; padding-left:20px">
+        <li><strong>Friction control:</strong> only name, email, and description are required. Upload is drag-and-drop with format hints, never a gate.</li>
+        <li><strong>Confidence:</strong> a "what happens next" 3-step strip directly under the submit button, and a stated response expectation once you can commit to one. <span style="font-family:'JetBrains Mono',monospace; font-size:12px; background:#efe9de; color:#6e6a63; padding:2px 8px; border-radius:99px; white-space:nowrap">NEEDS REAL INFO</span></li>
+        <li><strong>Distribution:</strong> the same form appears embedded in the homepage closing band (Phase 2) and as the target of every "Get a quote" button, with context passed along.</li>
+      </ul>
+    </section>
+
+    <!-- 11 About -->
+    <section id="about" style="padding:64px 0; border-bottom:1px solid #e6dfd8">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#cc785c; margin-bottom:12px">11 · About page</div>
+      <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:34px; letter-spacing:-0.6px; margin:0 0 20px">A company story with a human in it.</h2>
+      <p style="font-size:15px; line-height:1.7; color:#43403a; max-width:660px; margin:0 0 16px">Structure: <strong>why EverHaven exists</strong> (bridging creativity and manufacturing) → <strong>how we work</strong> (design-led, made in-house, honest engineering) → <strong>the founder note</strong> — a signed, personal passage with one authentic workshop photograph → <strong>where we're going</strong> (the long-term build) → CTA pair.</p>
+      <p style="font-size:14px; line-height:1.6; color:#6e6a63; max-width:660px; margin:0">The founder is one section, not the frame: the page opens and closes as a company. No invented team grid, no fake office shots. I'll need the real founder story, name/signature preference, and photography to write this page. <span style="font-family:'JetBrains Mono',monospace; font-size:12px; background:#efe9de; color:#6e6a63; padding:2px 8px; border-radius:99px; white-space:nowrap">NEEDS REAL INFO</span></p>
+    </section>
+
+    <!-- 12 Color -->
+    <section id="color" style="padding:64px 0; border-bottom:1px solid #e6dfd8">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#cc785c; margin-bottom:12px">12 · Color directions <span style="font-family:'JetBrains Mono',monospace; font-size:12px; background:#f5e8e2; color:#a9583e; padding:2px 8px; border-radius:99px; margin-left:8px; letter-spacing:0; text-transform:none">NEEDS APPROVAL</span></div>
+      <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:34px; letter-spacing:-0.6px; margin:0 0 20px">Three palettes, one to choose.</h2>
+      <p style="font-size:15px; line-height:1.7; color:#43403a; max-width:660px; margin:0 0 32px">All three follow your brief's rule — neutral foundation, photography carries the color, one accent used only for actions. They differ in temperature and in what the accent says about the company.</p>
+
+      <!-- Direction A -->
+      <div style="background:#ffffff; border:1px solid #e6dfd8; border-radius:12px; padding:32px; margin-bottom:20px">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px; margin-bottom:16px">
+          <h3 style="font-family:'Fraunces',serif; font-weight:400; font-size:22px; margin:0">A · Workshop warm</h3>
+          <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#6e6a63">warm neutrals · copper accent</span>
+        </div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px">
+          <div style="width:110px"><div style="height:56px; border-radius:8px; background:#FAF8F4; border:1px solid #e6dfd8"></div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#6e6a63; margin-top:6px">#FAF8F4 canvas</div></div>
+          <div style="width:110px"><div style="height:56px; border-radius:8px; background:#F0EBE2"></div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#6e6a63; margin-top:6px">#F0EBE2 surface</div></div>
+          <div style="width:110px"><div style="height:56px; border-radius:8px; background:#191817"></div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#6e6a63; margin-top:6px">#191817 ink/dark</div></div>
+          <div style="width:110px"><div style="height:56px; border-radius:8px; background:#45423C"></div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#6e6a63; margin-top:6px">#45423C graphite</div></div>
+          <div style="width:110px"><div style="height:56px; border-radius:8px; background:#E5DFD4"></div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#6e6a63; margin-top:6px">#E5DFD4 hairline</div></div>
+          <div style="width:110px"><div style="height:56px; border-radius:8px; background:#C2622D"></div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#6e6a63; margin-top:6px">#C2622D accent</div></div>
+          <div style="width:110px"><div style="height:56px; border-radius:8px; background:#9E4E20"></div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#6e6a63; margin-top:6px">#9E4E20 accent ↓</div></div>
+        </div>
+        <p style="font-size:14px; line-height:1.65; color:#43403a; margin:0"><strong>Reasoning:</strong> closest to your brief's "warm whites, charcoal, graphite." The copper accent evokes machined bronze and heated metal — craft with warmth. Most approachable of the three; photographs of wood, filament, and warm workshop light sit beautifully on it. <strong>Risk:</strong> warm cream + orange is currently common in maker/creator brands (including your reference) — differentiation must come from typography and photography discipline.</p>
+      </div>
+
+      <!-- Direction B -->
+      <div style="background:#ffffff; border:1px solid #e6dfd8; border-radius:12px; padding:32px; margin-bottom:20px">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px; margin-bottom:16px">
+          <h3 style="font-family:'Fraunces',serif; font-weight:400; font-size:22px; margin:0">B · Graphite &amp; signal</h3>
+          <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#6e6a63">neutral-cool paper · safety-signal accent</span>
+        </div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px">
+          <div style="width:110px"><div style="height:56px; border-radius:8px; background:#F7F6F3; border:1px solid #e6dfd8"></div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#6e6a63; margin-top:6px">#F7F6F3 canvas</div></div>
+          <div style="width:110px"><div style="height:56px; border-radius:8px; background:#ECEAE5"></div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#6e6a63; margin-top:6px">#ECEAE5 surface</div></div>
+          <div style="width:110px"><div style="height:56px; border-radius:8px; background:#16181A"></div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#6e6a63; margin-top:6px">#16181A ink</div></div>
+          <div style="width:110px"><div style="height:56px; border-radius:8px; background:#1A1D21"></div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#6e6a63; margin-top:6px">#1A1D21 dark band</div></div>
+          <div style="width:110px"><div style="height:56px; border-radius:8px; background:#3F4348"></div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#6e6a63; margin-top:6px">#3F4348 graphite</div></div>
+          <div style="width:110px"><div style="height:56px; border-radius:8px; background:#D95B1E"></div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#6e6a63; margin-top:6px">#D95B1E accent</div></div>
+          <div style="width:110px"><div style="height:56px; border-radius:8px; background:#B04713"></div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#6e6a63; margin-top:6px">#B04713 accent ↓</div></div>
+        </div>
+        <p style="font-size:14px; line-height:1.65; color:#43403a; margin:0"><strong>Reasoning:</strong> the accent references safety orange — the color of CNC e-stops, tooling, and CAD selection highlights. Reads unmistakably as <em>engineering</em>, not craft. The near-black dark band with a faint blue-steel cast gives Capabilities and How-it-works sections a precision-instrument feel. <strong>Risk:</strong> the coolest and most serious of the three; approachability has to come from copy voice and photography warmth.</p>
+      </div>
+
+      <!-- Direction C -->
+      <div style="background:#ffffff; border:1px solid #e6dfd8; border-radius:12px; padding:32px; margin-bottom:24px">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px; margin-bottom:16px">
+          <h3 style="font-family:'Fraunces',serif; font-weight:400; font-size:22px; margin:0">C · Stone &amp; verdigris</h3>
+          <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#6e6a63">warm stone neutrals · deep teal accent</span>
+        </div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px">
+          <div style="width:110px"><div style="height:56px; border-radius:8px; background:#FAFAF6; border:1px solid #e6dfd8"></div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#6e6a63; margin-top:6px">#FAFAF6 canvas</div></div>
+          <div style="width:110px"><div style="height:56px; border-radius:8px; background:#EFEEE7"></div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#6e6a63; margin-top:6px">#EFEEE7 surface</div></div>
+          <div style="width:110px"><div style="height:56px; border-radius:8px; background:#181A19"></div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#6e6a63; margin-top:6px">#181A19 ink/dark</div></div>
+          <div style="width:110px"><div style="height:56px; border-radius:8px; background:#4A4D49"></div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#6e6a63; margin-top:6px">#4A4D49 graphite</div></div>
+          <div style="width:110px"><div style="height:56px; border-radius:8px; background:#E3E1D8"></div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#6e6a63; margin-top:6px">#E3E1D8 hairline</div></div>
+          <div style="width:110px"><div style="height:56px; border-radius:8px; background:#127469"></div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#6e6a63; margin-top:6px">#127469 accent</div></div>
+          <div style="width:110px"><div style="height:56px; border-radius:8px; background:#0C574F"></div><div style="font-family:'JetBrains Mono',monospace; font-size:11px; color:#6e6a63; margin-top:6px">#0C574F accent ↓</div></div>
+        </div>
+        <p style="font-size:14px; line-height:1.65; color:#43403a; margin:0"><strong>Reasoning:</strong> the most differentiated. Deep teal against warm stone reads as premium lab / instrument-maker — nobody in the 3D-printing space owns this. Calm, timeless, and it grades beautifully against both raw-material photography and dark machine shots. <strong>Risk:</strong> teal carries less action-urgency on CTAs than orange; button prominence must come from size and placement.</p>
+      </div>
+
+      <p style="font-size:15px; line-height:1.7; color:#43403a; max-width:660px; margin:0"><strong>My recommendation: B — Graphite &amp; signal.</strong> It's the only palette that positions EverHaven as an engineering company first, which is the harder credibility to earn (the shop can be warm through photography regardless of palette). A is the safe warm option but sits closest to creator-brand territory; C is the boldest differentiator if you want to own an unusual color. All CTA pairings above pass WCAG AA on their canvas.</p>
+    </section>
+
+    <!-- 13 Typography -->
+    <section id="type" style="padding:64px 0; border-bottom:1px solid #e6dfd8">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#cc785c; margin-bottom:12px">13 · Typography directions <span style="font-family:'JetBrains Mono',monospace; font-size:12px; background:#f5e8e2; color:#a9583e; padding:2px 8px; border-radius:99px; margin-left:8px; letter-spacing:0; text-transform:none">NEEDS APPROVAL</span></div>
+      <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:34px; letter-spacing:-0.6px; margin:0 0 32px">Three systems, set in their own type.</h2>
+
+      <div style="background:#ffffff; border:1px solid #e6dfd8; border-radius:12px; padding:32px; margin-bottom:20px">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px; margin-bottom:20px">
+          <h3 style="font-family:'Fraunces',serif; font-weight:400; font-size:22px; margin:0">1 · Modern geometric sans</h3>
+          <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#6e6a63">Space Grotesk + Schibsted Grotesk</span>
+        </div>
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:500; letter-spacing:-0.8px; line-height:1.15; margin-bottom:12px">From idea to object, made properly.</div>
+        <p style="font-family:'Schibsted Grotesk',sans-serif; font-size:15px; line-height:1.65; color:#43403a; max-width:620px; margin:0 0 16px">Body set in Schibsted Grotesk — open, contemporary, quietly friendly. Buttons and captions share the display face at small sizes.</p>
+        <p style="font-size:14px; line-height:1.65; color:#6e6a63; margin:0"><strong>Reads as:</strong> modern product company, design-startup energy. <strong>Strength:</strong> creative + innovative. <strong>Weakness:</strong> the least "manufacturing" of the three; Space Grotesk is widely used in web3/startup land and may age fastest.</p>
+      </div>
+
+      <div style="background:#ffffff; border:1px solid #e6dfd8; border-radius:12px; padding:32px; margin-bottom:20px">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px; margin-bottom:20px">
+          <h3 style="font-family:'Fraunces',serif; font-weight:400; font-size:22px; margin:0">2 · Technical / industrial sans</h3>
+          <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#6e6a63">Archivo + IBM Plex Sans + IBM Plex Mono</span>
+        </div>
+        <div style="font-family:'Archivo',sans-serif; font-size:36px; font-weight:600; letter-spacing:-0.7px; line-height:1.12; margin-bottom:12px">From idea to object, made properly.</div>
+        <p style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; line-height:1.65; color:#43403a; max-width:620px; margin:0 0 8px">Body set in IBM Plex Sans — engineered, highly legible, warm enough for long reading. Spec labels, part numbers, and eyebrow captions set in IBM Plex Mono:</p>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:#6e6a63; margin-bottom:16px">MATERIAL · PETG — LAYER 0.2 MM — QTY 250</div>
+        <p style="font-size:14px; line-height:1.65; color:#6e6a63; margin:0"><strong>Reads as:</strong> precision manufacturer with a design department. <strong>Strength:</strong> engineering credibility + timelessness; the mono layer gives the whole site a spec-sheet signature that doubles as a brand device. <strong>Weakness:</strong> needs the mono accents and generous spacing to avoid feeling plain.</p>
+      </div>
+
+      <div style="background:#ffffff; border:1px solid #e6dfd8; border-radius:12px; padding:32px; margin-bottom:24px">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px; margin-bottom:20px">
+          <h3 style="font-family:'Fraunces',serif; font-weight:400; font-size:22px; margin:0">3 · Restrained serif + sans</h3>
+          <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#6e6a63">Source Serif 4 + Instrument Sans</span>
+        </div>
+        <div style="font-family:'Source Serif 4',serif; font-size:36px; font-weight:400; letter-spacing:-0.5px; line-height:1.15; margin-bottom:12px">From idea to object, made properly.</div>
+        <p style="font-family:'Instrument Sans',sans-serif; font-size:15px; line-height:1.65; color:#43403a; max-width:620px; margin:0 0 16px">Body, UI, and buttons in Instrument Sans; the serif appears only at display sizes, never bold.</p>
+        <p style="font-size:14px; line-height:1.65; color:#6e6a63; margin:0"><strong>Reads as:</strong> established premium studio — the most "flagship headquarters" of the three. <strong>Strength:</strong> premium + timeless; ages best. <strong>Weakness:</strong> the least technical; engineers may read it as a brand agency rather than a manufacturer.</p>
+      </div>
+
+      <p style="font-size:15px; line-height:1.7; color:#43403a; max-width:660px; margin:0"><strong>My recommendation: 2 — the technical system.</strong> It's the only direction that earns engineering credibility on sight, and the Plex Mono spec layer is an ownable brand device that works everywhere from capability tables to product packaging. Creativity and premium feel come from how it's used — scale contrast, whitespace, and photography — not from a decorative face. Pairs best with palette B; also works with A or C.</p>
+    </section>
+
+    <!-- 14 Rules -->
+    <section id="rules" style="padding:64px 0; border-bottom:1px solid #e6dfd8">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#cc785c; margin-bottom:12px">14 · Layout rules</div>
+      <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:34px; letter-spacing:-0.6px; margin:0 0 20px">Spacing, grid, radius, shadow, motion.</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px">
+        <div style="background:#ffffff; border:1px solid #e6dfd8; border-radius:12px; padding:24px 28px"><strong style="font-size:14px">Grid</strong><p style="font-size:14px; line-height:1.7; color:#6e6a63; margin:6px 0 0">12-column, 1200px max content width, 24px gutters. Hero splits 6/6; feature grids 3-up; path cards 2-up; process 4-up. Full-bleed color bands with contained content.</p></div>
+        <div style="background:#ffffff; border:1px solid #e6dfd8; border-radius:12px; padding:24px 28px"><strong style="font-size:14px">Spacing</strong><p style="font-size:14px; line-height:1.7; color:#6e6a63; margin:6px 0 0">4px base scale: 4/8/12/16/24/32/48/64/96. Section rhythm 96px desktop, 56px mobile. Card interiors 32px. Generous by default — whitespace is the premium signal.</p></div>
+        <div style="background:#ffffff; border:1px solid #e6dfd8; border-radius:12px; padding:24px 28px"><strong style="font-size:14px">Radius</strong><p style="font-size:14px; line-height:1.7; color:#6e6a63; margin:6px 0 0">Hierarchical: 6px inputs/buttons, 10px cards, 14px hero artifacts, pill for badges. One family, never mixed within a component.</p></div>
+        <div style="background:#ffffff; border:1px solid #e6dfd8; border-radius:12px; padding:24px 28px"><strong style="font-size:14px">Elevation</strong><p style="font-size:14px; line-height:1.7; color:#6e6a63; margin:6px 0 0">Color-block first: depth comes from surface alternation (canvas → tinted card → dark band), never two same-tone bands adjacent. One shadow recipe only — 0 1px 3px at 8% ink — for overlays and hover states.</p></div>
+        <div style="background:#ffffff; border:1px solid #e6dfd8; border-radius:12px; padding:24px 28px"><strong style="font-size:14px">Motion</strong><p style="font-size:14px; line-height:1.7; color:#6e6a63; margin:6px 0 0">Fades and ≤12px translates. 200ms ease-out hover, 300ms ease-in-out layout. Scroll-triggered reveals used once per section, not per element. No parallax, no spring bounce. Respects prefers-reduced-motion.</p></div>
+        <div style="background:#ffffff; border:1px solid #e6dfd8; border-radius:12px; padding:24px 28px"><strong style="font-size:14px">Hover discipline</strong><p style="font-size:14px; line-height:1.7; color:#6e6a63; margin:6px 0 0">Buttons darken one step; links underline; cards gain the single shadow. Nothing scales or moves on hover.</p></div>
+      </div>
+    </section>
+
+    <!-- 15 Imagery -->
+    <section id="imagery" style="padding:64px 0; border-bottom:1px solid #e6dfd8">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#cc785c; margin-bottom:12px">15 · Photography &amp; icons</div>
+      <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:34px; letter-spacing:-0.6px; margin:0 0 20px">One photographic standard.</h2>
+      <ul style="font-size:14px; line-height:1.8; color:#43403a; max-width:660px; margin:0 0 20px; padding-left:20px">
+        <li><strong>Three shot types only:</strong> (1) macro detail — layer lines, threads, textures; (2) object-on-set — products on neutral seamless backgrounds, consistent angle and lighting; (3) environment — machines and hands at work, shallow depth of field.</li>
+        <li><strong>Grade:</strong> consistent warm-neutral grade regardless of palette choice; no cool blue casts, no HDR, no b&amp;w.</li>
+        <li><strong>Never:</strong> stock offices, handshakes, laptops-with-charts, watermarked renders, or mixed-quality user photos beside studio shots.</li>
+        <li><strong>Until real photography exists:</strong> designed placeholder frames labeled with the intended shot ("macro — nozzle detail"), so layouts are honest and the shot list doubles as your photo brief. <span style="font-family:'JetBrains Mono',monospace; font-size:12px; background:#efe9de; color:#6e6a63; padding:2px 8px; border-radius:99px; white-space:nowrap">NEEDS REAL INFO</span></li>
+      </ul>
+      <p style="font-size:14px; line-height:1.6; color:#6e6a63; max-width:660px; margin:0"><strong>Icons:</strong> a single open-source stroke set (Lucide), 1.5px stroke, 20/24px sizes, ink or muted color only — never the accent, so icons never compete with CTAs. No emoji anywhere.</p>
+    </section>
+
+    <!-- 16 Components -->
+    <section id="components" style="padding:64px 0; border-bottom:1px solid #e6dfd8">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#cc785c; margin-bottom:12px">16 · Component system</div>
+      <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:34px; letter-spacing:-0.6px; margin:0 0 20px">Eighteen components build every page.</h2>
+      <div style="background:#181715; border-radius:12px; padding:28px 32px; overflow-x:auto">
+<pre style="font-family:'JetBrains Mono',monospace; font-size:13px; line-height:1.9; color:#f0eee9; margin:0">Chrome      announcement bar · header/nav · footer · mobile drawer
+Sections    hero (6/6) · path cards · section header (eyebrow+title+intro)
+            icon-card grid · numbered process band · capability strip
+            editorial feature row · dark CTA band · FAQ accordion
+Commerce    product card · collection card · product gallery · cart line
+Forms       quote form · input set · file dropzone · confirmation state</pre>
+      </div>
+      <p style="font-size:14px; line-height:1.6; color:#6e6a63; max-width:660px; margin:20px 0 0">Every page in the sitemap is a composition of these — no page-specific one-offs. That's what keeps the site consistent as it grows and keeps the eventual Shopify build sane (each component maps to a section/block).</p>
+    </section>
+
+    <!-- 17 Mobile -->
+    <section id="mobile" style="padding:64px 0; border-bottom:1px solid #e6dfd8">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#cc785c; margin-bottom:12px">17 · Mobile behavior</div>
+      <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:34px; letter-spacing:-0.6px; margin:0 0 20px">Stack, never shrink.</h2>
+      <ul style="font-size:14px; line-height:1.8; color:#43403a; max-width:660px; margin:0; padding-left:20px">
+        <li>All multi-column sections stack to single column; path cards and process steps become full-width swipeable or stacked cards, in reading order.</li>
+        <li>Display type scales from 56–64px desktop to 32–36px mobile; body never below 16px; tap targets 44px minimum.</li>
+        <li>Get a quote stays one tap away at all times (header button collapses to an icon+label chip, drawer pins it bottom).</li>
+        <li>Product grids go 2-up on mobile; editorial feature rows stack image-first.</li>
+        <li>Quote form becomes single-column with the reassurance content collapsed into an expandable "what happens next" above the form.</li>
+      </ul>
+    </section>
+
+    <!-- 18 A11y -->
+    <section id="a11y" style="padding:64px 0; border-bottom:1px solid #e6dfd8">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#cc785c; margin-bottom:12px">18 · Accessibility</div>
+      <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:34px; letter-spacing:-0.6px; margin:0 0 20px">AA as a floor.</h2>
+      <ul style="font-size:14px; line-height:1.8; color:#43403a; max-width:660px; margin:0; padding-left:20px">
+        <li>All text/background pairs ≥ 4.5:1 (large display ≥ 3:1); accent-on-canvas CTA combinations verified per palette before approval.</li>
+        <li>Color never sole signal — links underline in body copy, form errors pair icon + text.</li>
+        <li>Full keyboard support: visible focus rings (2px accent outline), skip-to-content link, focus-trapped drawer and dialogs.</li>
+        <li>Semantic landmarks and heading order; accordion and drawer states announced via ARIA; form fields with real labels, not placeholders-as-labels.</li>
+        <li>Motion honors prefers-reduced-motion; no autoplaying video with sound; alt text standards written into the content guidelines.</li>
+      </ul>
+    </section>
+
+    <!-- 19 Shopify -->
+    <section id="shopify" style="padding:64px 0; border-bottom:1px solid #e6dfd8">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#cc785c; margin-bottom:12px">19 · Shopify considerations</div>
+      <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:34px; letter-spacing:-0.6px; margin:0 0 20px">Designed to survive implementation.</h2>
+      <ul style="font-size:14px; line-height:1.8; color:#43403a; max-width:660px; margin:0; padding-left:20px">
+        <li>Every component above maps to an Online Store 2.0 section with blocks — the design deliverables will name these mappings so the Dawn build is assembly, not interpretation.</li>
+        <li>Density-adaptive collections use collection product-count logic — achievable in Liquid without apps.</li>
+        <li>Digital STL delivery needs a digital-downloads app; quote form file uploads likely need a form app or custom endpoint — flagged as the two app dependencies.</li>
+        <li>Services, Capabilities, About, and Quote are pages/metaobject templates; navigation and announcement bar are theme settings.</li>
+        <li>Dawn's type/color settings can't express everything (mono spec layer, band alternation) — expect a moderate custom CSS layer, still theme-update-safe.</li>
+      </ul>
+    </section>
+
+    <!-- 20 Roadmap -->
+    <section id="roadmap" style="padding:64px 0; border-bottom:1px solid #e6dfd8">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#cc785c; margin-bottom:12px">20 · Build roadmap</div>
+      <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:34px; letter-spacing:-0.6px; margin:0 0 20px">Design order, one page at a time.</h2>
+      <div style="display:grid; gap:12px; max-width:720px">
+        <div style="background:#181715; border-radius:12px; padding:24px 28px"><div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:1.5px; color:#cc785c; margin-bottom:8px">PHASE 0 · FOUNDATION</div><p style="font-size:14px; line-height:1.7; color:#d8d4cc; margin:0">You approve palette + typography → I build the visual design system (tokens, type scale, all 18 components as designed specimens). Everything after inherits from this.</p></div>
+        <div style="background:#181715; border-radius:12px; padding:24px 28px"><div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:1.5px; color:#cc785c; margin-bottom:8px">PHASE 1 · CORE JOURNEY</div><p style="font-size:14px; line-height:1.7; color:#d8d4cc; margin:0">Homepage → Get a quote → Services overview + one service detail (Custom 3D printing, the template-setter). This proves both paths end-to-end.</p></div>
+        <div style="background:#181715; border-radius:12px; padding:24px 28px"><div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:1.5px; color:#cc785c; margin-bottom:8px">PHASE 2 · COMMERCE</div><p style="font-size:14px; line-height:1.7; color:#d8d4cc; margin:0">Shop landing → collection template (both density modes) → product detail (physical + digital STL variants) → cart/empty states.</p></div>
+        <div style="background:#181715; border-radius:12px; padding:24px 28px"><div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:1.5px; color:#cc785c; margin-bottom:8px">PHASE 3 · DEPTH</div><p style="font-size:14px; line-height:1.7; color:#d8d4cc; margin:0">Capabilities overview + child template → remaining five service pages → About → FAQ → 404/utility pages.</p></div>
+        <div style="background:#181715; border-radius:12px; padding:24px 28px"><div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:1.5px; color:#cc785c; margin-bottom:8px">PHASE 4 · HANDOFF &amp; GROWTH</div><p style="font-size:14px; line-height:1.7; color:#d8d4cc; margin:0">Shopify section-mapping annotations, content guidelines, photo shot list; then the growth slots — Projects section, industries, quality/lead-time pages — as real material arrives.</p></div>
+      </div>
+    </section>
+
+    <!-- 21 Approvals -->
+    <section id="approvals" style="padding:64px 0">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#cc785c; margin-bottom:12px">21 · Waiting on you</div>
+      <h2 style="font-family:'Fraunces',serif; font-weight:400; font-size:34px; letter-spacing:-0.6px; margin:0 0 24px">Approvals &amp; open items.</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px">
+        <div style="background:#f5e8e2; border-radius:12px; padding:28px">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#a9583e; margin-bottom:14px">Decisions needed</div>
+          <ul style="font-size:14px; line-height:1.9; color:#43403a; margin:0; padding-left:18px">
+            <li>Color direction: A, B, or C (my pick: B)</li>
+            <li>Typography direction: 1, 2, or 3 (my pick: 2)</li>
+            <li>Homepage merges (11 beats → 9) — OK?</li>
+            <li>Projects section hidden at launch — OK?</li>
+            <li>Roadmap phase order — OK?</li>
+          </ul>
+        </div>
+        <div style="background:#efe9de; border-radius:12px; padding:28px">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#6e6a63; margin-bottom:14px">Real info needed (before content, not before design)</div>
+          <ul style="font-size:14px; line-height:1.9; color:#43403a; margin:0; padding-left:18px">
+            <li>Equipment, materials, accepted file formats</li>
+            <li>Actual product list + which collections have items</li>
+            <li>STL license terms</li>
+            <li>Founder story + workshop photography</li>
+            <li>Quote response-time commitment</li>
+            <li>Shipping/returns policy basics for FAQ</li>
+          </ul>
+        </div>
+      </div>
+      <p style="font-size:15px; line-height:1.7; color:#43403a; max-width:660px; margin:28px 0 0">Reply with your palette and typography picks (or ask for a deeper look at any direction — I can mock a homepage hero in two finalists side-by-side). Once approved, Phase 0 starts: the full design system, then the homepage.</p>
+    </section>
+
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

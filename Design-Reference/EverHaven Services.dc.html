@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+body { margin:0; background:#F7F6F3; }
+a { color:#16181A; text-decoration:none; }
+a:hover { color:#B04713; text-decoration:underline; }
+</style>
+</helmet>
+<div style="font-family:'IBM Plex Sans',sans-serif; color:#16181A; background:#F7F6F3; min-height:100vh">
+
+  <div data-screen-label="Header" style="position:sticky; top:0; z-index:50">
+    <div style="background:#1A1D21; padding:11px 24px; text-align:center"><span style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:1px; color:#F2F1ED">Custom 3D printing and prototyping, quoted from a sketch or a file — <a href="#quote" style="color:#F2F1ED; text-decoration:underline">get a quote →</a></span></div>
+    <div style="background:#F7F6F3; border-bottom:1px solid #E0DEDA; height:72px; display:flex; align-items:center">
+      <div style="max-width:1200px; width:100%; margin:0 auto; padding:0 32px; display:flex; align-items:center; justify-content:space-between">
+        <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:19px; letter-spacing:-0.3px">EverHaven<span style="color:#D95B1E">.</span></div>
+        <nav style="display:flex; gap:32px; align-items:center">
+          <a href="#" style="font-size:14px; font-weight:500; color:#16181A">Shop</a>
+          <a href="#" style="font-size:14px; font-weight:500; color:#16181A; text-decoration:underline; text-underline-offset:6px">Services</a>
+          <a href="#" style="font-size:14px; font-weight:500; color:#16181A">Capabilities</a>
+          <a href="#" style="font-size:14px; font-weight:500; color:#16181A">About</a>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16181A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg>
+          <a href="#quote" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:14px; color:#FFFFFF; background:#D95B1E; border-radius:6px; padding:11px 20px; display:inline-block" style-hover="background:#B04713">Get a quote</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <section data-screen-label="Services hero" style="max-width:1200px; margin:0 auto; padding:96px 32px 56px">
+    <div style="display:grid; grid-template-columns:1.1fr 1fr; gap:56px; align-items:center">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:1.8px; text-transform:uppercase; color:#6B7076; margin-bottom:20px">Services</div>
+        <h1 style="font-family:'Archivo',sans-serif; font-weight:500; font-size:56px; line-height:1.05; letter-spacing:-1.5px; margin:0 0 24px">Your project,<br>on our machines.</h1>
+        <p style="font-size:17px; line-height:1.65; color:#3F4348; max-width:460px; margin:0 0 36px">Design, prototyping, and small-batch manufacturing — from one-off prototypes to repeat production. Every request is reviewed by the people who will make it.</p>
+        <div style="display:flex; gap:14px">
+          <a href="#quote" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:14px; color:#FFFFFF; background:#D95B1E; border-radius:6px; padding:14px 26px; display:inline-block" style-hover="background:#B04713">Get a quote →</a>
+          <a href="#capabilities" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:14px; color:#16181A; border:1px solid #16181A; border-radius:6px; padding:13px 26px; display:inline-block" style-hover="background:#ECEAE5">See capabilities</a>
+        </div>
+      </div>
+      <div style="height:420px; border-radius:14px; overflow:hidden"><image-slot id="services-hero" shape="rounded" radius="14" placeholder="Environment — parts on build plate, warm light"></image-slot></div>
+    </div>
+  </section>
+
+  <section data-screen-label="Who it's for" style="max-width:1200px; margin:0 auto; padding:0 32px 56px">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px">
+      <div style="background:#ECEAE5; border-radius:10px; padding:36px">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#6B7076; margin-bottom:14px">Individuals &amp; creators</div>
+        <p style="font-size:15px; line-height:1.7; color:#3F4348; margin:0">A replacement part, a first prototype, an idea that needs a file — small projects are welcome, and treated like real projects.</p>
+      </div>
+      <div style="background:#ECEAE5; border-radius:10px; padding:36px">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#6B7076; margin-bottom:14px">Startups &amp; businesses</div>
+        <p style="font-size:15px; line-height:1.7; color:#3F4348; margin:0">Prototype iterations, design development, and repeat small-batch runs — a manufacturing partner you can reach directly.</p>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Six services" style="background:#ECEAE5">
+    <div style="max-width:1200px; margin:0 auto; padding:112px 32px">
+      <h2 style="font-family:'Archivo',sans-serif; font-weight:500; font-size:44px; letter-spacing:-1.1px; margin:0 0 48px">Six ways to work with us.</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px">
+        <a href="#" style="background:#FFFFFF; border:1px solid #E0DEDA; border-radius:10px; padding:32px; display:block; color:#16181A; text-decoration:none" style-hover="box-shadow:0 1px 3px rgba(22,24,26,0.08); text-decoration:none">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16181A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:20px"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
+          <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:19px; letter-spacing:-0.2px; margin-bottom:8px">Custom 3D printing</div>
+          <p style="font-size:14px; line-height:1.65; color:#6B7076; margin:0 0 20px">Made-to-spec FDM parts from your file — PLA or PETG, matched to the job.</p>
+          <span style="font-family:'Archivo',sans-serif; font-weight:600; font-size:14px; color:#16181A">View service →</span>
+        </a>
+        <a href="#" style="background:#FFFFFF; border:1px solid #E0DEDA; border-radius:10px; padding:32px; display:block; color:#16181A; text-decoration:none" style-hover="box-shadow:0 1px 3px rgba(22,24,26,0.08); text-decoration:none">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16181A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:20px"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"></path><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"></path><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"></path></svg>
+          <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:19px; letter-spacing:-0.2px; margin-bottom:8px">Rapid prototyping</div>
+          <p style="font-size:14px; line-height:1.65; color:#6B7076; margin:0 0 20px">Iterate fast — functional prototypes that tell you the truth about your design.</p>
+          <span style="font-family:'Archivo',sans-serif; font-weight:600; font-size:14px; color:#16181A">View service →</span>
+        </a>
+        <a href="#" style="background:#FFFFFF; border:1px solid #E0DEDA; border-radius:10px; padding:32px; display:block; color:#16181A; text-decoration:none" style-hover="box-shadow:0 1px 3px rgba(22,24,26,0.08); text-decoration:none">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16181A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:20px"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"></path><path d="m14.5 12.5 2-2"></path><path d="m11.5 9.5 2-2"></path><path d="m8.5 6.5 2-2"></path><path d="m17.5 15.5 2-2"></path></svg>
+          <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:19px; letter-spacing:-0.2px; margin-bottom:8px">Product design support</div>
+          <p style="font-size:14px; line-height:1.65; color:#6B7076; margin:0 0 20px">From an idea or sketch to a printable design — technical development shaped around how the part will be made.</p>
+          <span style="font-family:'Archivo',sans-serif; font-weight:600; font-size:14px; color:#16181A">View service →</span>
+        </a>
+        <a href="#" style="background:#FFFFFF; border:1px solid #E0DEDA; border-radius:10px; padding:32px; display:block; color:#16181A; text-decoration:none" style-hover="box-shadow:0 1px 3px rgba(22,24,26,0.08); text-decoration:none">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16181A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:20px"><path d="M16.5 9.4 7.55 4.24"></path><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
+          <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:19px; letter-spacing:-0.2px; margin-bottom:8px">Small-batch manufacturing</div>
+          <p style="font-size:14px; line-height:1.65; color:#6B7076; margin:0 0 20px">Repeat runs of a proven design, printed and inspected batch by batch.</p>
+          <span style="font-family:'Archivo',sans-serif; font-weight:600; font-size:14px; color:#16181A">View service →</span>
+        </a>
+        <a href="#" style="background:#FFFFFF; border:1px solid #E0DEDA; border-radius:10px; padding:32px; display:block; color:#16181A; text-decoration:none" style-hover="box-shadow:0 1px 3px rgba(22,24,26,0.08); text-decoration:none">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16181A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:20px"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+          <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:19px; letter-spacing:-0.2px; margin-bottom:8px">Replacement parts</div>
+          <p style="font-size:14px; line-height:1.65; color:#6B7076; margin:0 0 20px">A broken bracket, a lost knob — recreated from the part, a photo, or a drawing.</p>
+          <span style="font-family:'Archivo',sans-serif; font-weight:600; font-size:14px; color:#16181A">View service →</span>
+        </a>
+        <a href="#" style="background:#FFFFFF; border:1px solid #E0DEDA; border-radius:10px; padding:32px; display:block; color:#16181A; text-decoration:none" style-hover="box-shadow:0 1px 3px rgba(22,24,26,0.08); text-decoration:none">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16181A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:20px"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path></svg>
+          <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:19px; letter-spacing:-0.2px; margin-bottom:8px">File preparation &amp; print optimization</div>
+          <p style="font-size:14px; line-height:1.65; color:#6B7076; margin:0 0 20px">Have a model that isn't ready to print? We review, repair, adapt, and prepare files for reliable production — subject to project review.</p>
+          <span style="font-family:'Archivo',sans-serif; font-weight:600; font-size:14px; color:#16181A">View service →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="capabilities" data-screen-label="Capability strip" style="max-width:1200px; margin:0 auto; padding:88px 32px">
+    <div style="border-top:1px solid #E0DEDA; border-bottom:1px solid #E0DEDA; padding:24px 0; display:flex; gap:12px; flex-wrap:wrap; align-items:center">
+      <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#6B7076; margin-right:8px">Current capabilities</span>
+      <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#3F4348; background:#ECEAE5; border-radius:99px; padding:6px 14px">FDM 3D PRINTING</span>
+      <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#3F4348; background:#ECEAE5; border-radius:99px; padding:6px 14px">PLA · PETG</span>
+      <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#3F4348; background:#ECEAE5; border-radius:99px; padding:6px 14px">RAPID PROTOTYPING</span>
+      <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#3F4348; background:#ECEAE5; border-radius:99px; padding:6px 14px">SMALL-BATCH RUNS</span>
+      <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#3F4348; background:#ECEAE5; border-radius:99px; padding:6px 14px">DESIGN SUPPORT</span>
+      <a href="#" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:14px; color:#16181A; margin-left:auto">All capabilities →</a>
+    </div>
+  </section>
+
+  <section id="quote" data-screen-label="Final CTA" style="background:#1A1D21">
+    <div style="max-width:1200px; margin:0 auto; padding:120px 32px; text-align:center">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:1.8px; text-transform:uppercase; color:#6B7076; margin-bottom:20px">Start a project</div>
+      <h2 style="font-family:'Archivo',sans-serif; font-weight:500; font-size:52px; letter-spacing:-1.3px; color:#F2F1ED; margin:0 0 16px">Tell us what you're making.</h2>
+      <p style="font-size:16px; line-height:1.65; color:#A6AAAE; max-width:440px; margin:0 auto 40px">A file, a sketch, or a description is enough to start. We'll take it from there.</p>
+      <a href="#" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:15px; color:#FFFFFF; background:#D95B1E; border-radius:6px; padding:16px 32px; display:inline-block" style-hover="background:#B04713">Get a quote →</a>
+      <p style="font-size:12px; color:#6B7076; margin:20px 0 0">No commitment — a quote is a conversation, not a contract.</p>
+    </div>
+  </section>
+
+  <footer data-screen-label="Footer" style="background:#1A1D21; border-top:1px solid #33383E">
+    <div style="max-width:1200px; margin:0 auto; padding:72px 32px 32px">
+      <div style="display:grid; grid-template-columns:2fr 1fr 1fr 1.4fr; gap:48px; padding-bottom:48px; border-bottom:1px solid #33383E">
+        <div>
+          <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:19px; letter-spacing:-0.3px; color:#F2F1ED; margin-bottom:14px">EverHaven<span style="color:#D95B1E">.</span></div>
+          <p style="font-size:14px; line-height:1.7; color:#A6AAAE; max-width:280px; margin:0">Product design, prototyping, and small-batch manufacturing — from idea to finished object.</p>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#6B7076; margin-bottom:16px">Explore</div>
+          <div style="display:grid; gap:10px"><a href="#" style="font-size:14px; color:#F2F1ED">Shop</a><a href="#" style="font-size:14px; color:#F2F1ED">Services</a><a href="#" style="font-size:14px; color:#F2F1ED">Capabilities</a><a href="#" style="font-size:14px; color:#F2F1ED">About</a></div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#6B7076; margin-bottom:16px">Work with us</div>
+          <div style="display:grid; gap:10px"><a href="#" style="font-size:14px; color:#F2F1ED">Get a quote</a><a href="#" style="font-size:14px; color:#F2F1ED">FAQ</a><a href="#" style="font-size:14px; color:#F2F1ED">Contact</a></div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#6B7076; margin-bottom:16px">Updates</div>
+          <p style="font-size:13px; line-height:1.6; color:#A6AAAE; margin:0 0 14px">New products and capability updates. No noise.</p>
+          <div style="display:flex; gap:8px"><input placeholder="you@email.com" style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#F2F1ED; background:#22262B; border:1px solid #33383E; border-radius:6px; padding:10px 14px; flex:1; min-width:0; outline:none"><button style="font-family:'Archivo',sans-serif; font-weight:600; font-size:13px; color:#FFFFFF; background:#D95B1E; border:none; border-radius:6px; padding:10px 16px; cursor:pointer" style-hover="background:#B04713">Subscribe</button></div>
+        </div>
+      </div>
+      <div style="display:flex; justify-content:space-between; padding-top:24px"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#6B7076">© 2026 EverHaven</span><div style="display:flex; gap:24px"><a href="#" style="font-size:12px; color:#A6AAAE">Privacy</a><a href="#" style="font-size:12px; color:#A6AAAE">Returns</a><a href="#" style="font-size:12px; color:#A6AAAE">Terms</a></div></div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>

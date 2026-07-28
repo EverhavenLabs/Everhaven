@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "policy-header": {
+      "type": "eh-policy-header",
+      "settings": {
+        "eyebrow": "Policies",
+        "last_updated": "Pending",
+        "show_specimen_badge": true,
+        "specimen_badge_text": "PLACEHOLDER — NEEDS REAL POLICY & LEGAL REVIEW"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 12,
+        "padding_bottom": 88
+      }
+    }
+  },
+  "order": [
+    "policy-header",
+    "main"
+  ]
+}

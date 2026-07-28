@@ -1,0 +1,162 @@
+{% comment %}
+  EverHaven choose-your-path — exactly 2 cards (light/dark), 2-up desktop & tablet, stacked mobile.
+{% endcomment %}
+
+<section class="eh-path-cards eh-section">
+  <div class="eh-container">
+    <div class="eh-path-cards__grid">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'card' -%}
+            <div class="eh-path-cards__card eh-path-cards__card--{{ block.settings.appearance }}" {{ block.shopify_attributes }}>
+              {%- if block.settings.eyebrow != blank -%}
+                <div class="eh-eyebrow eh-path-cards__eyebrow">{{ block.settings.eyebrow | escape }}</div>
+              {%- endif -%}
+              {%- if block.settings.heading != blank -%}
+                <div class="eh-title-lg eh-path-cards__heading">{{ block.settings.heading | escape }}</div>
+              {%- endif -%}
+              {%- if block.settings.body != blank -%}
+                <div class="eh-body-md eh-path-cards__body">{{ block.settings.body }}</div>
+              {%- endif -%}
+              {%- if block.settings.cta_label != blank -%}
+                {%- if block.settings.cta_style == 'button' -%}
+                  <a href="{{ block.settings.cta_link | default: '#' }}" class="eh-btn eh-btn-primary eh-path-cards__cta">
+                    {{- block.settings.cta_label | escape -}}
+                  </a>
+                {%- else -%}
+                  <a href="{{ block.settings.cta_link | default: '#' }}" class="eh-btn-tertiary eh-path-cards__cta">
+                    {{- block.settings.cta_label | escape -}}
+                  </a>
+                {%- endif -%}
+              {%- endif -%}
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+    {%- if section.settings.caption_text != blank or section.settings.caption_link_label != blank -%}
+      <div class="eh-body-sm eh-path-cards__caption">
+        {%- if section.settings.caption_text != blank -%}
+          <span>{{ section.settings.caption_text | escape }}</span>
+        {%- endif -%}
+        {%- if section.settings.caption_link_label != blank -%}
+          <a href="{{ section.settings.caption_link | default: '#' }}" class="eh-path-cards__caption-link">
+            {{- section.settings.caption_link_label | escape -}}
+          </a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "EH Path cards",
+  "tag": "section",
+  "class": "eh-section-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "caption_text",
+      "label": "Caption text",
+      "default": "Not sure where to start?"
+    },
+    {
+      "type": "text",
+      "id": "caption_link_label",
+      "label": "Caption link label",
+      "default": "Describe your problem — that's enough."
+    },
+    {
+      "type": "url",
+      "id": "caption_link",
+      "label": "Caption link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Path card",
+      "settings": [
+        {
+          "type": "select",
+          "id": "appearance",
+          "label": "Appearance",
+          "options": [
+            { "value": "light", "label": "Light (surface)" },
+            { "value": "dark", "label": "Dark" }
+          ],
+          "default": "light"
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow",
+          "default": "For shoppers"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Products we make"
+        },
+        {
+          "type": "richtext",
+          "id": "body",
+          "label": "Body copy"
+        },
+        {
+          "type": "text",
+          "id": "cta_label",
+          "label": "CTA label",
+          "default": "Browse the shop →"
+        },
+        {
+          "type": "url",
+          "id": "cta_link",
+          "label": "CTA link"
+        },
+        {
+          "type": "select",
+          "id": "cta_style",
+          "label": "CTA style",
+          "options": [
+            { "value": "text_link", "label": "Text link" },
+            { "value": "button", "label": "Button" }
+          ],
+          "default": "text_link"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 2,
+  "presets": [
+    {
+      "name": "EH Path cards",
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "appearance": "light",
+            "eyebrow": "For shoppers",
+            "heading": "Products we make",
+            "body": "<p>Original physical products and print-ready STL files — designed, tested, and made in-house.</p>",
+            "cta_label": "Browse the shop →",
+            "cta_style": "text_link"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "appearance": "dark",
+            "eyebrow": "For projects",
+            "heading": "Things we make for you",
+            "body": "<p>Prototyping, product design support, custom FDM printing, replacement parts — from a file or a sketch.</p>",
+            "cta_label": "Get a quote →",
+            "cta_style": "button"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

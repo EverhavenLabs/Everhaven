@@ -1,0 +1,270 @@
+{% comment %}
+  EverHaven reusable service-detail template — one section drives all six
+  services (Custom 3D printing, Rapid prototyping, Product design support,
+  Small-batch manufacturing, Replacement parts, File prep & print
+  optimization) from a `service` metaobject entry. See docs/metaobjects.md
+  for the full field spec and how a Shopify Page connects to an entry.
+
+  Content source, in priority order:
+    1. section.settings.service_override — a metaobject picker, for
+       previewing this template in the Theme Editor before real pages/
+       metafields exist.
+    2. page.metafields.custom.service.value — the real, per-page wiring.
+       All six live pages share this one template file, so this metafield
+       is what makes each page render its own service.
+  If neither is set, the section renders a clearly labeled empty state
+  instead of erroring, so the template stays reviewable at every stage.
+
+  Process step TITLES ("Describe/Quote/Make/Deliver") are never
+  overridden — only body copy varies, and only where the metaobject entry
+  sets an explicit override; otherwise the approved global copy is used.
+{% endcomment %}
+
+{%- liquid
+  assign eh_service = section.settings.service_override
+  if eh_service == blank
+    assign eh_service = page.metafields.custom.service.value
+  endif
+-%}
+
+<section class="eh-service-detail eh-section">
+  <div class="eh-container">
+    {%- if eh_service == blank -%}
+      <span class="eh-specimen-badge">
+        NO SERVICE CONNECTED — set the section's service picker, or the page's custom.service metafield
+      </span>
+    {%- endif -%}
+
+    {%- comment %} ---- Hero ---- {%- endcomment %}
+    <div class="eh-service-detail__hero">
+      <div class="eh-service-detail__hero-copy">
+        <div class="eh-eyebrow eh-service-detail__breadcrumb">
+          <a href="{{ section.settings.services_overview_link | default: '#' }}">Services</a>
+          <span aria-hidden="true">·</span>
+          {{- eh_service.title.value | default: 'Service name' -}}
+        </div>
+        <h1 class="eh-display-lg eh-service-detail__heading">
+          {{- eh_service.hero_heading.value | default: 'Service hero heading' -}}
+        </h1>
+        {%- if eh_service.hero_supporting_copy.value != blank -%}
+          <p class="eh-body-lg eh-service-detail__hero-body">{{ eh_service.hero_supporting_copy.value }}</p>
+        {%- endif -%}
+        <div class="eh-service-detail__hero-ctas">
+          <a href="{{ section.settings.quote_link | default: '#' }}" class="eh-btn eh-btn-primary">Get a quote →</a>
+          <a href="#service-capabilities" class="eh-btn eh-btn-secondary">See capabilities</a>
+        </div>
+      </div>
+      <div class="eh-service-detail__hero-media">
+        {%- render 'eh-image-slot',
+          image: eh_service.hero_image.value,
+          placeholder: eh_service.hero_image_brief.value,
+          radius: 14,
+          ratio: '1.1'
+        -%}
+      </div>
+    </div>
+
+    {%- comment %} ---- What this covers ---- {%- endcomment %}
+    {%- assign eh_scope_cards = eh_service.scope_cards.value -%}
+    {%- if eh_scope_cards.size > 0 -%}
+      {%- assign eh_scope_cols = 2 -%}
+      {%- if eh_scope_cards.size >= 5 -%}
+        {%- assign eh_scope_cols = 3 -%}
+      {%- endif -%}
+      <div class="eh-service-detail__scope eh-section">
+        {%- render 'eh-section-header', eyebrow: 'What this covers', heading: 'Parts made for their purpose.' -%}
+        <div class="eh-service-detail__scope-grid eh-service-detail__scope-grid--cols-{{ eh_scope_cols }}">
+          {%- for card in eh_scope_cards -%}
+            <div class="eh-card eh-service-detail__scope-card">
+              {%- if card.title.value != blank -%}
+                <div class="eh-title-md eh-service-detail__scope-title">{{ card.title.value }}</div>
+              {%- endif -%}
+              {%- if card.body.value != blank -%}
+                <p class="eh-body-sm eh-service-detail__scope-body">{{ card.body.value }}</p>
+              {%- endif -%}
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- comment %} ---- How it works — global copy, per-service overrides only ---- {%- endcomment %}
+    {%- liquid
+      assign eh_step1_body = "Send a file, a sketch, or a problem. Any starting point works."
+      assign eh_step2_body = "We review it together and price the work to your exact spec."
+      assign eh_step3_body = "Your project is prototyped, printed, and inspected before it's prepared for delivery."
+      assign eh_step4_body = "Packed carefully and shipped to your requested destination."
+      if eh_service.process_step1_body_override.value != blank
+        assign eh_step1_body = eh_service.process_step1_body_override.value
+      endif
+      if eh_service.process_step2_body_override.value != blank
+        assign eh_step2_body = eh_service.process_step2_body_override.value
+      endif
+      if eh_service.process_step3_body_override.value != blank
+        assign eh_step3_body = eh_service.process_step3_body_override.value
+      endif
+      if eh_service.process_step4_body_override.value != blank
+        assign eh_step4_body = eh_service.process_step4_body_override.value
+      endif
+    -%}
+    <div class="eh-service-detail__process color-{{ section.settings.process_color_scheme }} eh-section">
+      {%- render 'eh-section-header', eyebrow: 'How it works', heading: 'Four steps, no mystery.', on_dark: true -%}
+      <div class="eh-service-detail__process-spacer"></div>
+      <div class="eh-process-steps__grid">
+        <div class="eh-process-steps__card">
+          <div class="eh-spec eh-process-steps__number">01</div>
+          <div class="eh-title-md eh-process-steps__title">Describe</div>
+          <div class="eh-body-sm eh-process-steps__body">{{ eh_step1_body }}</div>
+        </div>
+        <div class="eh-process-steps__card">
+          <div class="eh-spec eh-process-steps__number">02</div>
+          <div class="eh-title-md eh-process-steps__title">Quote</div>
+          <div class="eh-body-sm eh-process-steps__body">{{ eh_step2_body }}</div>
+        </div>
+        <div class="eh-process-steps__card">
+          <div class="eh-spec eh-process-steps__number">03</div>
+          <div class="eh-title-md eh-process-steps__title">Make</div>
+          <div class="eh-body-sm eh-process-steps__body">{{ eh_step3_body }}</div>
+        </div>
+        <div class="eh-process-steps__card">
+          <div class="eh-spec eh-process-steps__number">04</div>
+          <div class="eh-title-md eh-process-steps__title">Deliver</div>
+          <div class="eh-body-sm eh-process-steps__body">{{ eh_step4_body }}</div>
+        </div>
+      </div>
+    </div>
+
+    {%- comment %} ---- Starting points ---- {%- endcomment %}
+    {%- assign eh_starting_points = eh_service.starting_points.value -%}
+    <div class="eh-service-detail__starting eh-section">
+      <div class="eh-service-detail__starting-grid">
+        <div>
+          {%- render 'eh-section-header', eyebrow: 'Starting points', heading: 'Any of these is enough.' -%}
+          <p class="eh-body-md eh-service-detail__starting-intro">
+            No file? Product design support and file preparation can take an idea, sketch, or broken part to a
+            printable model.
+          </p>
+        </div>
+        {%- if eh_starting_points.size > 0 -%}
+          <div class="eh-service-detail__starting-list">
+            {%- for point in eh_starting_points -%}
+              <div class="eh-card eh-service-detail__starting-row">
+                <span class="eh-spec eh-service-detail__starting-key">{{ point.key.value }}</span>
+                <span class="eh-body-sm">{{ point.description.value }}</span>
+              </div>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+
+    {%- comment %} ---- Capabilities ---- {%- endcomment %}
+    {%- assign eh_capabilities = eh_service.capabilities.value -%}
+    <div id="service-capabilities" class="eh-capability-strip eh-capability-strip--border-top eh-capability-strip--border-bottom">
+      <div class="eh-capability-strip__row">
+        <span class="eh-eyebrow eh-capability-strip__label">Relevant capabilities</span>
+        {%- for cap in eh_capabilities -%}
+          <span class="eh-pill eh-capability-strip__pill eh-capability-strip__pill--outlined">{{ cap.label.value }}</span>
+        {%- endfor -%}
+        <a href="{{ section.settings.capabilities_link | default: '#' }}" class="eh-btn-tertiary eh-capability-strip__link">All capabilities →</a>
+      </div>
+    </div>
+
+    {%- comment %} ---- FAQ ---- {%- endcomment %}
+    {%- assign eh_faq_items = eh_service.faq_items.value -%}
+    {%- if eh_faq_items.size > 0 -%}
+      <div class="eh-faq eh-faq--sidebar eh-section">
+        <div class="eh-faq__layout">
+          <div class="eh-faq__header">
+            {%- render 'eh-section-header', eyebrow: 'FAQ', heading: 'Before you ask.' -%}
+            <span class="eh-specimen-badge">SPECIMEN ANSWERS — REPLACE BEFORE PUBLISHING</span>
+          </div>
+          <eh-faq-accordion class="eh-faq__list">
+            {%- for item in eh_faq_items -%}
+              <details class="eh-faq__item" {% if forloop.first %}open{% endif %}>
+                <summary class="eh-faq__question">
+                  <span class="eh-title-md eh-faq__question-text">{{ item.question.value }}</span>
+                  <span class="eh-spec eh-faq__icon" aria-hidden="true"></span>
+                </summary>
+                <div class="eh-body-lg eh-faq__answer">{{ item.answer.value }}</div>
+              </details>
+            {%- endfor -%}
+          </eh-faq-accordion>
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- comment %} ---- Closing CTA ---- {%- endcomment %}
+    <div class="eh-cta-dark color-{{ section.settings.cta_color_scheme }} eh-section eh-service-detail__cta">
+      <div class="eh-cta-dark__inner">
+        {%- render 'eh-section-header',
+          eyebrow: eh_service.title.value,
+          heading: eh_service.closing_cta_heading.value | default: "Tell us what you're making.",
+          intro: eh_service.closing_cta_body.value | default: "A file, a sketch, or a description is enough to start. We'll take it from there.",
+          align: 'center',
+          on_dark: true
+        -%}
+        <a href="{{ section.settings.quote_link | default: '#' }}" class="eh-btn eh-btn-primary eh-cta-dark__button">
+          Get a quote →
+        </a>
+        <p class="eh-body-sm eh-cta-dark__caption">No commitment — a quote is a conversation, not a contract.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% comment %}
+  assets/eh-faq-accordion.js is loaded once, globally, from
+  layout/theme.liquid — not from here (see eh-faq.liquid for the same note).
+{% endcomment %}
+
+{% schema %}
+{
+  "name": "EH Service detail",
+  "tag": "section",
+  "class": "eh-section-wrapper",
+  "settings": [
+    {
+      "type": "metaobject",
+      "id": "service_override",
+      "label": "Service (preview override)",
+      "metaobject_type": "service",
+      "info": "Leave blank in production — the page's custom.service metafield drives real pages. Use this only to preview the template before that's wired up."
+    },
+    {
+      "type": "url",
+      "id": "quote_link",
+      "label": "Get a quote link"
+    },
+    {
+      "type": "url",
+      "id": "services_overview_link",
+      "label": "Services overview link (breadcrumb)",
+      "info": "Connect once the Services overview Page exists — left blank until then."
+    },
+    {
+      "type": "url",
+      "id": "capabilities_link",
+      "label": "Capabilities page link",
+      "info": "Connect once the Capabilities Page exists — left blank until then."
+    },
+    {
+      "type": "color_scheme",
+      "id": "process_color_scheme",
+      "label": "\"How it works\" color scheme",
+      "default": "scheme-4"
+    },
+    {
+      "type": "color_scheme",
+      "id": "cta_color_scheme",
+      "label": "Closing CTA color scheme",
+      "default": "scheme-4"
+    }
+  ],
+  "presets": [
+    {
+      "name": "EH Service detail"
+    }
+  ]
+}
+{% endschema %}

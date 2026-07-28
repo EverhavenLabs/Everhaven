@@ -1,0 +1,35 @@
+{
+  "sections": {
+    "contact-intro": {
+      "type": "eh-icon-cards",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "heading_tag": "h1",
+        "eyebrow": "Contact",
+        "heading": "Say hello.",
+        "intro": "<p>Questions about an order, a product, or anything that isn't a quote request — this is the place. Project inquiries move faster through Get a quote.</p><p><span class=\"eh-specimen-badge\">EMAIL ADDRESS PENDING</span></p><p>We don't promise a response time yet. <span class=\"eh-specimen-badge\">RESPONSE TIME UNCOMMITTED UNTIL REAL</span></p>",
+        "header_link_label": "Get a quote →",
+        "header_link": "",
+        "card_link_style": "text_link",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "form": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "color_scheme": "scheme-1",
+        "show_subject_field": true,
+        "show_order_number_field": true,
+        "padding_top": 36,
+        "padding_bottom": 88
+      }
+    }
+  },
+  "order": [
+    "contact-intro",
+    "form"
+  ]
+}

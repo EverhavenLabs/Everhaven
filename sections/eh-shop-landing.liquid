@@ -1,0 +1,207 @@
+{% comment %}
+  EverHaven shop landing — curated entry point into the real catalog.
+  Every tile points at a merchant-selected collection (collection
+  reference settings); nothing is hardcoded, so this works with a small
+  catalog today and scales as more collections/products are added.
+{% endcomment %}
+
+<section class="eh-shop-landing eh-section">
+  <div class="eh-container">
+    {%- render 'eh-section-header',
+      eyebrow: section.settings.eyebrow,
+      heading: section.settings.heading,
+      heading_tag: section.settings.heading_tag,
+      intro: section.settings.intro
+    -%}
+    {%- if section.settings.show_specimen_badge -%}
+      <span class="eh-specimen-badge eh-shop-landing__badge">
+        SPECIMEN CONTENT — connect real collections before publishing
+      </span>
+    {%- endif -%}
+
+    <div class="eh-shop-landing__spacer"></div>
+
+    <div class="eh-shop-landing__tiles">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'tile' -%}
+          {%- assign eh_tile_collection = block.settings.collection -%}
+          <a
+            href="{{ eh_tile_collection.url | default: '#' }}"
+            class="eh-shop-landing__tile eh-shop-landing__tile--{{ block.settings.style }}"
+            {{ block.shopify_attributes }}
+          >
+            <div class="eh-shop-landing__tile-media">
+              {%- if block.settings.style == 'dark' -%}
+                {%- render 'eh-stl-cover',
+                  title: block.settings.label | default: eh_tile_collection.title,
+                  size: 'full',
+                  title_size: 'md',
+                  ratio: '1.3'
+                -%}
+              {%- else -%}
+                {%- render 'eh-image-slot',
+                  image: eh_tile_collection.featured_image,
+                  placeholder: block.settings.image_placeholder,
+                  radius: 14,
+                  ratio: '1.3'
+                -%}
+              {%- endif -%}
+            </div>
+            <div class="eh-shop-landing__tile-content">
+              <div class="eh-title-lg eh-shop-landing__tile-title">
+                {{ block.settings.label | default: eh_tile_collection.title | escape }}
+              </div>
+              {%- if block.settings.description != blank -%}
+                <p class="eh-body-sm eh-shop-landing__tile-body">{{ block.settings.description }}</p>
+              {%- endif -%}
+              <span class="eh-btn-tertiary eh-shop-landing__tile-link">Browse →</span>
+            </div>
+          </a>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    {%- assign eh_quick_links = section.blocks | where: 'type', 'quick_link' -%}
+    {%- if eh_quick_links.size > 0 -%}
+      <div class="eh-shop-landing__quick-links">
+        {%- for block in eh_quick_links -%}
+          {%- assign eh_ql_collection = block.settings.collection -%}
+          <a href="{{ eh_ql_collection.url | default: '#' }}" class="eh-shop-landing__quick-link" {{ block.shopify_attributes }}>
+            <span class="eh-title-md">{{ block.settings.label | default: eh_ql_collection.title | escape }}</span>
+            <span class="eh-body-sm eh-shop-landing__quick-link-arrow">→</span>
+          </a>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "EH Shop landing",
+  "tag": "section",
+  "class": "eh-section-wrapper",
+  "settings": [
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "Heading level",
+      "info": "Use H1 only when this section carries the page's main heading.",
+      "options": [
+        { "value": "h1", "label": "H1 (page hero)" },
+        { "value": "h2", "label": "H2" }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The shop"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Made by EverHaven."
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Intro copy",
+      "default": "<p>Every product here came off our own machines — designed, tested, and made with the same care we bring to customer work.</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_specimen_badge",
+      "label": "Show specimen badge",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tile",
+      "name": "Collection tile",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label override",
+          "info": "Defaults to the collection's title if left blank."
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "image_placeholder",
+          "label": "Placeholder shot brief (light style only)",
+          "default": "Object on set — physical product group"
+        },
+        {
+          "type": "select",
+          "id": "style",
+          "label": "Style",
+          "options": [
+            { "value": "light", "label": "Light (photo)" },
+            { "value": "dark", "label": "Dark (STL cover)" }
+          ],
+          "default": "light"
+        }
+      ]
+    },
+    {
+      "type": "quick_link",
+      "name": "Category quick link",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label override",
+          "info": "Defaults to the collection's title if left blank."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "EH Shop landing",
+      "blocks": [
+        {
+          "type": "tile",
+          "settings": {
+            "label": "Physical products",
+            "description": "<p>Finished objects, printed and inspected in-house.</p>",
+            "image_placeholder": "Object on set — physical product group",
+            "style": "light"
+          }
+        },
+        {
+          "type": "tile",
+          "settings": {
+            "label": "Digital STL files",
+            "description": "<p>Print-ready designs for your own machine.</p>",
+            "style": "dark"
+          }
+        },
+        { "type": "quick_link", "settings": { "label": "Functional" } },
+        { "type": "quick_link", "settings": { "label": "Best sellers" } },
+        { "type": "quick_link", "settings": { "label": "New arrivals" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

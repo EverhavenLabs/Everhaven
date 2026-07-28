@@ -1,0 +1,38 @@
+{% comment %}
+  Reusable content-band header: eyebrow (mono spec label) + display heading + optional intro paragraph.
+  Not merchant-editable on its own — the calling section owns the schema settings that feed it.
+
+  Usage:
+  {% render 'eh-section-header', eyebrow: section.settings.eyebrow, heading: section.settings.heading, intro: section.settings.intro %}
+
+  Params:
+    eyebrow    — plain text, optional
+    heading    — richtext-safe string
+    intro      — richtext-safe string, optional
+    heading_tag — 'h2' | 'h3', default 'h2'
+    size       — 'lg' | 'md', default 'md'
+    align      — 'left' | 'center', default 'left'
+    on_dark    — true to use on-dark color tokens
+{% endcomment %}
+{%- liquid
+  assign eh_tag = heading_tag | default: 'h2'
+  assign eh_size_class = 'eh-display-md'
+  if size == 'lg'
+    assign eh_size_class = 'eh-display-lg'
+  endif
+  assign eh_align_class = ''
+  if align == 'center'
+    assign eh_align_class = ' eh-section-header--center'
+  endif
+-%}
+<div class="eh-section-header{{ eh_align_class }}{% if on_dark %} eh-section-header--on-dark{% endif %}">
+  {%- if eyebrow != blank -%}
+    <div class="eh-eyebrow eh-section-header__eyebrow">{{ eyebrow | escape }}</div>
+  {%- endif -%}
+  {%- if heading != blank -%}
+    <{{ eh_tag }} class="{{ eh_size_class }} eh-section-header__heading">{{ heading }}</{{ eh_tag }}>
+  {%- endif -%}
+  {%- if intro != blank -%}
+    <div class="eh-body-lg eh-section-header__intro">{{ intro }}</div>
+  {%- endif -%}
+</div>

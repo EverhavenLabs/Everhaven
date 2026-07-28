@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+body { margin:0; background:#F7F6F3; }
+a { color:#16181A; text-decoration:none; }
+a:hover { color:#B04713; text-decoration:underline; }
+</style>
+</helmet>
+<div style="font-family:'IBM Plex Sans',sans-serif; color:#16181A; background:#F7F6F3; min-height:100vh">
+
+  <div data-screen-label="Header" style="position:sticky; top:0; z-index:50">
+    <div style="background:#1A1D21; padding:11px 24px; text-align:center"><span style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:1px; color:#F2F1ED">Custom 3D printing and prototyping, quoted from a sketch or a file — <a href="#quote" style="color:#F2F1ED; text-decoration:underline">get a quote →</a></span></div>
+    <div style="background:#F7F6F3; border-bottom:1px solid #E0DEDA; height:72px; display:flex; align-items:center">
+      <div style="max-width:1200px; width:100%; margin:0 auto; padding:0 32px; display:flex; align-items:center; justify-content:space-between">
+        <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:19px; letter-spacing:-0.3px">EverHaven<span style="color:#D95B1E">.</span></div>
+        <nav style="display:flex; gap:32px; align-items:center">
+          <a href="#" style="font-size:14px; font-weight:500; color:#16181A">Shop</a>
+          <a href="#" style="font-size:14px; font-weight:500; color:#16181A; text-decoration:underline; text-underline-offset:6px">Services</a>
+          <a href="#" style="font-size:14px; font-weight:500; color:#16181A">Capabilities</a>
+          <a href="#" style="font-size:14px; font-weight:500; color:#16181A">About</a>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16181A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg>
+          <a href="#quote" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:14px; color:#FFFFFF; background:#D95B1E; border-radius:6px; padding:11px 20px; display:inline-block" style-hover="background:#B04713">Get a quote</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1 Hero -->
+  <section data-screen-label="Service hero" style="max-width:1200px; margin:0 auto; padding:96px 32px 112px">
+    <div style="display:grid; grid-template-columns:1.1fr 1fr; gap:56px; align-items:center">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:1.8px; text-transform:uppercase; color:#6B7076; margin-bottom:20px"><a href="#" style="color:#6B7076">Services</a> · Custom 3D printing</div>
+        <h1 style="font-family:'Archivo',sans-serif; font-weight:500; font-size:56px; line-height:1.05; letter-spacing:-1.5px; margin:0 0 24px">Made to your spec.<br>Not off a shelf.</h1>
+        <p style="font-size:17px; line-height:1.65; color:#3F4348; max-width:460px; margin:0 0 36px">FDM printing in PLA or PETG, dialed in to how your part will actually be used — reviewed and made by the same people you talk to.</p>
+        <div style="display:flex; gap:14px">
+          <a href="#quote" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:14px; color:#FFFFFF; background:#D95B1E; border-radius:6px; padding:14px 26px; display:inline-block" style-hover="background:#B04713">Get a quote →</a>
+          <a href="#capabilities" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:14px; color:#16181A; border:1px solid #16181A; border-radius:6px; padding:13px 26px; display:inline-block" style-hover="background:#ECEAE5">See capabilities</a>
+        </div>
+      </div>
+      <div style="height:420px; border-radius:14px; overflow:hidden"><image-slot id="svc-3dp-hero" shape="rounded" radius="14" placeholder="Macro — printed surface detail, PLA or PETG"></image-slot></div>
+    </div>
+  </section>
+
+  <!-- 2 What this covers -->
+  <section data-screen-label="What this covers" style="background:#ECEAE5">
+    <div style="max-width:1200px; margin:0 auto; padding:112px 32px">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:1.8px; text-transform:uppercase; color:#6B7076; margin-bottom:16px">What this covers</div>
+      <h2 style="font-family:'Archivo',sans-serif; font-weight:500; font-size:44px; letter-spacing:-1.1px; margin:0 0 48px">Parts made for their purpose.</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px">
+        <div style="background:#FFFFFF; border:1px solid #E0DEDA; border-radius:10px; padding:32px">
+          <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:17px; margin-bottom:8px">From your file</div>
+          <p style="font-size:14px; line-height:1.65; color:#6B7076; margin:0">Send an existing 3D model and we print it to spec — with a review first, so problems surface before printing, not after.</p>
+        </div>
+        <div style="background:#FFFFFF; border:1px solid #E0DEDA; border-radius:10px; padding:32px">
+          <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:17px; margin-bottom:8px">Material matched to use</div>
+          <p style="font-size:14px; line-height:1.65; color:#6B7076; margin:0">PLA or PETG, chosen for how the part lives — indoors or out, decorative or load-bearing, one-off or handled daily.</p>
+        </div>
+        <div style="background:#FFFFFF; border:1px solid #E0DEDA; border-radius:10px; padding:32px">
+          <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:17px; margin-bottom:8px">Settings tuned per part</div>
+          <p style="font-size:14px; line-height:1.65; color:#6B7076; margin:0">Orientation, walls, and infill set for the part's job — not a default profile applied to everything.</p>
+        </div>
+        <div style="background:#FFFFFF; border:1px solid #E0DEDA; border-radius:10px; padding:32px">
+          <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:17px; margin-bottom:8px">Single parts or repeat runs</div>
+          <p style="font-size:14px; line-height:1.65; color:#6B7076; margin:0">One piece, a handful, or a repeat small-batch run of a proven design — scope shapes the approach, never the attention.</p>
+        </div>
+        <div style="background:#FFFFFF; border:1px solid #E0DEDA; border-radius:10px; padding:32px">
+          <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:17px; margin-bottom:8px">Inspected before delivery</div>
+          <p style="font-size:14px; line-height:1.65; color:#6B7076; margin:0">Every part is checked against your request before it's packed — quality control as a habit, not a checkbox.</p>
+        </div>
+        <div style="background:#FFFFFF; border:1px solid #E0DEDA; border-radius:10px; padding:32px">
+          <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:17px; margin-bottom:8px">Honest feasibility</div>
+          <p style="font-size:14px; line-height:1.65; color:#6B7076; margin:0">If a part isn't a good fit for FDM in PLA or PETG, we'll say so before any money changes hands.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 How it works -->
+  <section data-screen-label="How it works" style="background:#1A1D21">
+    <div style="max-width:1200px; margin:0 auto; padding:112px 32px">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:1.8px; text-transform:uppercase; color:#6B7076; margin-bottom:16px">How it works</div>
+      <h2 style="font-family:'Archivo',sans-serif; font-weight:500; font-size:44px; letter-spacing:-1.1px; color:#F2F1ED; margin:0 0 48px">Four steps, no mystery.</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:20px">
+        <div style="background:#22262B; border-radius:10px; padding:28px"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#D95B1E; margin-bottom:16px">01</div><div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:17px; color:#F2F1ED; margin-bottom:8px">Describe</div><p style="font-size:14px; line-height:1.65; color:#A6AAAE; margin:0">Send your file — or a sketch, photo, or reference if that's what you have.</p></div>
+        <div style="background:#22262B; border-radius:10px; padding:28px"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#D95B1E; margin-bottom:16px">02</div><div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:17px; color:#F2F1ED; margin-bottom:8px">Quote</div><p style="font-size:14px; line-height:1.65; color:#A6AAAE; margin:0">We review the part together and price the work to your exact spec.</p></div>
+        <div style="background:#22262B; border-radius:10px; padding:28px"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#D95B1E; margin-bottom:16px">03</div><div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:17px; color:#F2F1ED; margin-bottom:8px">Make</div><p style="font-size:14px; line-height:1.65; color:#A6AAAE; margin:0">Your part is printed and inspected before it's prepared for delivery.</p></div>
+        <div style="background:#22262B; border-radius:10px; padding:28px"><div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#D95B1E; margin-bottom:16px">04</div><div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:17px; color:#F2F1ED; margin-bottom:8px">Deliver</div><p style="font-size:14px; line-height:1.65; color:#A6AAAE; margin:0">Packed carefully and shipped to your requested destination.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 What you can send -->
+  <section data-screen-label="What you can send" style="max-width:1200px; margin:0 auto; padding:112px 32px">
+    <div style="display:grid; grid-template-columns:1fr 1.2fr; gap:64px; align-items:center">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:1.8px; text-transform:uppercase; color:#6B7076; margin-bottom:16px">Starting points</div>
+        <h2 style="font-family:'Archivo',sans-serif; font-weight:500; font-size:44px; letter-spacing:-1.1px; margin:0 0 16px">Any of these is enough.</h2>
+        <p style="font-size:15px; line-height:1.7; color:#3F4348; max-width:440px; margin:0">No file? Product design support and file preparation can take an idea, sketch, or broken part to a printable model.</p>
+      </div>
+      <div style="display:grid; gap:12px">
+        <div style="background:#FFFFFF; border:1px solid #E0DEDA; border-radius:10px; padding:22px 28px; display:flex; gap:20px; align-items:center"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.2px; color:#D95B1E; min-width:88px">3D MODEL</span><span style="font-size:14px; color:#3F4348">An existing 3D or CAD file, ready to review and print</span></div>
+        <div style="background:#FFFFFF; border:1px solid #E0DEDA; border-radius:10px; padding:22px 28px; display:flex; gap:20px; align-items:center"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.2px; color:#D95B1E; min-width:88px">SKETCH</span><span style="font-size:14px; color:#3F4348">A drawing with rough dimensions — we'll develop it into a model</span></div>
+        <div style="background:#FFFFFF; border:1px solid #E0DEDA; border-radius:10px; padding:22px 28px; display:flex; gap:20px; align-items:center"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.2px; color:#D95B1E; min-width:88px">PHOTO</span><span style="font-size:14px; color:#3F4348">Pictures of an existing or broken part, with measurements</span></div>
+        <div style="background:#FFFFFF; border:1px solid #E0DEDA; border-radius:10px; padding:22px 28px; display:flex; gap:20px; align-items:center"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.2px; color:#D95B1E; min-width:88px">PROBLEM</span><span style="font-size:14px; color:#3F4348">A description of what you need — that's a real starting point too</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 Capabilities -->
+  <section id="capabilities" data-screen-label="Capability strip" style="background:#ECEAE5">
+    <div style="max-width:1200px; margin:0 auto; padding:64px 32px">
+      <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center">
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#6B7076; margin-right:8px">Relevant capabilities</span>
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#3F4348; background:#FFFFFF; border:1px solid #E0DEDA; border-radius:99px; padding:6px 14px">FDM 3D PRINTING</span>
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#3F4348; background:#FFFFFF; border:1px solid #E0DEDA; border-radius:99px; padding:6px 14px">PLA · PETG</span>
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#3F4348; background:#FFFFFF; border:1px solid #E0DEDA; border-radius:99px; padding:6px 14px">SMALL-BATCH RUNS</span>
+        <a href="#" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:14px; color:#16181A; margin-left:auto">All capabilities →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 FAQ -->
+  <section data-screen-label="FAQ" style="max-width:1200px; margin:0 auto; padding:112px 32px">
+    <div style="display:grid; grid-template-columns:1fr 1.4fr; gap:64px; align-items:start">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:1.8px; text-transform:uppercase; color:#6B7076; margin-bottom:16px">FAQ</div>
+        <h2 style="font-family:'Archivo',sans-serif; font-weight:500; font-size:44px; letter-spacing:-1.1px; margin:0 0 16px">Before you ask.</h2>
+        <div style="display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:1.5px; color:#B04713; background:#F8E9E0; border-radius:99px; padding:5px 12px">SPECIMEN ANSWERS — REPLACE BEFORE PUBLISHING</div>
+      </div>
+      <div style="border-top:1px solid #E0DEDA">
+        <div style="border-bottom:1px solid #E0DEDA">
+          <button onClick="{{ toggleFaq0 }}" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:16px; color:#16181A; background:none; border:none; width:100%; text-align:left; padding:22px 0; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:16px">Which material should I choose — PLA or PETG?<span style="font-family:'IBM Plex Mono',monospace; font-size:16px; color:#6B7076">{{ faqIcon0 }}</span></button>
+          <sc-if value="{{ faqOpen0 }}" hint-placeholder-val="{{ true }}"><p style="font-size:15px; line-height:1.7; color:#3F4348; margin:0; padding:0 0 24px">You don't have to — tell us how the part will be used and we'll recommend one, with the reasoning. Specimen answer.</p></sc-if>
+        </div>
+        <div style="border-bottom:1px solid #E0DEDA">
+          <button onClick="{{ toggleFaq1 }}" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:16px; color:#16181A; background:none; border:none; width:100%; text-align:left; padding:22px 0; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:16px">My model was made for a different printer. Will it work?<span style="font-family:'IBM Plex Mono',monospace; font-size:16px; color:#6B7076">{{ faqIcon1 }}</span></button>
+          <sc-if value="{{ faqOpen1 }}" hint-placeholder-val="{{ false }}"><p style="font-size:15px; line-height:1.7; color:#3F4348; margin:0; padding:0 0 24px">Usually — we review every file before quoting and flag anything that needs adapting. File preparation is a service of its own. Specimen answer.</p></sc-if>
+        </div>
+        <div style="border-bottom:1px solid #E0DEDA">
+          <button onClick="{{ toggleFaq2 }}" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:16px; color:#16181A; background:none; border:none; width:100%; text-align:left; padding:22px 0; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:16px">Can you print something you didn't design?<span style="font-family:'IBM Plex Mono',monospace; font-size:16px; color:#6B7076">{{ faqIcon2 }}</span></button>
+          <sc-if value="{{ faqOpen2 }}" hint-placeholder-val="{{ false }}"><p style="font-size:15px; line-height:1.7; color:#3F4348; margin:0; padding:0 0 24px">Yes, for files you have the right to use — we'll confirm during review. Specimen answer pending final policy.</p></sc-if>
+        </div>
+        <div style="border-bottom:1px solid #E0DEDA">
+          <button onClick="{{ toggleFaq3 }}" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:16px; color:#16181A; background:none; border:none; width:100%; text-align:left; padding:22px 0; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:16px">How is the price determined?<span style="font-family:'IBM Plex Mono',monospace; font-size:16px; color:#6B7076">{{ faqIcon3 }}</span></button>
+          <sc-if value="{{ faqOpen3 }}" hint-placeholder-val="{{ false }}"><p style="font-size:15px; line-height:1.7; color:#3F4348; margin:0; padding:0 0 24px">Material, print time, setup, and any design or preparation work — itemized in the quote so nothing is a mystery. Specimen answer.</p></sc-if>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 Final CTA -->
+  <section id="quote" data-screen-label="Final CTA" style="background:#1A1D21">
+    <div style="max-width:1200px; margin:0 auto; padding:120px 32px; text-align:center">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:1.8px; text-transform:uppercase; color:#6B7076; margin-bottom:20px">Custom 3D printing</div>
+      <h2 style="font-family:'Archivo',sans-serif; font-weight:500; font-size:52px; letter-spacing:-1.3px; color:#F2F1ED; margin:0 0 16px">Send us the part.</h2>
+      <p style="font-size:16px; line-height:1.65; color:#A6AAAE; max-width:440px; margin:0 auto 40px">A file, a sketch, or a description is enough to start. We'll take it from there.</p>
+      <a href="#" style="font-family:'Archivo',sans-serif; font-weight:600; font-size:15px; color:#FFFFFF; background:#D95B1E; border-radius:6px; padding:16px 32px; display:inline-block" style-hover="background:#B04713">Get a quote →</a>
+      <p style="font-size:12px; color:#6B7076; margin:20px 0 0">No commitment — a quote is a conversation, not a contract.</p>
+    </div>
+  </section>
+
+  <footer data-screen-label="Footer" style="background:#1A1D21; border-top:1px solid #33383E">
+    <div style="max-width:1200px; margin:0 auto; padding:72px 32px 32px">
+      <div style="display:grid; grid-template-columns:2fr 1fr 1fr 1.4fr; gap:48px; padding-bottom:48px; border-bottom:1px solid #33383E">
+        <div>
+          <div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:19px; letter-spacing:-0.3px; color:#F2F1ED; margin-bottom:14px">EverHaven<span style="color:#D95B1E">.</span></div>
+          <p style="font-size:14px; line-height:1.7; color:#A6AAAE; max-width:280px; margin:0">Product design, prototyping, and small-batch manufacturing — from idea to finished object.</p>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#6B7076; margin-bottom:16px">Explore</div>
+          <div style="display:grid; gap:10px"><a href="#" style="font-size:14px; color:#F2F1ED">Shop</a><a href="#" style="font-size:14px; color:#F2F1ED">Services</a><a href="#" style="font-size:14px; color:#F2F1ED">Capabilities</a><a href="#" style="font-size:14px; color:#F2F1ED">About</a></div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#6B7076; margin-bottom:16px">Work with us</div>
+          <div style="display:grid; gap:10px"><a href="#" style="font-size:14px; color:#F2F1ED">Get a quote</a><a href="#" style="font-size:14px; color:#F2F1ED">FAQ</a><a href="#" style="font-size:14px; color:#F2F1ED">Contact</a></div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#6B7076; margin-bottom:16px">Updates</div>
+          <p style="font-size:13px; line-height:1.6; color:#A6AAAE; margin:0 0 14px">New products and capability updates. No noise.</p>
+          <div style="display:flex; gap:8px"><input placeholder="you@email.com" style="font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:#F2F1ED; background:#22262B; border:1px solid #33383E; border-radius:6px; padding:10px 14px; flex:1; min-width:0; outline:none"><button style="font-family:'Archivo',sans-serif; font-weight:600; font-size:13px; color:#FFFFFF; background:#D95B1E; border:none; border-radius:6px; padding:10px 16px; cursor:pointer" style-hover="background:#B04713">Subscribe</button></div>
+        </div>
+      </div>
+      <div style="display:flex; justify-content:space-between; padding-top:24px"><span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#6B7076">© 2026 EverHaven</span><div style="display:flex; gap:24px"><a href="#" style="font-size:12px; color:#A6AAAE">Privacy</a><a href="#" style="font-size:12px; color:#A6AAAE">Returns</a><a href="#" style="font-size:12px; color:#A6AAAE">Terms</a></div></div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { faq: 0 };
+  renderVals() {
+    const { faq } = this.state;
+    const vals = {};
+    [0, 1, 2, 3].forEach(i => {
+      vals['faqOpen' + i] = faq === i;
+      vals['faqIcon' + i] = faq === i ? '−' : '+';
+      vals['toggleFaq' + i] = () => this.setState({ faq: this.state.faq === i ? -1 : i });
+    });
+    return vals;
+  }
+}
+</script>
+</body>
+</html>

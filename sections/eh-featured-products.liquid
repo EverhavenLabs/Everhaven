@@ -1,0 +1,147 @@
+{% comment %}
+  EverHaven featured products — homepage product teaser. Uses per-block
+  product pickers (not a hardcoded collection feed) so the section behaves
+  correctly with 0, 1, 2, or 3 selected products. Renders Dawn's own
+  card-product snippet, unmodified rendering logic — no product data is
+  duplicated or hardcoded here.
+
+  Layout adapts to how many products are actually selected (see the
+  eh-featured-products__grid--count-N class below) rather than leaving
+  empty grid tracks: 1 selected renders as a single wide editorial card,
+  2 as equal-width cards, 3 as the approved three-column grid. The CSS
+  for each count lives in assets/everhaven.css under "eh-featured-products".
+{% endcomment %}
+
+<section class="eh-featured-products color-{{ section.settings.color_scheme }} eh-section">
+  <div class="eh-container">
+    <div class="eh-featured-products__header">
+      <div class="eh-featured-products__header-text">
+        {%- render 'eh-section-header',
+          eyebrow: section.settings.eyebrow,
+          heading: section.settings.heading,
+          intro: section.settings.intro
+        -%}
+      </div>
+      {%- if section.settings.link_label != blank -%}
+        <a href="{{ section.settings.link | default: '#' }}" class="eh-btn-tertiary eh-featured-products__link">
+          {{- section.settings.link_label | escape -}}
+        </a>
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.show_specimen_badge -%}
+      <span class="eh-specimen-badge eh-featured-products__badge">
+        SPECIMEN CONTENT — REPLACE BEFORE PUBLISHING · products &amp; prices
+      </span>
+    {%- endif -%}
+
+    {%- liquid
+      assign eh_selected_count = 0
+      for block in section.blocks
+        if block.settings.product != blank
+          assign eh_selected_count = eh_selected_count | plus: 1
+        endif
+      endfor
+    -%}
+
+    {%- if eh_selected_count > 0 -%}
+      <div class="eh-featured-products__grid eh-featured-products__grid--count-{{ eh_selected_count }}">
+        {%- assign eh_skip_card_styles = false -%}
+        {%- for block in section.blocks -%}
+          {%- if block.settings.product != blank -%}
+            <div class="eh-featured-products__item" {{ block.shopify_attributes }}>
+              {%- render 'card-product',
+                card_product: block.settings.product,
+                media_aspect_ratio: 'square',
+                skip_styles: eh_skip_card_styles,
+                section_id: section.id,
+                show_vendor: false
+              -%}
+            </div>
+            {%- assign eh_skip_card_styles = true -%}
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- else -%}
+      <p class="eh-body-sm eh-featured-products__empty">
+        No products selected yet — add up to three in the theme editor.
+      </p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "EH Featured products",
+  "tag": "section",
+  "class": "eh-section-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The shop"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Made by EverHaven."
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Intro copy",
+      "default": "<p>Every product here came off our own machines — the same design and care we bring to customer work.</p>"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Link label",
+      "default": "All products →"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_specimen_badge",
+      "label": "Show specimen content badge",
+      "info": "Turn off once real products and prices are selected.",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-2"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "EH Featured products",
+      "blocks": [
+        { "type": "product" },
+        { "type": "product" },
+        { "type": "product" }
+      ]
+    }
+  ]
+}
+{% endschema %}

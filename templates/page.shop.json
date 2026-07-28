@@ -1,0 +1,75 @@
+{
+  "sections": {
+    "shop-landing": {
+      "type": "eh-shop-landing",
+      "blocks": {
+        "tile-physical": {
+          "type": "tile",
+          "settings": {
+            "label": "Physical products",
+            "description": "<p>Finished objects, printed and inspected in-house.</p>",
+            "image_placeholder": "Object on set — physical product group",
+            "style": "light"
+          }
+        },
+        "tile-digital": {
+          "type": "tile",
+          "settings": {
+            "label": "Digital STL files",
+            "description": "<p>Print-ready designs for your own machine.</p>",
+            "style": "dark"
+          }
+        },
+        "ql-functional": { "type": "quick_link", "settings": { "label": "Functional" } },
+        "ql-bestsellers": { "type": "quick_link", "settings": { "label": "Best sellers" } },
+        "ql-newarrivals": { "type": "quick_link", "settings": { "label": "New arrivals" } }
+      },
+      "block_order": [
+        "tile-physical",
+        "tile-digital",
+        "ql-functional",
+        "ql-bestsellers",
+        "ql-newarrivals"
+      ],
+      "settings": {
+        "heading_tag": "h1",
+        "eyebrow": "The shop",
+        "heading": "Made by EverHaven.",
+        "intro": "<p>Every product here came off our own machines — designed, tested, and made with the same care we bring to customer work.</p>",
+        "show_specimen_badge": true
+      }
+    },
+    "new-and-noteworthy": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "New & noteworthy",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 3,
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "swipe_on_mobile": false,
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 88
+      }
+    }
+  },
+  "order": [
+    "shop-landing",
+    "new-and-noteworthy"
+  ]
+}

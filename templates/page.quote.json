@@ -1,0 +1,53 @@
+{
+  "sections": {
+    "quote-form": {
+      "type": "eh-quote-form",
+      "blocks": {
+        "reassurance-1": {
+          "type": "reassurance",
+          "settings": {
+            "heading": "No file? No problem.",
+            "body": "<p>Product design support takes ideas and sketches to printable models — describing the problem is enough to start.</p>"
+          }
+        },
+        "reassurance-2": {
+          "type": "reassurance",
+          "settings": {
+            "heading": "Honest feasibility, first.",
+            "body": "<p>If a part isn't a good fit for FDM printing in PLA or PETG, we'll tell you before any money changes hands.</p>"
+          }
+        },
+        "reassurance-3": {
+          "type": "reassurance",
+          "settings": {
+            "heading": "One part or a repeat run.",
+            "body": "<p>One-off prototypes and repeat production runs are equally welcome — scope shapes the approach, never the attention.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "reassurance-1",
+        "reassurance-2",
+        "reassurance-3"
+      ],
+      "settings": {
+        "eyebrow": "Get a quote",
+        "heading": "Tell us what you're making.",
+        "intro": "<p>Share what you can — we'll come back with questions, options, and a price. A sketch is enough to start, and a quote is a conversation, not a contract.</p>",
+        "step1_title": "We review your project",
+        "step1_body": "And reply with any questions — a real person, not an automated estimate.",
+        "step2_title": "You get a clear quote",
+        "step2_body": "Price, material, and timeline, with the reasoning behind each.",
+        "step3_title": "Approve it, and we start making",
+        "step3_body": "Prototyped, printed, and inspected before it's prepared for delivery.",
+        "helpful_heading": "Helpful to include",
+        "helpful_lines": "What you're making, and roughly how many\nYour timeline, if you have one\nHow the part will be used\nAnything else we should know",
+        "submit_label": "Request a quote →",
+        "color_scheme": "scheme-2"
+      }
+    }
+  },
+  "order": [
+    "quote-form"
+  ]
+}

@@ -1,0 +1,157 @@
+{% comment %}
+  EverHaven 404 — restyled from Dawn's stock version. Adds: editable
+  CTA buttons (blocks, not hardcoded routes), an optional native search
+  form, and optional merchandising from a merchant-selected collection
+  (no hardcoded products). Digital/STL products in that collection get
+  their branded card automatically via the unmodified card-product reuse.
+{% endcomment %}
+
+<div class="eh-404 eh-section">
+  <div class="eh-container eh-404__inner">
+    {%- if section.settings.eyebrow != blank -%}
+      <div class="eh-spec eh-404__eyebrow">{{ section.settings.eyebrow | escape }}</div>
+    {%- endif -%}
+    <h1 class="eh-display-md eh-404__heading">{{ section.settings.heading | escape }}</h1>
+    {%- if section.settings.body != blank -%}
+      <div class="eh-body-lg eh-404__body">{{ section.settings.body }}</div>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="eh-404__ctas">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'button' -%}
+              {%- if block.settings.label != blank -%}
+                {%- liquid
+                  assign eh_btn_class = 'eh-btn eh-btn-secondary'
+                  if block.settings.style == 'primary'
+                    assign eh_btn_class = 'eh-btn eh-btn-primary'
+                  elsif block.settings.style == 'text_link'
+                    assign eh_btn_class = 'eh-btn-tertiary'
+                  endif
+                -%}
+                <a href="{{ block.settings.link | default: routes.root_url }}" class="{{ eh_btn_class }}" {{ block.shopify_attributes }}>
+                  {{- block.settings.label | escape -}}
+                </a>
+              {%- endif -%}
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.show_search -%}
+      <form action="{{ routes.search_url }}" method="get" role="search" class="eh-404__search">
+        <label class="visually-hidden" for="Eh404-search">{{ 'general.search.search' | t }}</label>
+        <input
+          type="search"
+          id="Eh404-search"
+          name="q"
+          class="eh-quote__input eh-404__search-input"
+          placeholder="{{ 'general.search.search' | t }}"
+          autocomplete="off"
+        >
+        <input type="hidden" name="options[prefix]" value="last">
+        <button type="submit" class="eh-btn eh-btn-secondary">{{ 'general.search.search' | t }}</button>
+      </form>
+    {%- endif -%}
+
+    {%- liquid
+      assign eh_404_collection = section.settings.collection
+      assign eh_404_show_products = false
+      if eh_404_collection != blank and eh_404_collection.products.size > 0
+        assign eh_404_show_products = true
+      endif
+    -%}
+    {%- if eh_404_show_products -%}
+      <div class="eh-404__products">
+        <div class="eh-eyebrow eh-404__products-label">{{ eh_404_collection.title | escape }}</div>
+        <div class="eh-404__products-grid">
+          {%- assign eh_skip_card_styles = false -%}
+          {%- for product in eh_404_collection.products limit: 4 -%}
+            <div class="eh-404__products-item">
+              {%- render 'card-product',
+                card_product: product,
+                media_aspect_ratio: 'square',
+                skip_styles: eh_skip_card_styles,
+                section_id: section.id,
+                show_vendor: false
+              -%}
+            </div>
+            {%- assign eh_skip_card_styles = true -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "404 page",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Error 404"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "This page doesn't exist."
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body copy",
+      "default": "<p>Like a part that never got printed. Here's where to go instead.</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_search",
+      "label": "Show search form",
+      "default": true
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Merchandising collection (optional)",
+      "info": "Shows up to 4 products from this collection. Leave blank to hide — nothing is hardcoded."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Browse the shop"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "select",
+          "id": "style",
+          "label": "Style",
+          "options": [
+            { "value": "primary", "label": "Primary" },
+            { "value": "secondary", "label": "Secondary" },
+            { "value": "text_link", "label": "Text link" }
+          ],
+          "default": "secondary"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3
+}
+{% endschema %}

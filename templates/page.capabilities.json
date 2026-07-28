@@ -1,0 +1,358 @@
+{
+  "sections": {
+    "hero-and-current": {
+      "type": "eh-icon-cards",
+      "blocks": {
+        "cap-fdm": {
+          "type": "card",
+          "settings": {
+            "icon": "box",
+            "heading": "FDM 3D printing",
+            "body": "<p>Layer-by-layer thermoplastic printing — our core process for prototypes, parts, and products.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "cap-proto": {
+          "type": "card",
+          "settings": {
+            "icon": "layers",
+            "heading": "Rapid prototyping",
+            "body": "<p>Short print-test-revise loops that answer design questions before they get expensive.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "cap-batch": {
+          "type": "card",
+          "settings": {
+            "icon": "boxes",
+            "heading": "Small-batch runs",
+            "body": "<p>Repeat production of proven designs, inspected batch by batch against a reference part.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "cap-design": {
+          "type": "card",
+          "settings": {
+            "icon": "wrench",
+            "heading": "Product design support",
+            "body": "<p>Technical development from sketch to printable model, shaped around how the part will be made.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "cap-fdm",
+        "cap-proto",
+        "cap-batch",
+        "cap-design"
+      ],
+      "settings": {
+        "heading_tag": "h1",
+        "eyebrow": "Capabilities",
+        "heading": "What we work with, honestly.",
+        "intro": "<p>This page lists only what EverHaven offers today. As new processes and materials become real, they’ll appear here — not before.</p>",
+        "card_link_style": "text_link",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "capability-strip-capabilities": {
+      "type": "eh-capability-strip",
+      "blocks": {
+        "pill-1": {
+          "type": "pill",
+          "settings": {
+            "label": "FDM 3D PRINTING"
+          }
+        },
+        "pill-2": {
+          "type": "pill",
+          "settings": {
+            "label": "PLA · PETG"
+          }
+        },
+        "pill-3": {
+          "type": "pill",
+          "settings": {
+            "label": "RAPID PROTOTYPING"
+          }
+        },
+        "pill-4": {
+          "type": "pill",
+          "settings": {
+            "label": "SMALL-BATCH RUNS"
+          }
+        },
+        "pill-5": {
+          "type": "pill",
+          "settings": {
+            "label": "DESIGN SUPPORT"
+          }
+        }
+      },
+      "block_order": [
+        "pill-1",
+        "pill-2",
+        "pill-3",
+        "pill-4",
+        "pill-5"
+      ],
+      "settings": {
+        "label_text": "Current capabilities",
+        "pill_style": "filled",
+        "link_label": "",
+        "link": "",
+        "show_top_border": true,
+        "show_bottom_border": true
+      }
+    },
+    "materials": {
+      "type": "eh-icon-cards",
+      "blocks": {
+        "pla": {
+          "type": "card",
+          "settings": {
+            "icon": "none",
+            "heading": "PLA",
+            "body": "<p>Precise and easy to print well — a strong default for prototypes, models, and indoor products.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "petg": {
+          "type": "card",
+          "settings": {
+            "icon": "none",
+            "heading": "PETG",
+            "body": "<p>Tougher and more temperature-tolerant — suited to functional parts that get handled or used outdoors.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "pla",
+        "petg"
+      ],
+      "settings": {
+        "eyebrow": "Materials",
+        "heading": "PLA and PETG, matched to the job.",
+        "intro": "",
+        "card_link_style": "text_link",
+        "color_scheme": "scheme-2"
+      }
+    },
+    "equipment": {
+      "type": "eh-hero-split",
+      "settings": {
+        "heading_tag": "h2",
+        "heading_size": "md",
+        "eyebrow": "Equipment",
+        "heading": "The machines behind every part.",
+        "body": "<p>Specific printer models, counts, and configuration aren’t published yet. <span class=\"eh-specimen-badge\">SPECIMEN — EQUIPMENT DETAILS PENDING</span> Ask when you request a quote and we’ll confirm fit for your part.</p>",
+        "image_placeholder": "Environment — printer operating, warm light",
+        "image_position": "right",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "build-volume": {
+      "type": "eh-hero-split",
+      "settings": {
+        "heading_tag": "h2",
+        "heading_size": "md",
+        "eyebrow": "Build volume",
+        "heading": "Part size, scoped per project.",
+        "body": "<p>Maximum part dimensions depend on the job and current equipment. <span class=\"eh-specimen-badge\">SPECIMEN — PUBLISHED SPECIFICATIONS PENDING</span> Share your part’s size when you request a quote and we’ll confirm it fits.</p>",
+        "image_placeholder": "Environment — workspace wide, machines in view",
+        "image_position": "left",
+        "color_scheme": "scheme-2"
+      }
+    },
+    "file-and-design-support": {
+      "type": "eh-icon-cards",
+      "blocks": {
+        "design": {
+          "type": "card",
+          "settings": {
+            "icon": "wrench",
+            "heading": "Product design support",
+            "body": "<p>From an idea or sketch to a printable design — technical development shaped around how the part will be made.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "fileprep": {
+          "type": "card",
+          "settings": {
+            "icon": "file",
+            "heading": "File preparation & print optimization",
+            "body": "<p>Have a model that isn’t ready to print? We review, repair, adapt, and prepare files for reliable production — subject to project review.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "design",
+        "fileprep"
+      ],
+      "settings": {
+        "eyebrow": "File & design support",
+        "heading": "From any starting point.",
+        "intro": "<p>A file, image, sketch, drawing, or reference — any starting point works.</p>",
+        "card_link_style": "text_link",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "quality-approach": {
+      "type": "eh-icon-cards",
+      "blocks": {
+        "q1": {
+          "type": "card",
+          "settings": {
+            "icon": "none",
+            "heading": "Design-led",
+            "body": "<p>Every project starts as a design problem — we think about how a part should work before how it prints.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "q2": {
+          "type": "card",
+          "settings": {
+            "icon": "none",
+            "heading": "Made in-house",
+            "body": "<p>FDM printing in PLA and PETG, on our own machines — prototyped, printed, and inspected under one roof.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "q3": {
+          "type": "card",
+          "settings": {
+            "icon": "none",
+            "heading": "Said plainly",
+            "body": "<p>Real feasibility, real trade-offs, real prices — and an honest no when we’re not the right shop.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ],
+      "settings": {
+        "eyebrow": "Quality & production approach",
+        "heading": "Design-led. Made in-house. Said plainly.",
+        "intro": "",
+        "card_link_style": "text_link",
+        "color_scheme": "scheme-2"
+      }
+    },
+    "boundaries": {
+      "type": "eh-icon-cards",
+      "blocks": {
+        "offered": {
+          "type": "card",
+          "settings": {
+            "icon": "none",
+            "heading": "Currently offered",
+            "body": "<p>FDM 3D printing in PLA and PETG — prototyping, small-batch runs, design support, and replacement parts.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "review": {
+          "type": "card",
+          "settings": {
+            "icon": "none",
+            "heading": "Needs project review",
+            "body": "<p>Fine detail, unusual geometries, and borderline parts are assessed per project — we say so before work starts, not after.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "unsupported": {
+          "type": "card",
+          "settings": {
+            "icon": "none",
+            "heading": "Not currently supported",
+            "body": "<p>Resin, CNC, injection molding, additional materials, and guaranteed tolerances or lead times aren’t offered yet — this list grows only as new capabilities become real.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "offered",
+        "review",
+        "unsupported"
+      ],
+      "settings": {
+        "eyebrow": "Capability boundaries",
+        "heading": "What’s offered, what needs review, what’s not supported.",
+        "intro": "",
+        "card_link_style": "text_link",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "faq-capabilities": {
+      "type": "eh-faq",
+      "blocks": {
+        "q-1": {
+          "type": "question",
+          "settings": {
+            "question": "How smooth will the surface be?",
+            "answer": "<p>Layer lines are part of FDM — orientation and settings minimize them where it matters. We’ll show you what to expect before printing. Specimen answer.</p>"
+          }
+        },
+        "q-2": {
+          "type": "question",
+          "settings": {
+            "question": "PLA or PETG — how do you decide?",
+            "answer": "<p>By how the part lives: indoors and precise favors PLA; handled, flexed, or outdoors favors PETG. The quote explains the recommendation. Specimen answer.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q-1",
+        "q-2"
+      ],
+      "settings": {
+        "eyebrow": "FAQ",
+        "heading": "Before you ask.",
+        "layout": "sidebar",
+        "show_specimen_badge": true
+      }
+    },
+    "final-cta": {
+      "type": "eh-cta-dark",
+      "settings": {
+        "eyebrow": "Start a project",
+        "heading": "Not sure if it fits? Ask.",
+        "body": "<p>Describe the part and how it’ll be used — we’ll tell you honestly whether our process is right for it.</p>",
+        "button_label": "Get a quote →",
+        "button_link": "",
+        "caption": "No commitment — a quote is a conversation, not a contract.",
+        "color_scheme": "scheme-4"
+      }
+    }
+  },
+  "order": [
+    "hero-and-current",
+    "capability-strip-capabilities",
+    "materials",
+    "equipment",
+    "build-volume",
+    "file-and-design-support",
+    "quality-approach",
+    "boundaries",
+    "faq-capabilities",
+    "final-cta"
+  ]
+}

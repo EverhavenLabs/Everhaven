@@ -1,0 +1,140 @@
+{% comment %}
+  EverHaven policy header — eyebrow + "last updated" line + an optional
+  customer-facing summary callout + specimen badge, for use above Dawn's
+  native main-page section on policy/legal informational pages.
+  Deliberately carries no heading of its own: main-page.liquid already
+  renders the page's one h1 from page.title directly below this.
+
+  New section, not a reuse of eh-icon-cards or similar: legal/policy prose
+  shouldn't be forced into a card-grid component, and no existing shared
+  section has this eyebrow+dateline+badge pattern.
+
+  The summary callout (blocks) is visually distinct from the specimen
+  badge on purpose: it states operational points that were actually
+  approved (e.g. the Returns page's 14-day window), while the specimen
+  badge covers everything else on the page still pending legal review.
+  Never let the two collapse into one visual treatment — that would make
+  approved terms look uncertain, or unapproved prose look settled. The
+  distinction does NOT rely on color alone: the summary callout is a
+  solid-bordered card with a check icon and its own label text, while the
+  specimen badge is a differently-shaped pill with different text and
+  placement — shape, icon, and wording all carry the distinction, not
+  just color. Internally this used to be labeled "confirmed" with a green
+  badge; that read as internal project-status language, not customer-
+  facing copy, so it's plain Graphite & Signal styling now with ordinary
+  storefront wording ("Returns at a glance" by default, editable).
+{% endcomment %}
+
+<section class="eh-policy-header eh-section eh-section--tight">
+  <div class="eh-container">
+    {%- if section.settings.eyebrow != blank -%}
+      <div class="eh-eyebrow eh-policy-header__eyebrow">{{ section.settings.eyebrow | escape }}</div>
+    {%- endif -%}
+    {%- if section.settings.last_updated != blank -%}
+      <div class="eh-spec eh-policy-header__updated">LAST UPDATED · {{ section.settings.last_updated | escape }}</div>
+    {%- endif -%}
+
+    {%- assign eh_summary_points = section.blocks | where: 'type', 'summary_point' -%}
+    {%- if section.settings.summary_intro != blank or eh_summary_points.size > 0 -%}
+      <div class="eh-policy-header__summary">
+        {%- if section.settings.summary_label != blank -%}
+          <div class="eh-title-sm eh-policy-header__summary-label">
+            {%- render 'eh-icon', icon: 'check', size: 16 -%}
+            <span>{{ section.settings.summary_label | escape }}</span>
+          </div>
+        {%- endif -%}
+        {%- if section.settings.summary_intro != blank -%}
+          <p class="eh-body-sm eh-policy-header__summary-intro">{{ section.settings.summary_intro | escape }}</p>
+        {%- endif -%}
+        {%- if eh_summary_points.size > 0 -%}
+          <ul class="eh-policy-header__summary-list">
+            {%- for block in eh_summary_points -%}
+              <li {{ block.shopify_attributes }}>{{ block.settings.text | escape }}</li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.show_specimen_badge -%}
+      <span class="eh-specimen-badge eh-policy-header__badge">{{ section.settings.specimen_badge_text | escape }}</span>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "EH Policy header",
+  "tag": "section",
+  "class": "eh-section-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Policies"
+    },
+    {
+      "type": "text",
+      "id": "last_updated",
+      "label": "Last updated",
+      "info": "Shown as \"LAST UPDATED · [this text]\". Use \"Pending\" until a real policy is finalized.",
+      "default": "Pending"
+    },
+    {
+      "type": "header",
+      "content": "Customer-facing summary (optional)"
+    },
+    {
+      "type": "text",
+      "id": "summary_label",
+      "label": "Summary label",
+      "info": "Plain storefront wording, not internal status language. Leave blank along with the intro/points below to hide this block entirely.",
+      "default": "Returns at a glance"
+    },
+    {
+      "type": "text",
+      "id": "summary_intro",
+      "label": "Summary intro",
+      "info": "Only for statements that were actually approved — not a place to draft new policy language, and not a substitute for legal review.",
+      "default": ""
+    },
+    {
+      "type": "header",
+      "content": "Specimen badge"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_specimen_badge",
+      "label": "Show specimen badge",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "specimen_badge_text",
+      "label": "Specimen badge text",
+      "default": "PLACEHOLDER — NEEDS REAL POLICY & LEGAL REVIEW"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "summary_point",
+      "name": "Summary point",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Approved statement",
+          "info": "State it exactly as approved — do not expand or interpret it into broader legal language."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "EH Policy header"
+    }
+  ]
+}
+{% endschema %}

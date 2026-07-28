@@ -1,0 +1,108 @@
+{% comment %}
+  EverHaven capability strip — label + pill list + "All capabilities" link.
+  Blocks for now; the Handoff maps this to a `capability` metaobject, planned
+  for Phase 8 once that metaobject exists in the store — swapping the block
+  loop for a metaobject loop later won't require markup/CSS changes.
+{% endcomment %}
+
+<section class="eh-capability-strip{% if section.settings.show_top_border %} eh-capability-strip--border-top{% endif %}{% if section.settings.show_bottom_border %} eh-capability-strip--border-bottom{% endif %}">
+  <div class="eh-container">
+    <div class="eh-capability-strip__row">
+      {%- if section.settings.label_text != blank -%}
+        <span class="eh-eyebrow eh-capability-strip__label">{{ section.settings.label_text | escape }}</span>
+      {%- endif -%}
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'pill' -%}
+            <span
+              class="eh-pill eh-capability-strip__pill eh-capability-strip__pill--{{ section.settings.pill_style }}"
+              {{ block.shopify_attributes }}
+            >
+              {{- block.settings.label | escape -}}
+            </span>
+        {%- endcase -%}
+      {%- endfor -%}
+      {%- if section.settings.link_label != blank -%}
+        <a href="{{ section.settings.link | default: '#' }}" class="eh-btn-tertiary eh-capability-strip__link">
+          {{- section.settings.link_label | escape -}}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "EH Capability strip",
+  "tag": "section",
+  "class": "eh-section-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label_text",
+      "label": "Label",
+      "default": "Current capabilities"
+    },
+    {
+      "type": "select",
+      "id": "pill_style",
+      "label": "Pill style",
+      "options": [
+        { "value": "filled", "label": "Filled (surface fill, no border)" },
+        { "value": "outlined", "label": "Outlined (white fill, hairline border)" }
+      ],
+      "default": "filled"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Link label",
+      "default": "All capabilities →"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_top_border",
+      "label": "Show top border",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_bottom_border",
+      "label": "Show bottom border",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "pill",
+      "name": "Pill",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "FDM 3D PRINTING"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "EH Capability strip",
+      "blocks": [
+        { "type": "pill", "settings": { "label": "FDM 3D PRINTING" } },
+        { "type": "pill", "settings": { "label": "PLA · PETG" } },
+        { "type": "pill", "settings": { "label": "RAPID PROTOTYPING" } },
+        { "type": "pill", "settings": { "label": "SMALL-BATCH RUNS" } },
+        { "type": "pill", "settings": { "label": "DESIGN SUPPORT" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

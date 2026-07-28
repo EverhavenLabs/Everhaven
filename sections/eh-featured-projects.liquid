@@ -1,0 +1,138 @@
+{% comment %}
+  EverHaven featured projects — 2-up "recent work" photo grid.
+  Always specimen content until real project photography/copy exists;
+  disabled at the template level by default (see templates/index.json) —
+  re-enable from the theme editor's hidden-sections panel once ready.
+{% endcomment %}
+
+<section class="eh-featured-projects eh-section">
+  <div class="eh-container">
+    <div class="eh-featured-projects__header">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="eh-eyebrow">{{ section.settings.eyebrow | escape }}</span>
+      {%- endif -%}
+      {%- if section.settings.show_specimen_badge -%}
+        <span class="eh-specimen-badge">SPECIMEN CONTENT — SECTION HIDDEN UNTIL REAL PROJECTS EXIST</span>
+      {%- endif -%}
+    </div>
+    {%- if section.settings.heading != blank -%}
+      <h2 class="eh-display-md eh-featured-projects__heading">{{ section.settings.heading | escape }}</h2>
+    {%- endif -%}
+
+    <div class="eh-featured-projects__grid">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'project' -%}
+            <div class="eh-featured-projects__item" {{ block.shopify_attributes }}>
+              {%- render 'eh-image-slot',
+                image: block.settings.image,
+                placeholder: block.settings.image_placeholder,
+                radius: 10,
+                ratio: '1.5'
+              -%}
+              {%- if block.settings.category != blank -%}
+                <div class="eh-eyebrow eh-featured-projects__category">{{ block.settings.category | escape }}</div>
+              {%- endif -%}
+              {%- if block.settings.title != blank -%}
+                {%- if block.settings.link != blank -%}
+                  <a href="{{ block.settings.link }}" class="eh-title-md eh-featured-projects__title">
+                    {{- block.settings.title | escape -}}
+                  </a>
+                {%- else -%}
+                  <div class="eh-title-md eh-featured-projects__title">{{ block.settings.title | escape }}</div>
+                {%- endif -%}
+              {%- endif -%}
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "EH Featured projects",
+  "tag": "section",
+  "class": "eh-section-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Recent work"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Objects we've helped make."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_specimen_badge",
+      "label": "Show specimen badge",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "project",
+      "name": "Project",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "image_placeholder",
+          "label": "Placeholder shot brief",
+          "default": "Macro — printed part detail, PLA or PETG"
+        },
+        {
+          "type": "text",
+          "id": "category",
+          "label": "Category label",
+          "default": "Specimen project · Replacement part"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Project title and one-line outcome"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link (optional)"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "EH Featured projects",
+      "blocks": [
+        {
+          "type": "project",
+          "settings": {
+            "image_placeholder": "Macro — printed part detail, PLA or PETG",
+            "category": "Specimen project · Replacement part",
+            "title": "Project title and one-line outcome"
+          }
+        },
+        {
+          "type": "project",
+          "settings": {
+            "image_placeholder": "Environment — parts on build plate",
+            "category": "Specimen project · Prototype run",
+            "title": "Project title and one-line outcome"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

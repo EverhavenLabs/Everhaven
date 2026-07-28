@@ -1,0 +1,178 @@
+{% comment %}
+  EverHaven hero-split — 6/6 split hero used on home, services, service-detail.
+  Desktop: 6/6. Tablet (<=989px): stacked, image second. Mobile (<=749px): stacked, CTAs full-width.
+{% endcomment %}
+
+<section class="eh-hero-split color-{{ section.settings.color_scheme }} eh-section">
+  <div class="eh-container">
+    <div class="eh-hero-split__grid eh-hero-split__grid--image-{{ section.settings.image_position }}">
+      <div class="eh-hero-split__content">
+        {%- render 'eh-section-header',
+          eyebrow: section.settings.eyebrow,
+          heading: section.settings.heading,
+          heading_tag: section.settings.heading_tag,
+          size: section.settings.heading_size
+        -%}
+        {%- if section.settings.body != blank -%}
+          <div class="eh-body-lg eh-hero-split__body">{{ section.settings.body }}</div>
+        {%- endif -%}
+        {%- if section.blocks.size > 0 -%}
+          <div class="eh-hero-split__ctas">
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'button' -%}
+                  {%- if block.settings.label != blank -%}
+                    {%- if block.settings.style == 'text_link' -%}
+                      <a
+                        href="{{ block.settings.link | default: '#' }}"
+                        class="eh-btn-tertiary"
+                        {{ block.shopify_attributes }}
+                      >
+                        {{- block.settings.label | escape -}}
+                      </a>
+                    {%- else -%}
+                      <a
+                        href="{{ block.settings.link | default: '#' }}"
+                        class="eh-btn {% if block.settings.style == 'secondary' %}eh-btn-secondary{% else %}eh-btn-primary{% endif %}"
+                        {{ block.shopify_attributes }}
+                      >
+                        {{- block.settings.label | escape -}}
+                      </a>
+                    {%- endif -%}
+                  {%- endif -%}
+              {%- endcase -%}
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+      <div class="eh-hero-split__media">
+        {%- render 'eh-image-slot',
+          image: section.settings.image,
+          placeholder: section.settings.image_placeholder,
+          radius: 14,
+          ratio: '1.1'
+        -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "EH Hero split",
+  "tag": "section",
+  "class": "eh-section-wrapper",
+  "settings": [
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "Heading level",
+      "options": [
+        { "value": "h1", "label": "H1 (use once, page hero)" },
+        { "value": "h2", "label": "H2" }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Product design · Prototyping · Small-batch manufacturing"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "From idea to object."
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "options": [
+        { "value": "lg", "label": "Large (true hero)" },
+        { "value": "md", "label": "Medium (preview band)" }
+      ],
+      "default": "lg"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body copy",
+      "default": "<p>We design, prototype, and produce original products — and help customers bring their own ideas to life.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "image_placeholder",
+      "label": "Placeholder shot brief",
+      "info": "Shown until a real image is uploaded.",
+      "default": "Environment — machine in motion, warm light"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position (desktop)",
+      "options": [
+        { "value": "right", "label": "Right" },
+        { "value": "left", "label": "Left" }
+      ],
+      "default": "right"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Get a quote →"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "select",
+          "id": "style",
+          "label": "Style",
+          "options": [
+            { "value": "primary", "label": "Primary" },
+            { "value": "secondary", "label": "Secondary" },
+            { "value": "text_link", "label": "Text link" }
+          ],
+          "default": "primary"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 2,
+  "presets": [
+    {
+      "name": "EH Hero split",
+      "blocks": [
+        { "type": "button", "settings": { "label": "Get a quote →", "style": "primary" } },
+        { "type": "button", "settings": { "label": "Shop products", "style": "secondary" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

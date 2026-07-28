@@ -1,0 +1,42 @@
+{% comment %}
+  One alternating image/text row for the collection low-count editorial
+  layout — driven by a real product from collection.products (not a
+  manually curated block), so it reflects whatever is actually in the
+  collection.
+
+  Usage:
+  {% render 'eh-collection-editorial-row', product: product, reverse: false %}
+{% endcomment %}
+{%- liquid
+  assign eh_is_digital = false
+  if product.tags contains 'digital'
+    assign eh_is_digital = true
+  endif
+-%}
+<div class="eh-collection-editorial__row{% if reverse %} eh-collection-editorial__row--reverse{% endif %}">
+  <div class="eh-collection-editorial__media">
+    {%- if eh_is_digital -%}
+      {%- render 'eh-stl-cover', title: product.title, size: 'full', title_size: 'md', ratio: '1.4' -%}
+    {%- else -%}
+      {%- render 'eh-image-slot',
+        image: product.featured_image,
+        placeholder: 'Object on set — product hero, warm seamless',
+        radius: 14,
+        ratio: '1.4'
+      -%}
+    {%- endif -%}
+  </div>
+  <div class="eh-collection-editorial__content">
+    {%- if product.type != blank -%}
+      <div class="eh-eyebrow eh-collection-editorial__eyebrow">{{ product.type | escape }}</div>
+    {%- endif -%}
+    <div class="eh-display-md eh-collection-editorial__heading">{{ product.title | escape }}</div>
+    {%- if product.description != blank -%}
+      <div class="eh-body-md eh-collection-editorial__body">{{ product.description | strip_html | truncatewords: 28 }}</div>
+    {%- endif -%}
+    <div class="eh-collection-editorial__meta">
+      <span class="eh-title-md eh-collection-editorial__price">{{ product.price | money }}</span>
+      <a href="{{ product.url }}" class="eh-btn eh-btn-secondary">View product</a>
+    </div>
+  </div>
+</div>

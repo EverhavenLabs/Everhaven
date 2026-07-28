@@ -1,0 +1,274 @@
+{
+  "sections": {
+    "faq-quote": {
+      "type": "eh-faq",
+      "blocks": {
+        "q-1": {
+          "type": "question",
+          "settings": {
+            "question": "What can I send you to start a project?",
+            "answer": "<p>A file, image, sketch, drawing, or reference — any starting point works.</p>"
+          }
+        },
+        "q-2": {
+          "type": "question",
+          "settings": {
+            "question": "How does quoting work?",
+            "answer": "<p>A real person reviews the request and replies by email with questions or an itemized quote — no automated estimates.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q-1",
+        "q-2"
+      ],
+      "settings": {
+        "eyebrow": "FAQ",
+        "heading": "Getting a quote",
+        "layout": "stacked",
+        "show_specimen_badge": false,
+        "heading_tag": "h1"
+      }
+    },
+    "faq-files": {
+      "type": "eh-faq",
+      "blocks": {
+        "q-1": {
+          "type": "question",
+          "settings": {
+            "question": "Can you help design my part, not just print it?",
+            "answer": "<p>Yes — design assistance takes ideas from sketch to printable model.</p>"
+          }
+        },
+        "q-2": {
+          "type": "question",
+          "settings": {
+            "question": "Do I need to know CAD?",
+            "answer": "<p>No — describing the problem is enough. We handle the modeling and walk you through decisions in plain language.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q-1",
+        "q-2"
+      ],
+      "settings": {
+        "eyebrow": "",
+        "heading": "Project files & starting points",
+        "layout": "stacked",
+        "show_specimen_badge": false
+      }
+    },
+    "faq-materials": {
+      "type": "eh-faq",
+      "blocks": {
+        "q-1": {
+          "type": "question",
+          "settings": {
+            "question": "What materials do you print in?",
+            "answer": "<p>FDM printing in PLA and PETG, matched to how your part will be used.</p>"
+          }
+        },
+        "q-2": {
+          "type": "question",
+          "settings": {
+            "question": "PLA or PETG — how do you decide?",
+            "answer": "<p>By how the part lives: indoors and precise favors PLA; handled, flexed, or outdoors favors PETG. The quote explains the recommendation.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q-1",
+        "q-2"
+      ],
+      "settings": {
+        "eyebrow": "",
+        "heading": "Materials currently offered",
+        "layout": "stacked",
+        "show_specimen_badge": false
+      }
+    },
+    "faq-prototypes": {
+      "type": "eh-faq",
+      "blocks": {
+        "q-1": {
+          "type": "question",
+          "settings": {
+            "question": "How many iterations do projects usually need?",
+            "answer": "<p>It depends on the part — we scope round by round, so you only pay for the learning you need. Specimen answer.</p>"
+          }
+        },
+        "q-2": {
+          "type": "question",
+          "settings": {
+            "question": "Do you take small-batch or repeat orders?",
+            "answer": "<p>Yes — from one-off prototypes to repeat production runs.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q-1",
+        "q-2"
+      ],
+      "settings": {
+        "eyebrow": "",
+        "heading": "Prototypes & small-batch runs",
+        "layout": "stacked",
+        "show_specimen_badge": true
+      }
+    },
+    "faq-parts": {
+      "type": "eh-faq",
+      "blocks": {
+        "q-1": {
+          "type": "question",
+          "settings": {
+            "question": "Can you recreate any part?",
+            "answer": "<p>Only parts you have the right to reproduce, and only where FDM in PLA or PETG genuinely fits — we confirm both during review. Specimen answer.</p>"
+          }
+        },
+        "q-2": {
+          "type": "question",
+          "settings": {
+            "question": "What measurements do you need?",
+            "answer": "<p>Send what you can — we’ll tell you exactly which dimensions matter for your part. Specimen answer.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q-1",
+        "q-2"
+      ],
+      "settings": {
+        "eyebrow": "",
+        "heading": "Replacement parts",
+        "layout": "stacked",
+        "show_specimen_badge": true
+      }
+    },
+    "faq-design": {
+      "type": "eh-faq",
+      "blocks": {
+        "q-1": {
+          "type": "question",
+          "settings": {
+            "question": "What do I receive at the end?",
+            "answer": "<p>A printable design and, where agreed, printed parts. <span class=\"eh-specimen-badge\">FILE-OWNERSHIP TERMS PENDING</span></p>"
+          }
+        },
+        "q-2": {
+          "type": "question",
+          "settings": {
+            "question": "What if my idea isn't printable?",
+            "answer": "<p>We’ll say so early, explain why, and suggest what could work instead. Specimen answer.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q-1",
+        "q-2"
+      ],
+      "settings": {
+        "eyebrow": "",
+        "heading": "Product design support",
+        "layout": "stacked",
+        "show_specimen_badge": true
+      }
+    },
+    "faq-physical": {
+      "type": "eh-faq",
+      "blocks": {
+        "q-1": {
+          "type": "question",
+          "settings": {
+            "question": "Are physical products made in-house?",
+            "answer": "<p>Yes — every physical product is printed, inspected, and packed in-house before it ships.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q-1"
+      ],
+      "settings": {
+        "eyebrow": "",
+        "heading": "Physical products",
+        "layout": "stacked",
+        "show_specimen_badge": false
+      }
+    },
+    "faq-digital": {
+      "type": "eh-faq",
+      "blocks": {
+        "q-1": {
+          "type": "question",
+          "settings": {
+            "question": "How do digital STL downloads work?",
+            "answer": "<p><span class=\"eh-specimen-badge\">DIGITAL DELIVERY SETUP PENDING</span> <span class=\"eh-specimen-badge\">LICENSE TERMS PENDING</span></p>"
+          }
+        },
+        "q-2": {
+          "type": "question",
+          "settings": {
+            "question": "How are digital STL files licensed?",
+            "answer": "<p><span class=\"eh-specimen-badge\">PENDING LEGAL REVIEW</span> License terms are being finalized.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q-1",
+        "q-2"
+      ],
+      "settings": {
+        "eyebrow": "",
+        "heading": "Digital STL products",
+        "layout": "stacked",
+        "show_specimen_badge": true
+      }
+    },
+    "faq-shipping": {
+      "type": "eh-faq",
+      "blocks": {
+        "q-1": {
+          "type": "question",
+          "settings": {
+            "question": "How do shipping and returns work?",
+            "answer": "<p><span class=\"eh-specimen-badge\">PENDING REAL POLICY</span> Shipping and returns terms are not yet finalized.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q-1"
+      ],
+      "settings": {
+        "eyebrow": "",
+        "heading": "Shipping & returns",
+        "layout": "stacked",
+        "show_specimen_badge": true
+      }
+    },
+    "final-cta": {
+      "type": "eh-cta-dark",
+      "settings": {
+        "eyebrow": "Still have questions?",
+        "heading": "Tell us what you're making.",
+        "body": "<p>A file, a sketch, or a description is enough to start. We’ll take it from there.</p>",
+        "button_label": "Get a quote →",
+        "button_link": "",
+        "caption": "No commitment — a quote is a conversation, not a contract.",
+        "color_scheme": "scheme-4"
+      }
+    }
+  },
+  "order": [
+    "faq-quote",
+    "faq-files",
+    "faq-materials",
+    "faq-prototypes",
+    "faq-parts",
+    "faq-design",
+    "faq-physical",
+    "faq-digital",
+    "faq-shipping",
+    "final-cta"
+  ]
+}
