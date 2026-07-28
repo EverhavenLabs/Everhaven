@@ -1,0 +1,22 @@
+{% comment %}
+  Temporary diagnostic section — homepage-diagnostic branch only.
+  Purpose: confirm Shopify recognizes templates/index.json as the Home page
+  template. No dependencies, no JS, no dynamic sources. Not for merge into
+  shopify-theme or main.
+{% endcomment %}
+<div class="eh-home-diagnostic">
+  <h1>Homepage diagnostic</h1>
+  <p>If this appears, Shopify recognizes index.json.</p>
+</div>
+
+{% schema %}
+{
+  "name": "Homepage diagnostic",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Homepage diagnostic"
+    }
+  ]
+}
+{% endschema %}
