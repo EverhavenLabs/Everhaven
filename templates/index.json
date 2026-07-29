@@ -132,11 +132,11 @@
     "eh_faq_gbYVbM": {
       "type": "eh-faq",
       "blocks": {
-        "question_EE9LdQ": {
+        "question_KQ3BLL": {
           "type": "question",
           "settings": {
-            "question": "Do you work with international brands?",
-            "answer": "<p>Yes — we partner with brands both international and US-based as their US manufacturing and fulfillment partner. Everything is produced and shipped within the United States and fulfilled to US-based customers (we don't ship outside the US).</p>",
+            "question": "Where are we located?",
+            "answer": "<p>Everhaven is based in Cartersville, Georgia. We design, print, and ship made-to-spec parts and products for customers across the United States</p><p>If you're located within 50 mile radius personal delivery is available free of charge Aswell.</p>",
             "group": ""
           }
         },
@@ -148,11 +148,11 @@
             "group": ""
           }
         },
-        "question_WMm3qd": {
+        "question_X7DkDz": {
           "type": "question",
           "settings": {
-            "question": "What can I send you to start a project?",
-            "answer": "<p>A file, image, sketch, drawing, or reference — any starting point works.</p>",
+            "question": "What file formats do you accept?",
+            "answer": "<p>STL, STEP, and 3MF files are accepted. No model yet? We also offer design help to turn an idea or sketch into a printable file.<br/></p>",
             "group": ""
           }
         },
@@ -164,21 +164,30 @@
             "group": ""
           }
         },
-        "question_X7DkDz": {
+        "question_EE9LdQ": {
           "type": "question",
           "settings": {
-            "question": "What file formats do you accept?",
-            "answer": "<p>STL, STEP, and 3MF files are accepted. No model yet? We also offer design help to turn an idea or sketch into a printable file.<br/></p>",
+            "question": "Do you work with international brands?",
+            "answer": "<p>Yes — we partner with brands both international and US-based as their US manufacturing and fulfillment partner. Everything is produced and shipped within the United States and fulfilled to US-based customers (we don't ship outside the US).</p>",
+            "group": ""
+          }
+        },
+        "question_WMm3qd": {
+          "type": "question",
+          "settings": {
+            "question": "What can I send you to start a project?",
+            "answer": "<p>A file, image, sketch, drawing, or reference — any starting point works.</p>",
             "group": ""
           }
         }
       },
       "block_order": [
-        "question_EE9LdQ",
+        "question_KQ3BLL",
         "question_wD4gTP",
-        "question_WMm3qd",
+        "question_X7DkDz",
         "question_VKzi4h",
-        "question_X7DkDz"
+        "question_EE9LdQ",
+        "question_WMm3qd"
       ],
       "name": "EH FAQ",
       "settings": {
