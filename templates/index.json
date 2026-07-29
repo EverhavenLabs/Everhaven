@@ -177,7 +177,7 @@
         "eyebrow": "FAQ",
         "heading": "Common questions.",
         "layout": "stacked",
-        "show_specimen_badge": true
+        "show_specimen_badge": false
       }
     }
   },
