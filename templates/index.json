@@ -168,7 +168,7 @@
           "type": "question",
           "settings": {
             "question": "What file formats do you accept?",
-            "answer": "<p>STL, STEP, OBJ, and 3MF files are accepted. No model yet? We also offer design help to turn an idea or sketch into a printable file.<br/></p>",
+            "answer": "<p>STL, STEP, and 3MF files are accepted. No model yet? We also offer design help to turn an idea or sketch into a printable file.<br/></p>",
             "group": ""
           }
         }
