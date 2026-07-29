@@ -128,11 +128,63 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "eh_faq_gbYVbM": {
+      "type": "eh-faq",
+      "blocks": {
+        "question_wD4gTP": {
+          "type": "question",
+          "settings": {
+            "question": "What's your typical turnaround?",
+            "answer": "<p>Turnaround is quoted per project. Every job is different, so once we've talked through the details, you'll get a clear timeline along with your quote.</p>",
+            "group": ""
+          }
+        },
+        "question_WMm3qd": {
+          "type": "question",
+          "settings": {
+            "question": "What can I send you to start a project?",
+            "answer": "<p>A file, image, sketch, drawing, or reference — any starting point works.</p>",
+            "group": ""
+          }
+        },
+        "question_VKzi4h": {
+          "type": "question",
+          "settings": {
+            "question": "Can you work from a sketch instead of a 3D file?",
+            "answer": "<p>Yes — design assistance takes ideas from sketch to printable model.</p>",
+            "group": ""
+          }
+        },
+        "question_X7DkDz": {
+          "type": "question",
+          "settings": {
+            "question": "What file formats do you accept?",
+            "answer": "<p>STL, STEP, OBJ, and 3MF files are accepted. No model yet? We also offer design help to turn an idea or sketch into a printable file.<br/></p>",
+            "group": ""
+          }
+        }
+      },
+      "block_order": [
+        "question_wD4gTP",
+        "question_WMm3qd",
+        "question_VKzi4h",
+        "question_X7DkDz"
+      ],
+      "name": "EH FAQ",
+      "settings": {
+        "heading_tag": "h2",
+        "eyebrow": "FAQ",
+        "heading": "Common questions.",
+        "layout": "stacked",
+        "show_specimen_badge": true
+      }
     }
   },
   "order": [
     "hero",
     "path-cards",
-    "image_with_text_VqzghQ"
+    "image_with_text_VqzghQ",
+    "eh_faq_gbYVbM"
   ]
 }
