@@ -132,6 +132,14 @@
     "eh_faq_gbYVbM": {
       "type": "eh-faq",
       "blocks": {
+        "question_EE9LdQ": {
+          "type": "question",
+          "settings": {
+            "question": "Do you work with international brands?",
+            "answer": "<p>Yes — we partner with brands both international and US-based as their US manufacturing and fulfillment partner. Everything is produced and shipped within the United States and fulfilled to US-based customers (we don't ship outside the US).</p>",
+            "group": ""
+          }
+        },
         "question_wD4gTP": {
           "type": "question",
           "settings": {
@@ -151,8 +159,8 @@
         "question_VKzi4h": {
           "type": "question",
           "settings": {
-            "question": "Can you work from a sketch instead of a 3D file?",
-            "answer": "<p>Yes — design assistance takes ideas from sketch to printable model.</p>",
+            "question": "How do I get a quote?",
+            "answer": "<p>Start a project on our <a href=\"/pages/get-a-quote\" title=\"Get a Quote\">Get a Quote </a>and tell us what you're making. We'll set up a quick call to talk it through, then put together a custom quote — priced per project.</p>",
             "group": ""
           }
         },
@@ -166,6 +174,7 @@
         }
       },
       "block_order": [
+        "question_EE9LdQ",
         "question_wD4gTP",
         "question_WMm3qd",
         "question_VKzi4h",
