@@ -89,14 +89,14 @@
         "heading_eidGrN": {
           "type": "heading",
           "settings": {
-            "heading": "Image with text",
+            "heading": "Owner",
             "heading_size": "h1"
           }
         },
         "text_WCyWW3": {
           "type": "text",
           "settings": {
-            "text": "<p>Hey — I'm Dylan. EverHaven was built from my passion for engineering, manufacturing, and solving real-world problems. I started with 3D printing, but my goal has always been much bigger than making products—it's about helping bring great ideas from concept to production.</p><h4>—<strong> Dylan</strong></h4>",
+            "text": "<h4>Hey — I'm Dylan. EverHaven was built from my passion for engineering, manufacturing, and solving real-world problems. I started with 3D printing, but my goal has always been much bigger than making products—it's about helping bring great ideas from concept to production.</h4>",
             "text_style": "body"
           }
         },
