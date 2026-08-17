@@ -17,6 +17,19 @@
         "padding_bottom": 28
       }
     },
+    "eh_cta_dark_8gThyM": {
+      "type": "eh-cta-dark",
+      "name": "EH Dark CTA",
+      "settings": {
+        "eyebrow": "Start a project",
+        "heading": "Tell us what you're making.",
+        "body": "<p>A file, a sketch, or a description is enough to start. We'll take it from there.</p>",
+        "button_label": "Get a quote →",
+        "button_link": "shopify://pages/services",
+        "caption": "No commitment — a quote is a conversation, not a contract.",
+        "color_scheme": ""
+      }
+    },
     "eh_principles_YpajDp": {
       "type": "eh-principles",
       "blocks": {
@@ -173,6 +186,7 @@
   },
   "order": [
     "main",
+    "eh_cta_dark_8gThyM",
     "eh_principles_YpajDp",
     "eh_process_steps_L936My",
     "eh_quote_form_4tAbEg"
