@@ -11,9 +11,71 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
+      }
+    },
+    "eh_principles_YpajDp": {
+      "type": "eh-principles",
+      "blocks": {
+        "principle_WMUg3m": {
+          "type": "principle",
+          "settings": {
+            "title": "Design-first thinking",
+            "body": "<p>Every project starts as a design problem, not a print job. We'll suggest a better way when we see one.</p>"
+          }
+        },
+        "principle_xBd33M": {
+          "type": "principle",
+          "settings": {
+            "title": "Honest communication",
+            "body": "<p>Real feasibility, real trade-offs, real prices. If we're not the right shop, we'll say so.</p>"
+          }
+        },
+        "principle_C4tKw9": {
+          "type": "principle",
+          "settings": {
+            "title": "Flexible project scope",
+            "body": "<p>One-off prototypes and repeat runs are equally welcome — scope shapes the approach, never the attention.</p>"
+          }
+        },
+        "principle_pKaEXK": {
+          "type": "principle",
+          "settings": {
+            "title": "Products as proof",
+            "body": "<p>Our own products come off the same machines, with the same care, as customer work — the shop shows how we build.</p>"
+          }
+        },
+        "principle_Q9XALD": {
+          "type": "principle",
+          "settings": {
+            "title": "Attention to detail",
+            "body": "<p>Fit, print quality, and presentation — the details people may not request, but always notice.</p>"
+          }
+        },
+        "principle_dfmrzQ": {
+          "type": "principle",
+          "settings": {
+            "title": "Long-term relationships",
+            "body": "<p>We'd rather be the studio you return to for years than the vendor you used once.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "principle_WMUg3m",
+        "principle_xBd33M",
+        "principle_C4tKw9",
+        "principle_pKaEXK",
+        "principle_Q9XALD",
+        "principle_dfmrzQ"
+      ],
+      "name": "EH Principles",
+      "settings": {
+        "eyebrow": "Why EverHaven",
+        "heading": "How we approach the work.",
+        "intro": "<p>No badges, no borrowed logos — the principles behind every project we take on.</p>"
       }
     },
     "eh_process_steps_L936My": {
@@ -106,67 +168,6 @@
         "helpful_lines": "What you're making, and roughly how many\nYour timeline, if you have one\nHow the part will be used\nAnything else we should know",
         "submit_label": "Start the Conversation",
         "color_scheme": ""
-      }
-    },
-    "eh_principles_YpajDp": {
-      "type": "eh-principles",
-      "blocks": {
-        "principle_WMUg3m": {
-          "type": "principle",
-          "settings": {
-            "title": "Design-first thinking",
-            "body": "<p>Every project starts as a design problem, not a print job. We'll suggest a better way when we see one.</p>"
-          }
-        },
-        "principle_xBd33M": {
-          "type": "principle",
-          "settings": {
-            "title": "Honest communication",
-            "body": "<p>Real feasibility, real trade-offs, real prices. If we're not the right shop, we'll say so.</p>"
-          }
-        },
-        "principle_C4tKw9": {
-          "type": "principle",
-          "settings": {
-            "title": "Flexible project scope",
-            "body": "<p>One-off prototypes and repeat runs are equally welcome — scope shapes the approach, never the attention.</p>"
-          }
-        },
-        "principle_pKaEXK": {
-          "type": "principle",
-          "settings": {
-            "title": "Products as proof",
-            "body": "<p>Our own products come off the same machines, with the same care, as customer work — the shop shows how we build.</p>"
-          }
-        },
-        "principle_Q9XALD": {
-          "type": "principle",
-          "settings": {
-            "title": "Attention to detail",
-            "body": "<p>Fit, print quality, and presentation — the details people may not request, but always notice.</p>"
-          }
-        },
-        "principle_dfmrzQ": {
-          "type": "principle",
-          "settings": {
-            "title": "Long-term relationships",
-            "body": "<p>We'd rather be the studio you return to for years than the vendor you used once.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "principle_WMUg3m",
-        "principle_xBd33M",
-        "principle_C4tKw9",
-        "principle_pKaEXK",
-        "principle_Q9XALD",
-        "principle_dfmrzQ"
-      ],
-      "name": "EH Principles",
-      "settings": {
-        "eyebrow": "Why EverHaven",
-        "heading": "How we approach the work.",
-        "intro": "<p>No badges, no borrowed logos — the principles behind every project we take on.</p>"
       }
     }
   },
