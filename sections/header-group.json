@@ -37,18 +37,6 @@
     },
     "header": {
       "type": "header",
-      "blocks": {
-        "eh-quote-button": {
-          "type": "eh_quote_button",
-          "settings": {
-            "label": "Get a quote",
-            "link": "shopify://pages/get-a-quote"
-          }
-        }
-      },
-      "block_order": [
-        "eh-quote-button"
-      ],
       "settings": {
         "logo_position": "middle-left",
         "mobile_logo_position": "left",
