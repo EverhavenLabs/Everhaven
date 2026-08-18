@@ -89,21 +89,21 @@
         "heading_eidGrN": {
           "type": "heading",
           "settings": {
-            "heading": "Owner",
+            "heading": "Behind Everhaven",
             "heading_size": "h1"
           }
         },
         "text_WCyWW3": {
           "type": "text",
           "settings": {
-            "text": "<h4>Hey — I'm Dylan. EverHaven was built from my passion for engineering, manufacturing, and solving real-world problems. I started with 3D printing, but my goal has always been much bigger than making products—it's about helping bring great ideas from concept to production.</h4>",
+            "text": "<h3><strong>Hey, I’m Dylan, the founder of Everhaven. What began with 3D printing grew into a bigger goal: turning useful ideas into real, functional products.</strong></h3><h3><strong>I work across design, prototyping, and small-batch production, focusing on practical solutions and dependable quality. Follow along on YouTube to see what I’m building and how each project comes together.</strong></h3>",
             "text_style": "body"
           }
         },
         "button_iVdzXJ": {
           "type": "button",
           "settings": {
-            "button_label": "Button label",
+            "button_label": "Watch on Youtube",
             "button_link": "",
             "button_style_secondary": false
           }
