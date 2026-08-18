@@ -25,7 +25,7 @@
         "heading": "Tell us what you're making.",
         "body": "<p>A file, a sketch, or a description is enough to start. We'll take it from there.</p>",
         "button_label": "Get a quote →",
-        "button_link": "shopify://pages/services",
+        "button_link": "#quote-form",
         "caption": "No commitment — a quote is a conversation, not a contract.",
         "color_scheme": ""
       }
