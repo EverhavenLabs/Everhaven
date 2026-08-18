@@ -29,10 +29,53 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "eh_faq_8QC8nz": {
+      "type": "eh-faq",
+      "blocks": {
+        "question_AXhrcR": {
+          "type": "question",
+          "settings": {
+            "question": "What can I send you to start a project?",
+            "answer": "<p>A file, image, sketch, drawing, or reference — any starting point works.</p>",
+            "group": ""
+          }
+        },
+        "question_PNCQwN": {
+          "type": "question",
+          "settings": {
+            "question": "Can you work from a sketch instead of a 3D file?",
+            "answer": "<p>Yes — design assistance takes ideas from sketch to printable model.</p>",
+            "group": ""
+          }
+        },
+        "question_Bb9WbT": {
+          "type": "question",
+          "settings": {
+            "question": "How are digital STL files licensed?",
+            "answer": "<p>Awaiting final license terms.</p>",
+            "group": ""
+          }
+        }
+      },
+      "block_order": [
+        "question_AXhrcR",
+        "question_PNCQwN",
+        "question_Bb9WbT"
+      ],
+      "name": "EH FAQ",
+      "settings": {
+        "heading_tag": "h2",
+        "eyebrow": "FAQ",
+        "heading": "Common questions.",
+        "layout": "stacked",
+        "show_specimen_badge": true
+      }
     }
   },
   "order": [
     "main",
-    "contact_form_7NN69J"
+    "contact_form_7NN69J",
+    "eh_faq_8QC8nz"
   ]
 }
