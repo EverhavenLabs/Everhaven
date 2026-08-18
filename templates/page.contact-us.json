@@ -33,32 +33,68 @@
     "eh_faq_8QC8nz": {
       "type": "eh-faq",
       "blocks": {
+        "question_wkWtxi": {
+          "type": "question",
+          "settings": {
+            "question": "How are digital STL files licensed?",
+            "answer": "<p>The license included on each product page determines how the file may be used. Unless otherwise stated, digital files may not be shared, copied, resold, or redistributed. Contact us if you need commercial-use rights.</p>",
+            "group": ""
+          }
+        },
+        "question_Ft6BKh": {
+          "type": "question",
+          "settings": {
+            "question": "Will my design and project information remain confidential?",
+            "answer": "<p>Customer files are used only to evaluate and complete the requested project. We will not publish, reuse, or resell your design without permission. If an NDA is required, please let us know before sending sensitive files.</p>",
+            "group": ""
+          }
+        },
+        "question_cMCPLT": {
+          "type": "question",
+          "settings": {
+            "question": "How do you handle measurements and tolerances?",
+            "answer": "<p>Tell us about any critical dimensions, mounting holes, mating surfaces, moving parts, or hardware. For fit-sensitive projects, we may recommend producing and testing one prototype before completing the full order.</p>",
+            "group": ""
+          }
+        },
+        "question_qntcEV": {
+          "type": "question",
+          "settings": {
+            "question": "Can I make changes after receiving my quote?",
+            "answer": "<p>Yes. Changes to the design, material, quantity, or finishing requirements may affect the price and turnaround time. We’ll confirm any updated costs before continuing.</p>",
+            "group": ""
+          }
+        },
         "question_AXhrcR": {
           "type": "question",
           "settings": {
-            "question": "What can I send you to start a project?",
-            "answer": "<p>A file, image, sketch, drawing, or reference — any starting point works.</p>",
+            "question": "Can you design a part from a sketch, photo, or existing object?",
+            "answer": "<p>Yes. Send us your reference materials, measurements, intended use, and any important requirements. CAD and design work will be included separately in your quote.</p>",
             "group": ""
           }
         },
         "question_PNCQwN": {
           "type": "question",
           "settings": {
-            "question": "Can you work from a sketch instead of a 3D file?",
-            "answer": "<p>Yes — design assistance takes ideas from sketch to printable model.</p>",
+            "question": "What materials can you print with?",
+            "answer": "<p>We offer PLA, PETG, and carbon-fiber-reinforced materials for different strength, heat, durability, and appearance requirements. We’ll help you select the right material for your application.</p>",
             "group": ""
           }
         },
         "question_Bb9WbT": {
           "type": "question",
           "settings": {
-            "question": "How are digital STL files licensed?",
-            "answer": "<p>Awaiting final license terms.</p>",
+            "question": "Can I order just one prototype?",
+            "answer": "<p>Yes. We produce one-off prototypes, replacement parts, functional components, and small production batches. Larger quantities may qualify for volume pricing.</p>",
             "group": ""
           }
         }
       },
       "block_order": [
+        "question_wkWtxi",
+        "question_Ft6BKh",
+        "question_cMCPLT",
+        "question_qntcEV",
         "question_AXhrcR",
         "question_PNCQwN",
         "question_Bb9WbT"
