@@ -56,7 +56,7 @@
             "heading": "Products we make",
             "body": "<p>Original physical products and print-ready STL files — designed, tested, and made in-house.</p>",
             "cta_label": "Browse the shop →",
-            "cta_link": "shopify://collections/all",
+            "cta_link": "shopify://pages/shop",
             "cta_style": "text_link"
           }
         },
