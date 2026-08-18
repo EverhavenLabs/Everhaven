@@ -1,75 +1,194 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "shop-landing": {
-      "type": "eh-shop-landing",
-      "blocks": {
-        "tile-physical": {
-          "type": "tile",
-          "settings": {
-            "label": "Physical products",
-            "description": "<p>Finished objects, printed and inspected in-house.</p>",
-            "image_placeholder": "Object on set — physical product group",
-            "style": "light"
-          }
-        },
-        "tile-digital": {
-          "type": "tile",
-          "settings": {
-            "label": "Digital STL files",
-            "description": "<p>Print-ready designs for your own machine.</p>",
-            "style": "dark"
-          }
-        },
-        "ql-functional": { "type": "quick_link", "settings": { "label": "Functional" } },
-        "ql-bestsellers": { "type": "quick_link", "settings": { "label": "Best sellers" } },
-        "ql-newarrivals": { "type": "quick_link", "settings": { "label": "New arrivals" } }
-      },
-      "block_order": [
-        "tile-physical",
-        "tile-digital",
-        "ql-functional",
-        "ql-bestsellers",
-        "ql-newarrivals"
-      ],
+    "main": {
+      "type": "main-page",
+      "disabled": true,
       "settings": {
-        "heading_tag": "h1",
-        "eyebrow": "The shop",
-        "heading": "Made by EverHaven.",
-        "intro": "<p>Every product here came off our own machines — designed, tested, and made with the same care we bring to customer work.</p>",
-        "show_specimen_badge": true
+        "padding_top": 28,
+        "padding_bottom": 28
       }
     },
-    "new-and-noteworthy": {
-      "type": "featured-collection",
+    "eh_cta_dark_8gThyM": {
+      "type": "eh-cta-dark",
+      "name": "EH Dark CTA",
       "settings": {
-        "title": "New & noteworthy",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 3,
-        "columns_desktop": 3,
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "padding_top": 0,
-        "padding_bottom": 88
+        "eyebrow": "Start a project",
+        "heading": "Tell us what you're making.",
+        "body": "<p>A file, a sketch, or a description is enough to start. We'll take it from there.</p>",
+        "button_label": "Get a quote →",
+        "button_link": "#quote-form",
+        "caption": "No commitment — a quote is a conversation, not a contract.",
+        "color_scheme": ""
+      }
+    },
+    "eh_principles_YpajDp": {
+      "type": "eh-principles",
+      "blocks": {
+        "principle_WMUg3m": {
+          "type": "principle",
+          "settings": {
+            "title": "Design-first thinking",
+            "body": "<p>Every project starts as a design problem, not a print job. We'll suggest a better way when we see one.</p>"
+          }
+        },
+        "principle_xBd33M": {
+          "type": "principle",
+          "settings": {
+            "title": "Honest communication",
+            "body": "<p>Real feasibility, real trade-offs, real prices. If we're not the right shop, we'll say so.</p>"
+          }
+        },
+        "principle_C4tKw9": {
+          "type": "principle",
+          "settings": {
+            "title": "Flexible project scope",
+            "body": "<p>One-off prototypes and repeat runs are equally welcome — scope shapes the approach, never the attention.</p>"
+          }
+        },
+        "principle_pKaEXK": {
+          "type": "principle",
+          "settings": {
+            "title": "Products as proof",
+            "body": "<p>Our own products come off the same machines, with the same care, as customer work — the shop shows how we build.</p>"
+          }
+        },
+        "principle_Q9XALD": {
+          "type": "principle",
+          "settings": {
+            "title": "Attention to detail",
+            "body": "<p>Fit, print quality, and presentation — the details people may not request, but always notice.</p>"
+          }
+        },
+        "principle_dfmrzQ": {
+          "type": "principle",
+          "settings": {
+            "title": "Long-term relationships",
+            "body": "<p>We'd rather be the studio you return to for years than the vendor you used once.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "principle_WMUg3m",
+        "principle_xBd33M",
+        "principle_C4tKw9",
+        "principle_pKaEXK",
+        "principle_Q9XALD",
+        "principle_dfmrzQ"
+      ],
+      "name": "EH Principles",
+      "settings": {
+        "eyebrow": "Why EverHaven",
+        "heading": "How we approach the work.",
+        "intro": "<h3>The principles behind how we design, build, and work with our customers.</h3>"
+      }
+    },
+    "eh_process_steps_L936My": {
+      "type": "eh-process-steps",
+      "blocks": {
+        "step_3EnHTH": {
+          "type": "step",
+          "settings": {
+            "title": "Describe",
+            "body": "<p>Send a file, a sketch, or a problem. Any starting point works.</p>"
+          }
+        },
+        "step_r6mgrA": {
+          "type": "step",
+          "settings": {
+            "title": "Quote",
+            "body": "<p>We review the project with you, work through the details, and provide a clear quote.</p>"
+          }
+        },
+        "step_MKwzAR": {
+          "type": "step",
+          "settings": {
+            "title": "Make",
+            "body": "<p>We prototype, print, and inspect the part before it leaves the shop.</p>"
+          }
+        },
+        "step_x7yLdL": {
+          "type": "step",
+          "settings": {
+            "title": "Deliver",
+            "body": "<p>Packed carefully and shipped directly to you.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "step_3EnHTH",
+        "step_r6mgrA",
+        "step_MKwzAR",
+        "step_x7yLdL"
+      ],
+      "name": "EH Process steps",
+      "settings": {
+        "eyebrow": "How it works",
+        "heading": "Four steps, no mystery.",
+        "color_scheme": "scheme-4"
+      }
+    },
+    "eh_quote_form_4tAbEg": {
+      "type": "eh-quote-form",
+      "blocks": {
+        "reassurance_Hw7HLt": {
+          "type": "reassurance",
+          "settings": {
+            "heading": "No file? No problem.",
+            "body": "<p>Have an idea, sketch, or problem to solve? We can help turn it into a printable design. You don't need a finished model to get started.</p>"
+          }
+        },
+        "reassurance_hfhBmy": {
+          "type": "reassurance",
+          "settings": {
+            "heading": "Honest feasibility, first.",
+            "body": "<p>If a part isn't a good fit for our process, we'll tell you before any money changes hands — and recommend a better approach when we can.</p>"
+          }
+        },
+        "reassurance_VRRAdB": {
+          "type": "reassurance",
+          "settings": {
+            "heading": "One part or a repeat run.",
+            "body": "<p>One-off prototypes and repeat production runs are equally welcome — scope shapes the approach, never the attention.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "reassurance_Hw7HLt",
+        "reassurance_hfhBmy",
+        "reassurance_VRRAdB"
+      ],
+      "name": "EH Quote form",
+      "settings": {
+        "eyebrow": "Get a quote",
+        "heading": "Tell us what you're making.",
+        "intro": "<p>Share what you can — we'll come back with questions, options, and a price. A sketch is enough to start, and a quote is a conversation, not a contract.</p>",
+        "step1_title": "We review your project",
+        "step1_body": "And reply with any questions — a real person, not an automated estimate.",
+        "step2_title": "You get a clear quote",
+        "step2_body": "Price, material, and timeline, with the reasoning behind each.",
+        "step3_title": "Approve it, and we start making",
+        "step3_body": "Prototyped, printed, and inspected before it's prepared for delivery.",
+        "helpful_heading": "Helpful to include",
+        "helpful_lines": "What you're making, and roughly how many\nYour timeline, if you have one\nHow the part will be used\nAnything else we should know",
+        "submit_label": "Request a Quote",
+        "color_scheme": ""
       }
     }
   },
   "order": [
-    "shop-landing",
-    "new-and-noteworthy"
+    "main",
+    "eh_cta_dark_8gThyM",
+    "eh_principles_YpajDp",
+    "eh_process_steps_L936My",
+    "eh_quote_form_4tAbEg"
   ]
 }
