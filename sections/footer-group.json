@@ -14,10 +14,10 @@
     "footer": {
       "type": "footer",
       "blocks": {
-        "link_list_mrwCNN": {
+        "explore": {
           "type": "link_list",
           "settings": {
-            "heading": "Quick links",
+            "heading": "Explore",
             "menu": "footer"
           }
         },
@@ -26,27 +26,11 @@
           "settings": {
             "show_social": true
           }
-        },
-        "explore": {
-          "type": "link_list",
-          "settings": {
-            "heading": "Explore",
-            "menu": "footer"
-          }
-        },
-        "work-with-us": {
-          "type": "link_list",
-          "settings": {
-            "heading": "Work with us",
-            "menu": "footer"
-          }
         }
       },
       "block_order": [
-        "link_list_mrwCNN",
-        "brand",
         "explore",
-        "work-with-us"
+        "brand"
       ],
       "settings": {
         "color_scheme": "scheme-4",
